@@ -1,0 +1,101 @@
+# the settings
+title: johnsosoka.com # site title
+description: a software engineer currently working in financial tech.
+lang: en-US # default lang
+timezone: Eastern # set your timezone
+image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+repo: # Repository
+mode: dark # default theme "dark" | "light"
+
+# Site Messaging (sosoka customizations)
+error_404_text: I cannot find that page :-(
+lore_go_back_text: go back # Text for lore pages
+
+# Profile settings
+author:
+  name: john sosoka # author name
+  bio: >- # tell to the world
+    <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a>. <br>
+    a software engineer currently working in financial tech.
+  username: jsosoka # general username
+  github: johnsosoka # github username
+  twitter: twitter_username # twitter username
+  facebook: 100070345623723 # facebook username
+  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org # email adress
+  avatar: /assets/img/avatar.jpg # change with your own avatar
+
+# URL settings
+url: "https://www.johnsosoka.com" #
+baseurl:
+permalink: /:title/
+google_analytics: UA-164477664-1
+analytics_enabled: true
+fb_appid:
+
+# Collection setting
+collections:
+  posts:
+    output: true
+  notes:
+    output: true
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Homepage limit posts
+number_of_posts: 5
+
+# Build settings
+# theme: klise
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - JEKYLL_TEMPLATE_LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - lighthouse.png
+  - klise-*.gem
+  - klise.gemspec
+  - run-local.sh
+  - deploy-prod.sh
+  - sosoka-banner
+  - old
+  - KLISE_THEME_README.md
+  - erase-image-meta-data.sh
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles
