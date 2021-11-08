@@ -1,31 +1,25 @@
 # site-johnsosoka-com
-content, assets, jekyll template &amp; terraform for https://www.johnsosoka.com
+content, assets, jekyll template &amp; terraform required to run https://www.johnsosoka.com
 
-# about
+# About
 
 This repository is split into two sections: infrastructure and website. Combined, these can provision & run a copy of
 [my homepage](https://johnsosoka.com). Contained in the website directory are some scripts to build & host a local copy
 of the website as well as a deployer script. 
 
-**Requirements**
+## Requirements
 
-* aws cli installed & configured (check terraform-deployer account for credentials if needed)
-* terraform cli installed & configured
+* AWS CLI installed & configured (with terraform account created)
+* Terraform 
 
-## [Infrastructure](/infrastructure)
+## Repository Sections:
+For more specific details on getting the site up & running visit a section's readme:
 
-The Terraform directory includes all required terraform scripts to ensure the correct provisioning
-of aws resources.
-
-
-
-## [Website](/website)
-
-The website directory includes all requires template files, scripts, image assets to run johnsosoka.com. It is a static generated site
-using jekyll.
+* **[Infrastructure](/infrastructure)** - Contains terraform to provision all required johnsosoka.com infrastructure.
+* **[Website](/website)** - Contains the Jekyll theme & Content for johnsosoka.com
 
 
-# Todo
+## Todo
 
 * [ ] Deployment Pipelines
   * [ ] Build Artifacts & Sync to prod S3 bucket upon merge to main
