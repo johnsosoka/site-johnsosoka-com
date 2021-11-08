@@ -3,12 +3,12 @@
 ### Getting Started
 
 1. Install **aws-cli**. Check out the [guide here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
-2. Configure aws-cli with `aws configure` I did original provisioning with iam user: [aws-terraform-user](https://console.aws.amazon.com/iam/home#/users/aws-terraform-user)
+2. Configure aws-cli with `aws configure` (have a user provisioned on aws already)
 3. Follow the [terraform installation guide](https://learn.hashicorp.com/tutorials/terraform/install-cli?)
 4. Terraform should be able to execute on the johnsosoka-com account now.
 
 ## Infrastructure Overview
-If you haven't figured it out based off of the prerequisites--the infrastructure for this website is provisioned by terraform (with an AWS provider).
+If you haven't figured it out by now--the infrastructure for this website is provisioned by terraform (with an AWS provider).
 
 This is a static website, hosted on S3. AWS Requires multiple s3 buckets in order to have www.johnsosoka.com and johnsosoka.com. One redirects to the other.
 

@@ -7,13 +7,13 @@ This repository is split into two sections: infrastructure and website. Combined
 [my homepage](https://johnsosoka.com). Contained in the website directory are some scripts to build & host a local copy
 of the website as well as a deployer script. 
 
-## Requirements
-
-* AWS CLI installed & configured (with terraform account created)
+### Requirements
+* Static site generator, [Jekyll](https://jekyllrb.com/docs/) & dependencies (ruby)
+* AWS CLI installed & configured (including credential provisioning)
 * Terraform 
 
 ## Repository Sections:
-For more specific details on getting the site up & running visit a section's readme:
+For more details on getting the site up & running visit a section's readme:
 
 * **[Infrastructure](/infrastructure)** - Contains terraform to provision all required johnsosoka.com infrastructure.
 * **[Website](/website)** - Contains the Jekyll theme & Content for johnsosoka.com
