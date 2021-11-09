@@ -45,7 +45,7 @@ resource "aws_route53_record" "files_subdomain" {
   }
 }
 
-// api subdomain setup below (move to different repo)
+// api subdomain setup below (consider moving to different repo)
 
 resource "aws_api_gateway_domain_name" "api_domain" {
   domain_name              = "${local.api_fqdn}"

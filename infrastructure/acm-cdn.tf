@@ -1,8 +1,5 @@
-// Combining two related sets of resources.
+// ACM & Cloudfront.
 
-// Use the AWS Certificate Manager to create an SSL cert for our domain.
-// This resource won't be created until you receive the email verifying you
-// own the domain and you click on the confirmation link.
 resource "aws_acm_certificate" "certificate" {
   // We want a wildcard cert so we can host subdomains later.
   domain_name       = "*.${local.root_domain_name}"
@@ -61,7 +58,7 @@ resource "aws_cloudfront_distribution" "www_distribution" {
   }
 
   // Here we're ensuring we can hit this distribution using www.johnsosoka.com
-  // rather than the domain name CloudFront gives us.
+  // rather than the domain name CloudFront generates.
   aliases = ["${local.www_domain_name}"]
 
   restrictions {
@@ -76,8 +73,6 @@ resource "aws_cloudfront_distribution" "www_distribution" {
     ssl_support_method  = "sni-only"
   }
 }
-
-
 
 resource "aws_cloudfront_distribution" "root_distribution" {
   origin {

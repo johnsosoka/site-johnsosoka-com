@@ -4,10 +4,8 @@
 //  from blog/website files.
 
 resource "aws_s3_bucket" "www" {
-  // Our bucket's name is going to be the same as our site's domain name.
+  // bucket name will match site name.
   bucket = local.www_domain_name
-  // Because we want our site to be available on the internet, we set this so
-  // anyone can read this bucket.
   acl    = "public-read"
   // We also need to create a policy that allows anyone to view the content.
   // This is basically duplicating what we did in the ACL but it's required by
@@ -43,7 +41,7 @@ POLICY
   }
 }
 
-// Root S3 bucket here (example.com). This S3 bucket will redirect to www
+// Root S3 bucket here (johnsosoka.com). This S3 bucket will redirect to www
 
 resource "aws_s3_bucket" "root" {
   bucket = "${local.root_domain_name}"
