@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      ruby: latest
+  pre_build:
+    commands:
+      - echo Updating bundler version....
+      - gem install bundler
+      - echo installing required gem executables.
+      - bundle install
+      - echo defining env variables
+      - export LC_ALL="C.UTF-8"
+      - export LANG="en_US.UTF-8"
+      - export LANGUAGE="en_US.UTF-8"
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - bundle exec jekyll build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+      - '**/*'
+  base-directory: '_site'
+# Removing unique artifact name for now to test code deploy
+  #name: johnsosoka-com-generated-site-artifacts-$(date +%Y-%m-%d-%s) 
+  name: johnsosoka-com-generated-site-artifacts
