@@ -104,5 +104,6 @@ plugins:
 # Contact Me Form Settings
 contact:
   api:
-    url: https://api.johnsosoka.com/services/form/contact
-    method: POST
+    url: https://api.johnsosoka.com/test/services/form/contact
+    #url: https://api.johnsosoka.com/services/form/contact
+    method:
