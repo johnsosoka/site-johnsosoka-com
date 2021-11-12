@@ -12,6 +12,8 @@ I am john sosoka, a software engineer currently working in financial tech. I am 
 work with java & python day to day. I have worked as a release engineer in the past & continue to have an interest in 
 dev/ops (running this site helps scratch some of that itch).
 
+[contact info](/contact/)
+
 ## Website:
 
 This website is intended to serve as a base of operations for me. There is a blog which I'm hoping to contribute more to,
