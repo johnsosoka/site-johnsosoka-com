@@ -23,11 +23,6 @@ variable "files_subdomain" {
   description = "Files subdomain...for logically partitioning site data stores. Download files separate from blog content."
 }
 
-variable "api_subdomain" {
-  default = "api"
-  description = "My api subdomain. Will point to api gateway and be where I host web services."
-}
-
 // End Subdomains
 
 // Additional Resource Naming:

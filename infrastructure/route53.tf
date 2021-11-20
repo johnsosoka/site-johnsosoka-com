@@ -45,27 +45,3 @@ resource "aws_route53_record" "files_subdomain" {
   }
 }
 
-// api subdomain setup below (consider moving to different repo)
-
-resource "aws_api_gateway_domain_name" "api_domain" {
-  domain_name              = "${local.api_fqdn}"
-  regional_certificate_arn = aws_acm_certificate.certificate.arn
-  # The valid values are TLS_1_0 and TLS_1_2
-  security_policy = "TLS_1_2"
-
-  endpoint_configuration {
-    types = ["REGIONAL"]
-  }
-}
-
-resource "aws_route53_record" "api_gateway_dns" {
-  name    = aws_api_gateway_domain_name.api_domain.domain_name
-  type    = "A"
-  zone_id = aws_route53_zone.zone.id
-
-  alias {
-    evaluate_target_health = true
-    name                   = aws_api_gateway_domain_name.api_domain.regional_domain_name
-    zone_id                = aws_api_gateway_domain_name.api_domain.regional_zone_id
-  }
-}
