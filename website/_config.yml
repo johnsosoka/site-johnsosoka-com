@@ -104,7 +104,5 @@ plugins:
 # Contact Me Form Settings
 contact:
   api:
-    #url: https://k6mta3dh76.execute-api.us-east-1.amazonaws.com/services/form/contact
     url: https://api.johnsosoka.com/services/form/contact
-    #url: http://localhost:80/
     method: post
