@@ -22,6 +22,5 @@ locals {
   // files.johnsosoka.com
   files_fqdn = "${var.files_subdomain}.${local.root_domain_name}"
   // api.johnsosoka.com
-  api_fqdn = "${var.api_subdomain}.${local.root_domain_name}"
 
 }
