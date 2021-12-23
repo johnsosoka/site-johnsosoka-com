@@ -99,3 +99,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+
+
+# Contact Me Form Settings
+contact:
+  api:
+    url: https://api.johnsosoka.com/services/form/contact
+    method: post
