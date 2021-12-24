@@ -69,7 +69,7 @@ terraform {
 }
 ```
 
-You may have noticed that my terraform backend is a remote s3 backend. Depending on your use case, you may decide to use
+You may have noticed that my terraform backend is a remote S3 backend. Depending on your use case, you may decide to use
  a local Terraform backend. I use a remote backend because I want a method for different terraform managed project to 
 reference output & resources provisioned by each other.
 
@@ -87,7 +87,8 @@ variable "lambda_name" {
 }
 ```
 
-Next up is to define the SNS topic. Like the previous project, I broke these out mostly by resource.
+Next up is to define the SNS topic. Sticking to the pattern of my previous projects, I broke these out mostly by resource.
+If these projects get any larger or complicated, I will need to come up with a better strategy for dividing & naming files.
 
 **sns.tf**
 ```terraform
@@ -96,7 +97,7 @@ resource "aws_sns_topic" "contact_me_topic" {
 }
 ```
 
-After setting up the variables referred to below, I went ahead and utilized the module in the following file:
+After setting up the variables referred to below, I went ahead and utilized the lambda module in the following file:
 
 **lambda.tf**
 ```terraform
@@ -139,7 +140,7 @@ Note that I included & attached policy json to grant publish permissions to the 
 fail as an exception would be thrown when attempting to publish a message.
 
 This was my first time using a Terraform module. The Intellij terraform plugin did me a solid and suggested that I perform
-a `terraform get` which created a `modules` directory within the (already .gitignored) `.terraform` folder. Terroform fetched
+a `terraform get` which created a `modules` directory within the (already .gitignored) `.terraform` folder. Terraform fetched
 the module contents and stashed them in the newly created directory.
 
 The next chunk of terraform is the largest bit, I have this housed in a file api-gateway, but you may notice there are other
@@ -259,12 +260,15 @@ Note the `integrations` block, this is where the meat of the api-gateway work is
   }
 ```
 
-You can see that the method, path & lambda ARN are all specified here. So now when a qualifying request reaches
+Notice that the method, path & lambda ARN are all specified here. So now when a qualifying request reaches
 `/services/form/contact` the request will be forwarded to my lambda `module.lambda_function.lambda_function_invoke_arn`
 
 
 
 ## Contact-Me Form
+
+The final piece of this project is the contact-me form. For V1, I'm just going to use a simple HTML form to submit the 
+contact request. 
 
 ```html
 <form action="{{ site.contact.api.url }}" method="{{ site.contact.api.method }}" >
@@ -287,3 +291,15 @@ You can see that the method, path & lambda ARN are all specified here. So now wh
   </ul>
 </form>
 ```
+
+In the current iteration of this, the contact me form redirects to the lambda & the response is rendered on the screen. 
+In future versions, I will need to take advantage of some js library to fire in the background. Front end work is not a 
+strength of mine, this will be a great opportunity to improve my lack of skills there.
+
+## Conclusion
+
+When the Terraform is executed, everything is created--the Route53 entry, the Api-Gateway API and SNS topic. My contact me
+form lives on an s3 bucket, more details on that setup in [this blog post](/terraform-provision-blog-infra/). The only
+manual step in this process was subscribing my e-mail to the sns topic--Amazon details this process [here](https://docs.aws.amazon.com/sns/latest/dg/sns-email-notifications.html).
+Feel free to use the [contact me](/contact/) form & let me know if I should provide more details or correct anything :)
+

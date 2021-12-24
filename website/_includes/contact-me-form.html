@@ -1,4 +1,4 @@
-<form action="{{ site.contact.api.url }}" method="{{ site.contact.api.method }}" >
+<form form id="FormID" action="{{ site.contact.api.url }}" method="{{ site.contact.api.method }}" >
   <ul>
     <li>
       <label for="name">Name:</label>
@@ -13,7 +13,15 @@
       <textarea id="msg" name="user_message"></textarea>
     </li>
     <li class="button">
-      <button type="submit">Send your message</button>
+      <input type="submit" value="Send your message">
     </li>
   </ul>
 </form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+  $(function(){
+    $("#submit").click(function(){
+      $("#FormID").submit();
+    }
+  });
+</script>
