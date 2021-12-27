@@ -6,8 +6,9 @@ excerpt: The Notes that I keep.
 comments: false
 ---
 
-Here are some notes that I've taken. I group them by medium, so far I have _book_ notes and _udemy_ notes.
+Contained here is a collection of various notes. Some are notes that I have taken from udemy courses, book-notes, and 
+others may be quick reference notes that I may have scraped together for future use. Anything here is pretty much guaranteed to 
+be less coherent than blog posts.
 
-I am selectively migrating old notes from various digital sources and placing them here.
 
 {% include notes_posts.html post_display_limit=site.number_of_notes post_collection_title="All Notes" %}

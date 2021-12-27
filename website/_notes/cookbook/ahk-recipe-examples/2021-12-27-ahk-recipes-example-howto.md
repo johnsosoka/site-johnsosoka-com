@@ -27,9 +27,9 @@ Note: In most of these examples, I bind the script to `F1` function key.
 7. [Type Text Press Enter](#type-text-press-enter)
 
 ### Recipes
-1. Sleep for a Variable Duration (Parameterized)
-2. Execute Task Based on Time of Day
-3. Execute Task With Percent Chance of Execution
+1. [Sleep for a Variable Duration (Parameterized)](#sleep-for-variable-duration-parameterized)
+2. [Execute Task Based on Time of Day](#execute-task-based-on-time-of-day)
+3. [Execute Task With Percent Chance of Execution](#execute-task-with-percent-chance-of-execution)
 
 ## Bind Script to Function Key
 [bind script example](https://github.com/johnsosoka/code-examples/blob/main/ahk/ahk-recipes-examples/001-bind-script-to-key.ahk)
@@ -55,7 +55,6 @@ return
 
 **inline**
 ```
-
 F1::
 {
     name_variable := "john"
@@ -143,5 +142,81 @@ F1::
 {
     Send, "This is a test message"
     SendInput {Enter}
+}
+```
+
+# Sleep For Variable Duration Parameterized
+[sleep variable duration parameterized example](https://github.com/johnsosoka/code-examples/blob/main/ahk/ahk-recipes-examples/recipes/sleep-for-variable-duration-paramaterized.ahk)
+
+The following script calls a function & provides a range in milliseconds. The function will then sleep for a duratino
+within the limits provided.
+
+```
+F1::
+{
+    sleep_duration(2000, 5000)
+    Msgbox "finished sleeping"
+}
+
+sleep_duration(min_milliseconds, max_milliseconds)
+{
+    Random, sleepDurationAmount, %min_milliseconds%, %max_milliseconds%
+    sleep sleepDurationAmount
+}
+```
+
+# Execute Task Based on Time of Day
+[time of day task example](https://github.com/johnsosoka/code-examples/blob/main/ahk/ahk-recipes-examples/recipes/execute-task-based-on-time-of-day.ahk)
+
+This will need to be adjusted depending on the goal. The following script only checks which hour it is every hour. If
+this checked more frequently, it would execute multiple times per hour.
+
+``` 
+global executeHour = 8
+
+global OneMinuteMilliseconds := 60000
+F1::
+    loop {
+
+        if (shouldExecuteBasedOnTime())
+        {
+            Msgbox, "Executing Script at Execution Hour"
+        }
+        Sleep OneMinuteMilliseconds*60
+    }
+
+
+shouldExecuteBasedOnTime() {
+    shouldExecute := false
+    if (A_Hour = executeHour) {
+        shouldExecute := true
+    }
+
+    return shouldExecute
+}
+```
+
+# Execute Task With Percent Chance of Execution
+[percent chance execution example](https://github.com/johnsosoka/code-examples/blob/main/ahk/ahk-recipes-examples/recipes/execute-task-percent-execution-chance.ahk)
+
+``` 
+global percentChanceOfExecution := 50
+
+F1::
+{
+    if (shouldExecuteBasedOnChance()) {
+        Msgbox, % Format("I executed with {}% of execution", percentChanceOfExecution)
+    }
+}
+
+shouldExecuteBasedOnChance() {
+    shouldExecute := false
+    Random, randomNumber, 1, 100
+
+    if (randomNumber <= percentChanceOfExecution) {
+        shouldExecute := true
+    }
+
+    return shouldExecute
 }
 ```
