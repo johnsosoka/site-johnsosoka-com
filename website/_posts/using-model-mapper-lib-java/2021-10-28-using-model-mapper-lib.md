@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Intelligent Object Mapping in Java with the Model Mapper Library (Pt. 1)
+title: Intelligent Object Mapping in Java with the Model Mapper Library
 tags: programming java ModelMapper dto entity form bean encapsulation
 ---
 
@@ -165,7 +165,6 @@ Clean Code
 
 Success! We have successfully mapped common fields between two objects! The bulk of this task was preparing our data
 objects and demonstrating the old way of transforming objects. The actual core of the lesson here was ultimately a single
-line, the ModelMapper library is a really handy tool. Keep an eye out for Pt. 2, where I will discuss deep mapping between
-models. 
+line, the ModelMapper library is a really handy tool.
 
 Full Example [Code Here](https://github.com/johnsosoka/code-examples/tree/main/java/object-mapping)
