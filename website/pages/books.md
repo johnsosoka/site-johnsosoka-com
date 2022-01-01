@@ -39,10 +39,10 @@ profile up to date, but I don't always succeed.
 * Code: The Hidden Language of Computer Hardware and Software (Charles Petzold)
 
 
-### Auto/Biography
+### Autobiography & Biography
 
 * Just for Fun: The Story of an Accidental Revolutionary (Linus Torvalds)
-* What Do You Care What Other People Think?": Further Adventures of a Curious Character (Richard Feynman)
+* What Do You Care What Other People Think?: Further Adventures of a Curious Character (Richard Feynman)
 
 # Social / Political
 
@@ -62,6 +62,7 @@ profile up to date, but I don't always succeed.
 #### Stoicism
 
 * Meditations (Marcus Aurelius)
+* The Obstacle is the Way (Ryan Holiday)
 
 #### Misc
 

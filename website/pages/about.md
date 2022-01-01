@@ -8,16 +8,25 @@ comments: false
 
 ## Me:
 
-I am john sosoka, a software engineer currently working in financial tech. I am a backend developer and usually 
-work with java & python day to day. I have worked as a release engineer in the past & continue to have an interest in 
-dev/ops (running this site helps scratch some of that itch).
+I am john sosoka, a software engineer currently working in financial tech. I am a backend developer and usually work 
+with java & python day to day. Over the course of my career I have worked in a variety of roles in software development,
+including software tester & release engineer.
 
-[contact info](/contact/)
+I have been on GitHub for a while under a pseudonym, but have recently created a more polished profile which you can 
+[visit here](https://github.com/johnsosoka). This same GitHub profile will host code examples to accompany blog posts.
+
+#### Contact
+
+Friendly requests/comments/corrections are always welcome, feel free to contact me via the [contact form](/contact/). 
+Be sure to leave a valid e-mail so that I can follow up with you.
 
 ## Website:
 
-This website is intended to serve as a base of operations for me. There is a blog which I'm hoping to contribute more to,
-posts there will probably be some combination of technical projects & personal/family updates. 
+This website is intended to serve as a base of operations for me. I enjoy running this website as somebody might enjoy 
+keeping a garden, I like contributing to it and watching it grow but don't have any ambitious plans for it.
+
+View the source for this website on GitHub [here](https://github.com/johnsosoka/site-johnsosoka-com). This includes the
+Terraform to provision aws infrastructure for johnsosoka.com as well.
 
 ### Home Office Setup:
 
