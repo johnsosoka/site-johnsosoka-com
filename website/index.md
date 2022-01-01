@@ -11,7 +11,7 @@ So far I've posted some technical content and some family updates.
 {% include blog_posts.html post_display_limit=15 post_collection_title="Recent Blog Posts"  %}
 
 # [Notes](/notes)
-I'm also uploading some notes that I've taken from books & udemy courses.
+If you think my blog posts are cluttered & unorganized, just wait until you view my notes.
 
 {% include notes_posts.html post_display_limit=3 post_collection_title="Recent Notes" %}
 
