@@ -8,14 +8,14 @@ tags: i/o usb pedal ergonomic poweruser
 What started off as a quest to alleviate arm strain has now developed into a new way of interfacing with my computer.
 
 Near the top of the pandemic I was playing an unreal amount of the pc game counter strike, which results in many repetitive 
-motions and _lots_ of clicking--this eventually resulted in `lateral epicondylitis` commonly  referred to as tennis elbow; 
-In my particular case, it could (embarrassingly) be referred to as "computer elbow." 
+motions and _lots_ of clicking--this eventually resulted in tennis elbow. In my case, it could be called (embarrassingly) 
+be called computer elbow but both describe the same condition, lateral epicondylitis.
 
 Initially, time off & bracing helped alleviate some pain from the injury...but this injury was going to take more time 
 to heal than I was capable of breaking from the computer. This set me on my quest to find alternatives.
 
 I started off only interested in a substitute for left/right click, but soon realized a few other common operations could
-be attached to these pedals. I currently have 5 pedals, below is a picture with each role labelled.
+be attached to these pedals. I currently have 5 pedals, below is a picture with each role labeled.
 
 ![pic](/usb-foot-pedals/foot-pedal-label.png)
 
@@ -31,9 +31,13 @@ to `d` to walk backwards.
 There are many other applications for these foot pedals beyond gaming. If I was spending more time in the command line,
 I would probably set up one of the pedals to act as a vim clutch to toggle between insert & normal mode.
 
-That pretty much concludes my post, I spoke to handful of friends about using usb foot pedals in this way and 4/5 of them
-didn't realize that foot pedals could be utilized outside of gaming or court transcription. As such, I wanted to drop a 
-quick post highlighting the potential of usb foot pedals to get the word out.
+That pretty much concludes my post, I spoke to handful of friends about using usb foot pedals in this way and 90% of them
+didn't realize that foot pedals could be utilized outside of gaming or transcription. As such, I wanted to drop a 
+quick post highlighting the potential of usb foot pedals to get the word out. 
+
+I think that there might be some great
+potential for combining pedal usage with AutoHotKey scripts in the future--I have some notes on writing ahk scripts
+[here ](/notes/cookbook/ahk-recipe-examples/2021-12-27-ahk-recipes-example-howto/).
 
 Happy new year!
 
