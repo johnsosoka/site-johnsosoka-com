@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using Terraform to Provision AWS Infrastructure for an S3 Hosted Jekyll Blog
+category: blog
 subtitle: Building infrastructure for a personal site reproducibly & on the cheap.
 tags: terraform s3 aws jekyll scripting awscli cloudfront route53
 ---

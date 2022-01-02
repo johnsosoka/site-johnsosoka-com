@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Intelligent Object Mapping in Java with the Model Mapper Library
+category: blog
 tags: programming java ModelMapper dto entity form bean encapsulation
 ---
 

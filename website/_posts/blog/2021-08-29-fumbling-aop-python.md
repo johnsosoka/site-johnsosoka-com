@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fumbling Aspect Oriented Programming in Python
+category: blog
 subtitle: Lot's of mistakes & a hack.
 tags: programming python uml failure
 ---
@@ -20,7 +21,7 @@ the task at hand. I must stress that all the examples in this post are simplifie
 Here is UML:
 
 {:refdef: style="text-align: center;"}
-![class relationship](/fumbling-aop-python/initial-overiew-uml.png)
+![class relationship](/assets/img/blog/aspect-fumble/initial-overiew-uml.png)
 {: refdef}
 
 This means that our ChildDAO would have a method `execute_some_sql()` that can acquire a connection object, and that the 
@@ -171,7 +172,7 @@ how to pull this off--how can my decorator gain access to the connection object 
 that a fair strategy would be to stash the connection object in a known location. 
 
 {:refdef: style="text-align: center;"}
-![new plan class relationship](/fumbling-aop-python/hack-uml.png)
+![new plan class relationship](/assets/img/blog/aspect-fumble/hack-uml.png)
 {: refdef}
 
 With this new plan, I would create a dictionary on the parent class which would serve as a key/value store for the 

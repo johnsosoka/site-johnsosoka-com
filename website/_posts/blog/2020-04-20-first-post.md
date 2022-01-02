@@ -1,8 +1,9 @@
 ---
 layout: post
 title: First Post
+category: blog
 subtitle: how exciting.
-image: /first-post/hello-world.png
+image: /assets/img/blog/hello-world.png
 ---
 
 I'll be brief as this post really only exists to mark the occasion of getting this up and running. Finding [Jekyll](https://jekyllrb.com/) really 

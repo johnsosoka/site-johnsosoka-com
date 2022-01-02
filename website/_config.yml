@@ -21,13 +21,12 @@ author:
   github: johnsosoka # github username
   twitter: twitter_username # twitter username
   facebook: 100070345623723 # facebook username
-  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org # email adress
+  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org # email address
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings
 url: "https://www.johnsosoka.com" #
 baseurl:
-permalink: /:title/
 google_analytics: UA-164477664-1
 analytics_enabled: true
 fb_appid:

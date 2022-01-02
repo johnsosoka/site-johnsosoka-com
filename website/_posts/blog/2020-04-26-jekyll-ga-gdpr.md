@@ -1,11 +1,12 @@
 ---
 layout: post
 title: GDPR Compliance with Jekyll & Google Analytics
+category: blog
 subtitle: Integrating the official Jekyll cookie-consent solution with a 3rd party theme's OOTB Google Analytics implementation.
 image: /img/gdpr/cc-icon.png
 tags: jekyll theme analytics ga google analytics
 ---
-![gdpr](/jekyll-ga-gdpr/gdpr-jekyll-ga.png)
+![gdpr](/assets/img/blog/gdpr/gdpr-jekyll-ga.png)
 
 I'm currently in the process of setting up the infrastructure needed to run my site and at some point in the future 
 I want to enable Google Analytics (GA) to get some usage statistics. _Why Google Analytics?_ 
@@ -72,12 +73,14 @@ It took me a minute to figure it out--Of course I'm getting this error, I didn't
 I just want to see if the banner is visible, so to get unstuck I comment out the `ga.js` and `chatbutton.js` includes and start my local
 site again.
 
-![consent banner](/jekyll-ga-gdpr/cookie-consent-banner.png){: .center-block :}
+{{ file.cookie-consent-banner.png }}
+
+![consent banner](/assets/img/blog/gdpr/cookie-consent-banner.png){: .center-block :}
 
 I see the banner below the footer, which is what I was hoping for. Next up I will test the script by clicking approve. When I click that
 button, I am expecting a cookie named `cookie-notice-dismissed` to be created with the value `true`. I used chrome dev tools to quickly reveal:
 
-![cookie](/jekyll-ga-gdpr/cookie-set.png){: .center-block :}
+![cookie](/assets/img/blog/gdpr/cookie-set.png){: .center-block :}
 
 Wonderful! I now have the banner displaying and the cookie being properly set. When I load other pages after accepting the cookie consent policy the banner no longer
 displays which is perfect. Now all that remains is to:
