@@ -1,8 +1,9 @@
 ---
 layout: post
 title: USB Foot Pedals are a Game Changer
+category: blog
 subtitle: 
-tags: i/o usb pedal ergonomic poweruser
+tags: i/o usb pedal ergonomic poweruser injury wrist
 ---
 
 What started off as a quest to alleviate arm strain has now developed into a new way of interfacing with my computer.
@@ -11,13 +12,13 @@ Near the top of the pandemic I was playing an unreal amount of the pc game count
 motions and _lots_ of clicking--this eventually resulted in tennis elbow. In my case, it could be called (embarrassingly) 
 be called computer elbow but both describe the same condition, lateral epicondylitis.
 
-Initially, time off & bracing helped alleviate some pain from the injury...but this injury was going to take more time 
-to heal than I was capable of breaking from the computer. This set me on my quest to find alternatives.
+Unfortunately, this injury was going to take more time to heal than I was capable of breaking from the computer. 
+This set me on my quest to find alternatives to clicking.
 
 I started off only interested in a substitute for left/right click, but soon realized a few other common operations could
 be attached to these pedals. I currently have 5 pedals, below is a picture with each role labeled.
 
-![pic](/usb-foot-pedals/foot-pedal-label.png)
+![pic](/assets/img/blog/foot-pedal/foot-pedal-label.png)
 
 I use the Play/Pause media controls regularly enough to warrant a foot pedal. The scroll down / Scroll down pedals are
 bound to down arrow / up arrow; These pedal bindings are enormously helpful when reading, browsing & scrolling through

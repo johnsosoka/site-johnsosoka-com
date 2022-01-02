@@ -2,16 +2,16 @@
   url: /
   external: false
 
-- title: books
-  url: /books/
+- title: blog
+  url: /blog/
   external: false
 
 - title: notes
   url: /notes/
   external: false
 
-- title: blog
-  url: /blog/
+- title: books
+  url: /books/
   external: false
 
 - title: music
