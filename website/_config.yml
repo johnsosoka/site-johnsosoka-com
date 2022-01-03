@@ -27,8 +27,6 @@ author:
 # URL settings
 url: "https://www.johnsosoka.com" #
 baseurl:
-google_analytics: UA-164477664-1
-analytics_enabled: true
 fb_appid:
 
 # Collection setting
