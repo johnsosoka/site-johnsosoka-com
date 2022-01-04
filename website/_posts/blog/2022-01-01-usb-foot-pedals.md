@@ -8,9 +8,9 @@ tags: i/o usb pedal ergonomic poweruser injury wrist
 
 What started off as a quest to alleviate arm strain has now developed into a new way of interfacing with my computer.
 
-Near the top of the pandemic I was playing an unreal amount of the pc game counter strike, which results in many repetitive 
-motions and _lots_ of clicking--this eventually resulted in tennis elbow. In my case, it could be called (embarrassingly) 
-be called computer elbow but both describe the same condition, lateral epicondylitis.
+Near the top of the pandemic I was playing an unreal amount of the pc game counter strike, which means  many repetitive 
+motions and _lots_ of clicking. All of these repetitive actions eventually led to computer elbow, which is the same
+thing as tennis elbow, lateral epicondylitis.
 
 Unfortunately, this injury was going to take more time to heal than I was capable of breaking from the computer. 
 This set me on my quest to find alternatives to clicking.
