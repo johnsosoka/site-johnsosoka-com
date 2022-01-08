@@ -45,3 +45,13 @@ resource "aws_route53_record" "files_subdomain" {
   }
 }
 
+// Minecraft subdomain set up here.
+resource "aws_route53_record" "minecraft" {
+  zone_id = "${aws_route53_zone.zone.zone_id}"
+
+  name = "${local.minecraft_subdomain_name}"
+  type = "A"
+
+  ttl = "5"
+  records = ["${var.minecraft_target_ip}"]
+}
