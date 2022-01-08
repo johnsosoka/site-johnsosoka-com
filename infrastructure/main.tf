@@ -21,6 +21,8 @@ locals {
   www_domain_name = "www.${local.root_domain_name}"
   // files.johnsosoka.com
   files_fqdn = "${var.files_subdomain}.${local.root_domain_name}"
-  // api.johnsosoka.com
+
+  // minecraft.johnsosoka.com
+  minecraft_subdomain_name = "${var.minecraft_subdomain}.${local.root_domain_name}"
 
 }

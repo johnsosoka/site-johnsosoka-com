@@ -23,6 +23,16 @@ variable "files_subdomain" {
   description = "Files subdomain...for logically partitioning site data stores. Download files separate from blog content."
 }
 
+
+variable "minecraft_subdomain" {
+  type = string
+  default = "minecraft"
+}
+variable "minecraft_target_ip" {
+  type = string
+  default = "135.148.29.129"
+}
+
 // End Subdomains
 
 // Additional Resource Naming:
