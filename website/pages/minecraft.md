@@ -6,12 +6,15 @@ excerpt: minecraft
 comments: false
 ---
 
+## Server
+* 01/10/2022 - minecraft.johnsosoka.com is live!
+
+## Downloads
+
 Over the years I have either hosted and/or played on friend hosted minecraft realms & servers. Some worlds have been
 lost while others have been backed up. On this page I will do my best to keep world-saves available for download; it
 feels wrong to hoard the world backups and not share all the cool creations friends & friends of friends have come up
 with.
-
-## Downloads
 
 ### World Backups
 
