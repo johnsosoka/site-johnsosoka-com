@@ -6,7 +6,8 @@ output "jscom_acm_cert" {
 output "root_johnsosokacom_zone_id" {
   value = aws_route53_zone.zone.zone_id
 }
-# custom domain & key..
 
-
-# what else?
+# mail from arn
+output "no_reply_mail_ses_id" {
+  value = aws_ses_email_identity.no_reply.arn
+}

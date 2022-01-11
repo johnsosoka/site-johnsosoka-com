@@ -51,6 +51,11 @@ variable "zoho_domain_spf" {
   type = string
   default = "v=spf1 include:zoho.com ~all"
 }
+
+variable "no_reply_send_address" {
+  type = string
+  default = "noreply@johnsosoka.com"
+}
 // Additional Resource Naming:
 
 // logs bucket name
