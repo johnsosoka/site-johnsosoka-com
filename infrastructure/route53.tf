@@ -55,3 +55,35 @@ resource "aws_route53_record" "minecraft" {
   ttl = "5"
   records = ["${var.minecraft_target_ip}"]
 }
+
+// MAIL
+resource "aws_route53_record" "zoho_mail_route" {
+  name = ""
+  type = "MX"
+  zone_id = aws_route53_zone.zone.zone_id
+  ttl = "5"
+  records = ["10 mx.zoho.com",
+             "20 mx2.zoho.com",
+             "50 mx3.zoho.com"]
+
+}
+
+resource "aws_route53_record" "zoho_mail_spf" {
+  name = ""
+  type = "TXT"
+  zone_id = aws_route53_zone.zone.zone_id
+  ttl = "5"
+  records = [var.zoho_domain_spf]
+
+}
+
+resource "aws_route53_record" "zoho_mail_domain_key" {
+  name = "zmail._domainkey"
+  type = "TXT"
+  zone_id = aws_route53_zone.zone.zone_id
+  ttl = "5"
+  records = ["${var.zoho_domain_key}"]
+
+}
+
+// END MAIL
