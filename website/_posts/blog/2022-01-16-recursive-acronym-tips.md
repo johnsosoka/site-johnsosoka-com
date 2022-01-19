@@ -6,8 +6,9 @@ tags: writing acronym recursion recursive nerd humor
 ---
 
 Writing a recursive acronym is a rite of passage for some and a trivial (potentially asinine)  pursuit for others. What
-follows is a very casual analysis of existing recursive acronyms a couple strategies one might employ when attempting
-to craft their own.
+follows is a very casual analysis of some existing recursive acronyms as well as some strategies you could use when trying
+to craft your own. Additionally, The cheat sheets at the end of the post have some reference information to help construct 
+your first recursive acronym.
 
 **What is a recursive acronym?**
 
