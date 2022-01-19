@@ -5,6 +5,12 @@ category: blog
 tags: writing acronym recursion recursive nerd humor
 ---
 
+Writing a recursive acronym is a rite of passage for some and a trivial (potentially asinine)  pursuit for others. What
+follows is a very casual analysis of existing recursive acronyms a couple strategies one might employ when attempting
+to craft their own.
+
+**What is a recursive acronym?**
+
 So you have decided that you want to write your first recursive acronym, but for some reason have no idea what one is? 
 Luckily for you and the SEO gods, a definition is incoming. Recursive acronyms are acronyms which reference themselves. 
 They are also sometimes referred to as self-referential acronyms. Techopedia defines a recursive acronym as follows:
@@ -14,10 +20,8 @@ They are also sometimes referred to as self-referential acronyms. Techopedia def
 > In GNU's case, the acronym is a play on words: GNU is not Unix in the sense that it does not have any code dating to the 
 > original Bell Labs Unix, but the behavior of GNU attempts to mimic Unix systems as closely as possible.[^1]
 
-
-Writing a recursive acronym is a rite of passage for some and a trivial (potentially asinine)  pursuit for others. What 
-follows is a very light analysis of existing recursive acronyms & some casual strategies one might employ when attempting
-to craft their own.
+Now that we have a firm grasp of where we are going, let's begin our quest to create a recursive acronym by visiting the 
+end.
 
 ## Tip No. 1 - Start at the End
 
@@ -59,7 +63,8 @@ YAML | YAML Aint Markup Language | no | no |
 
 A whopping 60% of them have the state `is` either explicitly or hidden behind a contraction. It's incredibly popular to 
 state what your recursive acronym either **is** (Nano, Fiji,) or **is not** (gnu, wine, MINT, EINE). Interestingly enough, 
-it  is popular to say what the acronym isn't, even while avoiding "is not" like YAML and LAME both saying what _they **aint**._
+it  is popular to say what the acronym isn't, even while avoiding "is not" as with YAML and LAME both stating what
+_they **aint**._
 
 With this in mind, if you know what your recursive acronym isn't--then consider `I`, `IN`, or `A` for your middle initials.
 If you already have the middle characters reserved, then don't be afraid to use a contraction to sneak `is` into your definition
@@ -97,7 +102,7 @@ that your middle character(s) will need to be verbs[^3].
 
 #### Action Verbs
 
-| Vowel | verb |
+| Consonant | verb |
 |-----|------|
 | B | Breaks |
 | B | Builds |
@@ -121,7 +126,7 @@ that your middle character(s) will need to be verbs[^3].
 
 #### Linking Verbs
 
-| Vowel | verb |
+| Consonant | verb |
 |-----|------|
 | B | Become |
 | G | Grow |
