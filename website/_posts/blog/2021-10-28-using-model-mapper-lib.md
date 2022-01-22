@@ -15,9 +15,9 @@ type & then proceed to populate its fields by fetching each related field on the
 amount of overhead, but now with the [ModelMapper library](http://modelmapper.org/) that work can often be avoided.
 
 Starting with this post, I will have accompanying source code available on GitHub. You can find related code for this
-article [on github](https://github.com/johnsosoka/code-examples/tree/main/java/object-mapping). You may notice these 
-examples look pretty light--this is because I'm using the Lombok library to handle the creation of getters/setters. The 
-annotations should be clear but if you need more clarification on Lombok, follow the project [lombok](https://projectlombok.org/) 
+article [on github](https://github.com/johnsosoka/code-examples/tree/01ed21807852aa6804b6ad661454480a906fe633/java/object-mapping). 
+You may notice these examples look pretty light--this is because I'm using the Lombok library to handle the creation of getters/setters. 
+The annotations should be clear but if you need more clarification on Lombok, follow the project [lombok](https://projectlombok.org/) 
 link for additional details.
 
 **Pom Dependencies Snippet**
@@ -168,4 +168,4 @@ Success! We have successfully mapped common fields between two objects! The bulk
 objects and demonstrating the old way of transforming objects. The actual core of the lesson here was ultimately a single
 line, the ModelMapper library is a really handy tool.
 
-Full Example [Code Here](https://github.com/johnsosoka/code-examples/tree/main/java/object-mapping)
+Full Example [Code Here](https://github.com/johnsosoka/code-examples/tree/01ed21807852aa6804b6ad661454480a906fe633/java/object-mapping)
