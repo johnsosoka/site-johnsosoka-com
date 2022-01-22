@@ -38,10 +38,10 @@ Some design considerations:
 * I keep my test dir outside of `src` so when this is bundled & uploaded content in the test dir won't add to lambda execution costs.
 
 At the end of the day, the python lambda simply:
-* [validates input](https://github.com/johnsosoka/jscom-contact-services/blob/main/contact-me-listener-svc/src/app/validator/contact_event_validator.py)
-* [converts the key/values to json](https://github.com/johnsosoka/jscom-contact-services/blob/main/contact-me-listener-svc/src/app/model/contact_me_submission.py#L39-L41)
-* [publishes to sns](https://github.com/johnsosoka/jscom-contact-services/blob/main/contact-me-listener-svc/src/app/publisher/sns_publisher.py)
-* [returns an execution status.](https://github.com/johnsosoka/jscom-contact-services/blob/main/contact-me-listener-svc/src/app/application.py#L65-L68)
+* [validates input](https://github.com/johnsosoka/jscom-contact-services/blob/5c1b56a3317a684d553e88bf6c8d4b9c62cc015a/contact-me-listener-svc/src/app/validator/contact_event_validator.py)
+* [converts the key/values to json](https://github.com/johnsosoka/jscom-contact-services/blob/b12d10bc233066754254749a1af74b369f434a2d/contact-me-listener-svc/src/app/model/contact_me_submission.py#L39-L41)
+* [publishes to sns](https://github.com/johnsosoka/jscom-contact-services/blob/5c1b56a3317a684d553e88bf6c8d4b9c62cc015a/contact-me-listener-svc/src/app/publisher/sns_publisher.py)
+* [returns an execution status.](https://github.com/johnsosoka/jscom-contact-services/commit/5c1b56a3317a684d553e88bf6c8d4b9c62cc015a#diff-dc396b2c700a102fba0f9aacd0a6430bb720b2e67ac56bf1959c1a7bdfa7df9e#L65-L68)
 
 ## Terraform
 
@@ -241,7 +241,7 @@ dns for my root/www domains managed in a separate repository. Setting up and ref
 allows me to refer to the variable outputs from another project within this project. 
 
 In the api-gateway module, you will see the first reference to `jscom_common_data` remote state data. I fetch the
-same acm cert provisioned in my site-johnsosoka-com repo. You can view how my outputs are defined [here](https://github.com/johnsosoka/site-johnsosoka-com/blob/main/infrastructure/outputs.tf)
+same acm cert provisioned in my site-johnsosoka-com repo. You can view how my outputs are defined [here](https://github.com/johnsosoka/site-johnsosoka-com/blob/f9f9f44b2f00d8604a7b7405eb678f7571f0fe97/infrastructure/outputs.tf)
 
 Note the `integrations` block, this is where the meat of the api-gateway work is:
 
