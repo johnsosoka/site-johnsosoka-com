@@ -1,6 +1,11 @@
 # terraform lock file...not tracking for now..
 *lock.hcl
 
+.DS_Store
+
+website/Gemfile
+
+
 # Jekyll
 _site/
 .sass-cache/
