@@ -1,1 +1,0 @@
-echo ${WWW_S3_BUCKET_NAME}.
