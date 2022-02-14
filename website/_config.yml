@@ -103,4 +103,4 @@ plugins:
 contact:
   api:
     url: https://api.johnsosoka.com/services/form/contact
-    method: post
+    method: POST
