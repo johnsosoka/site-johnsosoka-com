@@ -1,6 +1,6 @@
 # the settings
 title: johnsosoka.com # site title
-description: a software engineer currently working in financial tech.
+description: A Charlotte based software engineer
 site_est_year: 2020
 lang: en-US # default lang
 timezone: Eastern # set your timezone
@@ -17,7 +17,7 @@ author:
   name: john sosoka # author name
   bio: >- # tell to the world
     <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a>. <br>
-    a software engineer currently working in financial tech.
+    A Charlotte based software engineer.
   username: jsosoka # general username
   github: johnsosoka # github username
   twitter: twitter_username # twitter username
