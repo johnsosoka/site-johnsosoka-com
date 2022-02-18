@@ -2,14 +2,14 @@
 title: About
 permalink: /about/
 layout: page
-excerpt: I am john sosoka, a software engineer currently working in financial tech.
+excerpt: I am john sosoka, a Charlotte based software engineer.
 comments: false
 ---
 
 ## Me:
 
-I am john sosoka, a software engineer currently working in financial tech. I am a backend developer and usually work 
-with java & python day to day. Over the course of my career I have worked in a variety of roles in software development,
+I am John Sosoka, a Charlotte based software engineer. I am a backend developer and usually work 
+with java & python day to day. I am currently learning NodeJS, and improving my cloud engineering skills. Over the course of my career I have worked in a variety of roles in software development,
 including software tester & release engineer.
 
 I have been on GitHub for a while under a pseudonym, but have recently created a more polished profile which you can 
