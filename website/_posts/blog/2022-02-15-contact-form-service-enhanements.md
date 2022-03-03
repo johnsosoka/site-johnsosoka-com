@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Housekeeping - Improving the Contact Form & Backend Contact Listener Service
+title: Improving the Contact Form & Backend Contact Listener Service
 category: blog
 tags: jquery ajax python javascript housekeeping programming cse json Udemy event http forms aws lambda api-gateway
 ---
