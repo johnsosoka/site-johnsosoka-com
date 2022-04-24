@@ -6,7 +6,7 @@ subtitle: Taking a moment to capture the move.
 tags: charlotte nc travel dogs idaho move
 ---
 
-Way back in October 2020, I accepted a position at Ally Bank with the understanding that I would relocate to Charlotte, 
+Way back in October 2020, I accepted a position at a new employer with the understanding that I would relocate to Charlotte, 
 North Carolina. For some time my wife and I had been itching for a "great american adventure" but we never made any concrete
 plans.
 
