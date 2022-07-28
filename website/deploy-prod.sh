@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-
+export AWS_PROFILE=jscom
 # Author: john sosoka
 #
 # Overview: builds Jekyll artifacts & syncs them to an s3 bucket.

@@ -140,7 +140,7 @@ EOF
 Note that I included & attached policy json to grant publish permissions to the SNS topic. Without this, my lambda would 
 fail as an exception would be thrown when attempting to publish a message.
 
-This was my first time using a Terraform module. The Intellij terraform plugin did me a solid and suggested that I perform
+This was my first time using this Terraform module. The Intellij terraform plugin did me a solid and suggested that I perform
 a `terraform get` which created a `modules` directory within the (already .gitignored) `.terraform` folder. Terraform fetched
 the module contents and stashed them in the newly created directory.
 
