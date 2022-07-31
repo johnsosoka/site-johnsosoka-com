@@ -3,11 +3,14 @@
 
 resource "aws_s3_bucket" "terraform-state" {
   bucket = var.terraform_backend_bucket_name
-  acl = "private"
-
   versioning {
     enabled = true
   }
+}
+
+resource "aws_s3_bucket_acl" "acl_state_bucket" {
+  bucket = aws_s3_bucket.terraform-state.id
+  acl    = "private"
 }
 
 // Block public access!
