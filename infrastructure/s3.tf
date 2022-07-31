@@ -2,15 +2,19 @@
 //  johnsosoka.com bucket redirects to www.johnsosoka.com, which hosts the blog posts.
 //  file bucket is for logically separating hosted content (minecraft world downloads, music, etc)
 //  from blog/website files.
-
 resource "aws_s3_bucket" "www" {
-  // bucket name will match site name.
+  // Our bucket's name is going to be the same as our site's domain name.
   bucket = local.www_domain_name
-  acl    = "public-read"
+  // Because we want our site to be available on the internet, we set this so
+  // anyone can read this bucket.
   // We also need to create a policy that allows anyone to view the content.
   // This is basically duplicating what we did in the ACL but it's required by
   // AWS. This post: http://amzn.to/2Fa04ul explains why.
-  policy = <<POLICY
+}
+
+resource "aws_s3_bucket_policy" "www_policy" {
+  bucket = aws_s3_bucket.www.id
+  policy = <<EOF
 {
   "Version":"2012-10-17",
   "Statement":[
@@ -23,30 +27,48 @@ resource "aws_s3_bucket" "www" {
     }
   ]
 }
-POLICY
+EOF
+}
 
-  // Set up Logging
-  logging {
-    target_bucket = aws_s3_bucket.www_log_bucket.id
-    target_prefix = var.www_johnsosoka_logs_path
+resource "aws_s3_bucket_acl" "acl_www" {
+  bucket = aws_s3_bucket.www.id
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_website_configuration" "website_configuration" {
+  bucket = aws_s3_bucket.www.id
+
+  index_document {
+    suffix = "index.html"
   }
-  // Tell S3 it's purpose.
-  website {
-    // Here we tell S3 what to use when a request comes in to the root
-    // ex. https://www.johnsosoka.com/index.html
-    index_document = "index.html"
-    // The page to serve up if a request results in an error or a non-existing
-    // page.
-    error_document = "404.html"
+
+  error_document {
+    key = "404.html"
   }
 }
 
-// Root S3 bucket here (johnsosoka.com). This S3 bucket will redirect to www
+// Root S3 bucket here (example.com). This S3 bucket will redirect to www
 
 resource "aws_s3_bucket" "root" {
   bucket = "${local.root_domain_name}"
-  acl    = "public-read"
-  policy = <<POLICY
+
+}
+
+resource "aws_s3_bucket_website_configuration" "root_website_configuration" {
+  bucket = aws_s3_bucket.root.id
+
+  // Note this redirect. Here's where the magic happens.
+  redirect_all_requests_to {
+    host_name = "${local.www_domain_name}"
+    protocol = "https"
+
+  }
+
+}
+
+resource "aws_s3_bucket_policy" "root_policy" {
+  bucket = aws_s3_bucket.root.id
+  policy = <<EOF
 {
   "Version":"2012-10-17",
   "Statement":[
@@ -59,19 +81,28 @@ resource "aws_s3_bucket" "root" {
     }
   ]
 }
-POLICY
+EOF
+}
 
-  website {
-    // Note this redirect. Here's where the magic happens.
-    redirect_all_requests_to = "https://${local.www_domain_name}"
-  }
+resource "aws_s3_bucket_acl" "acl_root" {
+  bucket = aws_s3_bucket.root.id
+  acl    = "public-read"
 }
 
 
 resource "aws_s3_bucket" "file_share" {
+  // Our bucket's name is going to be the same as our site's domain name.
   bucket = local.files_fqdn
-  acl    = "public-read"
-  policy = <<POLICY
+  // Because we want our site to be available on the internet, we set this so
+  // anyone can read this bucket.
+  // We also need to create a policy that allows anyone to view the content.
+  // This is basically duplicating what we did in the ACL but it's required by
+  // AWS. This post: http://amzn.to/2Fa04ul explains why.
+}
+
+resource "aws_s3_bucket_policy" "file_share_policy" {
+  bucket = aws_s3_bucket.file_share.id
+  policy = <<EOF
 {
   "Version":"2012-10-17",
   "Statement":[
@@ -84,45 +115,23 @@ resource "aws_s3_bucket" "file_share" {
     }
   ]
 }
-POLICY
+EOF
+}
 
-  website {
-    // For now these will break, but index.html could be a file tree or something in the future.
-    index_document = "index.html"
-    error_document = "404.html"
+resource "aws_s3_bucket_acl" "acl_file_share" {
+  bucket = aws_s3_bucket.file_share.id
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_website_configuration" "file_share_website_configuration" {
+  bucket = aws_s3_bucket.file_share.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "404.html"
   }
 }
 
-// LOGGING BUCKET
-resource "aws_s3_bucket" "www_log_bucket" {
-
-  bucket = var.logs_bucket_name
-  acl    = "log-delivery-write"
-
-  lifecycle_rule {
-    id      = "log"
-    enabled = true
-
-    prefix = "log/"
-
-    tags = {
-      rule      = "log"
-      autoclean = "true"
-    }
-
-    transition {
-      days          = 30
-      storage_class = "STANDARD_IA" # or "ONEZONE_IA"
-    }
-
-    transition {
-      days          = 60
-      storage_class = "GLACIER"
-    }
-
-    expiration {
-      days = 180
-    }
-  }
-
-}
