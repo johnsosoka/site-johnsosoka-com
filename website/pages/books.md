@@ -44,6 +44,14 @@ profile up to date, but I don't always succeed.
 * Just for Fun: The Story of an Accidental Revolutionary (Linus Torvalds)
 * What Do You Care What Other People Think?: Further Adventures of a Curious Character (Richard Feynman)
 
+# Fiction
+
+### Science Fiction
+
+* We Are Legion (We Are Bob) (Bobiverse Book 1)
+* To Your Scattered Bodies Go (Riverworld Saga, Book 1)
+* Manna – Two Views of Humanity's Future
+
 # Social / Political
 
 ### Social Cycle Theory
