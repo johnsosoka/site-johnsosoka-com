@@ -5,7 +5,7 @@ category: blog
 tags: project management estimating
 ---
 
-Throughout my career, I have found myself wrestling with padding estimates. This struggle is twofold:
+Estimate padding is a strategy where a time or effort buffer would be added to your honest estimate for how long a task may take. The thinking is that this provides a bit of wiggle room, should anything go wrong over the course of your task. Throughout my career, I have found myself wrestling with padding estimates. This struggle is twofold:
 
 1. At a gut level, it feels dishonest.
 2. Given [Parkinson's Law,](https://en.wikipedia.org/wiki/Parkinson%27s_law) I fear that padded estimates will inevitably lead to time wasted. Parkinson's law states that  _"work expands so as to fill the time available for its completion."_
@@ -37,12 +37,12 @@ The biggest concern that I have with contingency tasks is that we cannot always 
 
 The difficulty with all of these strategies is that everybody adapts over the long run.
 
-If we always run a project blindly padding estimates & regularly beat deadlines, project management will eventually catch on. Either they will relay to business partners that the project will likely be completed ahead of schedule or we will begin to lose credibility with our ability to provide accurate estimates.
+If we always run a project blindly padding estimates & regularly beat deadlines, project management will eventually catch on. Either they will relay to business partners that the project will likely be completed ahead of schedule or we will begin to lose credibility in our ability to provide accurate estimates.
 
 Alternatively, if we create well-thought-out contingency tasks & then regularly do not encounter them--project management may either cease to see the value in them, or simply not factor them in when relaying estimates to business stakeholders.
 
 ## Conclusion
 
-Unfortunately, everything seems to always come back to moderation. Pad estimates to account for the unknown, but not so much that it risks your credibility or integrity (_re: Parkinson's law._) Create contingency tasks, but be incredibly thoughtful when doing so; If too many contingencies are never encountered, the value proposition of the tasks will be lost.
+Unfortunately, everything seems to always come back to moderation. Pad estimates to account for the unknown, but not so much that it risks your credibility or integrity (_re: Parkinson's law._) Create contingency tasks, but be incredibly thoughtful when doing so; If too many contingencies are never encountered, the value proposition of these tasks will be lost.
 
 Project estimates are hard, with a bit of thought and reflection we all can do better.  
