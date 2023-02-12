@@ -17,7 +17,7 @@ are the screenshots:
 
 ![home office](/assets/img/notes/chatGPT-convo/image1.png){: .center-block :}
 
-## Write a Python function that will give the current temperature to in fahrenheit for a given zip code.
+## Write a Python function that will give the current temperature in fahrenheit for a given zip code.
 
 In this question, I was seeing if chatGPT could import and utilize an api client to solve a task.
 
@@ -25,7 +25,7 @@ In this question, I was seeing if chatGPT could import and utilize an api client
 
 # Java
 
-## Write a Java function to convert arabic numbers to roman numerals.
+## Write a Java method to convert arabic numbers to roman numerals.
 
 ![home office](/assets/img/notes/chatGPT-convo/image3.png){: .center-block :}
 
