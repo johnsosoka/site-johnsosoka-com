@@ -1,7 +1,7 @@
 <h3 class="posts-item-note" aria-label="Recent Posts">{{ include.post_collection_title }}</h3>
-{%- for note in site.notes -%}
+{%- for note in site.categories.notes limit: include.post_display_limit -%}
 <article class="post-item">
-  <span class="post-item-date">{{ note.date | date: "%b %d, %Y" | reverse }}</span>
+  <span class="post-item-date">{{ note.date | date: "%b %d, %Y" }}</span>
   <h3 class="post-item-title">
     <a href="{{ note.url }}">{{ note.title | escape }} | {{ note.note_type }} Notes</a>
   </h3>
