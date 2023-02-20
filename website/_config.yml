@@ -32,7 +32,7 @@ fb_appid:
 
 # Collection setting
 collections:
-  posts:
+  blog:
     output: true
   notes:
     output: true
@@ -56,6 +56,10 @@ jekyll_compose:
   post_default_front_matter:
     modified:
     tags: []
+    description:
+  note_default_front_matter:
+    modified:
+    tags: [ ]
     description:
   draft_default_front_matter:
     modified:
