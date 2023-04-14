@@ -1,5 +1,5 @@
 ---
-title: Notes
+title: Bytes / Notes
 permalink: /notes/
 layout: page
 excerpt: The Notes that I keep.

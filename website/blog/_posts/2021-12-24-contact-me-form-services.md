@@ -300,7 +300,7 @@ strength of mine, this will be a great opportunity to improve my lack of skills 
 ## Conclusion
 
 When the Terraform is executed, everything is created--the Route53 entry, the Api-Gateway API and SNS topic. My contact me
-form lives on an s3 bucket, more details on that setup in [this blog post](/terraform-provision-blog-infra/). The only
+form lives on an s3 bucket, more details on that setup in [this blog post](/blog/2021/09/20/terraform-provision-blog-infra.html). The only
 manual step in this process was subscribing my e-mail to the sns topic--Amazon details this process [here](https://docs.aws.amazon.com/sns/latest/dg/sns-email-notifications.html).
 Feel free to use the [contact me](/contact/) form & let me know if I should provide more details or correct anything :)
 
