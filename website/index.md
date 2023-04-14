@@ -12,7 +12,7 @@ So far I've posted some technical content and some family updates.
 
 --------------------------
 
-# [Notes](/notes)
+# [Bytes / Notes](/notes)
 If you think my blog posts are cluttered & unorganized, just wait until you view my notes.
 
 {% include notes_posts.html post_display_limit=5 post_collection_title="Recent Notes" %}
