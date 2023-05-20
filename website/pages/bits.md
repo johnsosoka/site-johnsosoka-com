@@ -6,9 +6,13 @@ excerpt: Thought Feed.
 comments: false
 ---
 
-Welcome to `Bits`. This section of the website is for the smallest of updates. Think of it like a cheap Twitter clone.
+Welcome to `Bits`, the microblog portion of my website.
 
 # 2023
+
+## 2023/05/20
+
+- I wonder if generative AI will eventually lead to people having more face-to-face interaction. Eventually, social media sites will probably be overrun by bots writing unique content and sounding like humans, I could imagine that driving a large number of folks off of platforms.
 
 ## 2023/05/01
 
