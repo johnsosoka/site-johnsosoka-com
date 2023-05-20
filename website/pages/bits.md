@@ -12,7 +12,7 @@ Welcome to `Bits`, the microblog portion of my website.
 
 ## 2023/05/20
 
-- I wonder if generative AI will eventually lead to people having more facet to face interaction. Eventually social media sites will be overrun by bots writing unique content and sounding like humans, I could imagine that driving a large number of folks off of platforms.
+- I wonder if generative AI will eventually lead to people having more face-to-face interaction. Eventually, social media sites will probably be overrun by bots writing unique content and sounding like humans, I could imagine that driving a large number of folks off of platforms.
 
 ## 2023/05/01
 
