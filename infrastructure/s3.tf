@@ -50,7 +50,7 @@ resource "aws_s3_bucket_website_configuration" "website_configuration" {
 // Root S3 bucket here (example.com). This S3 bucket will redirect to www
 
 resource "aws_s3_bucket" "root" {
-  bucket = "${local.root_domain_name}"
+  bucket = local.root_domain_name
 
 }
 
@@ -59,7 +59,7 @@ resource "aws_s3_bucket_website_configuration" "root_website_configuration" {
 
   // Note this redirect. Here's where the magic happens.
   redirect_all_requests_to {
-    host_name = "${local.www_domain_name}"
+    host_name = local.www_domain_name
     protocol = "https"
 
   }
@@ -89,49 +89,4 @@ resource "aws_s3_bucket_acl" "acl_root" {
   acl    = "public-read"
 }
 
-
-resource "aws_s3_bucket" "file_share" {
-  // Our bucket's name is going to be the same as our site's domain name.
-  bucket = local.files_fqdn
-  // Because we want our site to be available on the internet, we set this so
-  // anyone can read this bucket.
-  // We also need to create a policy that allows anyone to view the content.
-  // This is basically duplicating what we did in the ACL but it's required by
-  // AWS. This post: http://amzn.to/2Fa04ul explains why.
-}
-
-resource "aws_s3_bucket_policy" "file_share_policy" {
-  bucket = aws_s3_bucket.file_share.id
-  policy = <<EOF
-{
-  "Version":"2012-10-17",
-  "Statement":[
-    {
-      "Sid":"AddPerm",
-      "Effect":"Allow",
-      "Principal": "*",
-      "Action":["s3:GetObject"],
-      "Resource":["arn:aws:s3:::${local.files_fqdn}/*"]
-    }
-  ]
-}
-EOF
-}
-
-resource "aws_s3_bucket_acl" "acl_file_share" {
-  bucket = aws_s3_bucket.file_share.id
-  acl    = "public-read"
-}
-
-resource "aws_s3_bucket_website_configuration" "file_share_website_configuration" {
-  bucket = aws_s3_bucket.file_share.id
-
-  index_document {
-    suffix = "index.html"
-  }
-
-  error_document {
-    key = "404.html"
-  }
-}
 

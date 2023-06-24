@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
 // Terraform state managed remotely.
@@ -7,8 +7,8 @@ terraform {
   backend "s3" {
     // WARNING  -- Couldn't read from variables.tf in this block!!
     bucket         = "johnsosoka-com-tf-backend"
-    key            = "project/johnsosoka.com-blog/state/terraform.tfstate"
-    region         = "us-east-1"
+    key            = "project/jscom-blog/state/terraform.tfstate"
+    region         = "us-west-2"
     dynamodb_table = "terraform-state"
   }
 }
@@ -25,4 +25,13 @@ locals {
   // minecraft.johnsosoka.com
   minecraft_subdomain_name = "${var.minecraft_subdomain}.${local.root_domain_name}"
 
+}
+
+data "terraform_remote_state" "jscom_common_data" {
+  backend = "s3"
+  config = {
+    bucket = "johnsosoka-com-tf-backend"
+    key = "project/jscom-core-infra/state/terraform.tfstate"
+    region = "us-west-2"
+  }
 }
