@@ -1,34 +1,34 @@
-# Website
+# Blog
 
-This section of the repository houses the jekyll theme + source content for blog posts & 
-pages. You can find the original markup docs mostly in the `pages` and `_posts` directories.
+The blog itself is a static html website generated using [Jekyll](https://jekyllrb.com/docs/) and hosted on AWS S3.
 
-I have built customizations on top of the template Klisé which can be found [here](https://github.com/piharpi/jekyll-klise)
+This portion of the repository contains the markdown files that are used to generate the content of the blog as well 
+as the jekyll theme, [Klisé](https://github.com/piharpi/jekyll-klise).
 
-### Customizations
+## Getting Started
 
-#### Layouts
+### To Run Locally
+* Install Jekyll & Ruby (see [Jekyll Docs](https://jekyllrb.com/docs/installation/))
+* execute `run-local.sh` to run the website locally. View at http://localhost:4000
 
-* Created lore layout. It's just like a page layout but includes a GO BACK button (text of button controlled in yaml)
-  * The idea of lore would be little pages/offshoots explaining something. The example that prompted this to be made is the snippet on the braille book dad got me.
-
-* Set up embed-audio.html. Example usage:
-```html
-{% include embed-audio.html src="https://files.johnsosoka.com/music/the-concept/through-times-eyes-ep/What-a-Time-Version-2.mp3" %}
-```
+### To Deploy
+* Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
+* Configure AWS CLI with `aws configure` (have a user provisioned on aws already, with access to the target S3 bucket)
+* Execute `configure_deployer.sh` to set the required environment variables for the `deploy-prod.sh` script.
+* Run `deploy-prod.sh` to build the website and sync the contents to the target S3 bucket. The deployment script also 
+attempts to invalidate CloudFront caches.
 
 ### Scripts
-
-`run-local.sh` will attempt to serve jekyll locally at http://localhost:4000/
-
-`deploy-prod` will attempt to build jekyll to the `_site` dir and then sync the contents to the target S3 bucket s3://www.johnsosoka.com
-
+| Script Name | Description | 
+| --- | --- |
+| `run-local.sh` | Attempts to serve Jekyll locally at http://localhost:4000/ |
+| `configure_deployer.sh` | Sets the required environment variables for the `deploy-prod.sh` script |
+| `deploy-prod.sh` | Attempts to build Jekyll to the `_site` directory and then sync the contents to the target S3 bucket s3://www.johnsosoka.com |
 
 ## TODO
-
-* [ ] Add [image slider](https://github.com/jekylltools/jekyll-ideal-image-slider) (or equivalent)
   * [ ] Add image gallery to minecraft page.
 * [ ] Add Projects Page (get some projects going first)
+* ~~[ ] Add [image slider](https://github.com/jekylltools/jekyll-ideal-image-slider) (or equivalent)~~
 * [x] Handle embedded audio
 * [x] Add Minecraft Downloads Page
 * [x] Add Notes Page (Udemy Course Notes + Book Notes)
