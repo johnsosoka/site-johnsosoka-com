@@ -37,9 +37,13 @@ organize our data in a way that makes it easy to ingest and retrieve.
 
 ### Data Ingestion
 
-For this project, we will be using a simple text file broken into chunks of 200 characters. We will then use the vector 
-representation of each chunk to build a vector database.
+For this project, we will be using a simple text file broken into chunks of 200 characters. We will store the text chunks
+and vectors in two separate arrays. The following diagram shows that we will persist to a database, and we would in a real
+world scenario, but for this project we will simply use two lists in memory.
 
 ![gdpr](/assets/img/blog/custom-gpt-data/data-ingest.png)
+
+We will be using FAISS to build a vector database from the vectors stored in our vector list.
+
 
 ### Data Retrieval
