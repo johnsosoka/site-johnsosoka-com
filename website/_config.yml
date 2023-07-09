@@ -107,4 +107,3 @@ plugins:
 contact:
   api:
     url: https://api.johnsosoka.com/v1/contact
-    method: POST
