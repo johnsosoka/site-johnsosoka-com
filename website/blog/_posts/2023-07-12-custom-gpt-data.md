@@ -6,10 +6,11 @@ tags: ai chatGPT vector datanbase vectors embeddings custom data NLP natural lan
 ---
 
 AI and ChatGPT have taken the world by storm. Being able to interact with intelligent chatbots unlocks a world of possibilities.
-Being able to interact with intelligent chatbots that can answer questions based on custom data unlocks _even more_ possibilities.
+Being able to interact with intelligent chatbots that can answer questions based on your own custom data unlocks _even more_ 
+possibilities.
 
-Imagine having a customer-service agent that knows your product catalog inside out or an interactive run-book that assists 
-engineers dealing with production issues.
+Imagine training a customer-service agent in seconds that knows your product catalog inside out or an interactive run-book 
+that assists engineers dealing with production issues.
 
 Libraries such as LangChain and LlamaIndex have emerged as popular choices for using custom data with chatGPT. These libraries,
 while impressive, can sometimes feel like black boxes, obscuring the underlying principles at work. In this blog post, I'll 
