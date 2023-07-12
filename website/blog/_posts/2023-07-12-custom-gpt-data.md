@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "Using Custom Data in ChatGPT without LangChain or LlamaIndex"
+title: "Using Custom Data with ChatGPT from Scratch"
 category: blog
 tags: ai chatGPT vector datanbase vectors embeddings custom data NLP natural language processing similarity search openai
 ---
 
+AI and ChatGPT have taken the world by storm. Being able to interact with intelligent chatbots unlocks a world of possibilities.
+Being able to interact with intelligent chatbots that can answer questions based on custom data unlocks _even more_ possibilities.
+
 Imagine having a customer-service agent that knows your product catalog inside out or an interactive run-book that assists 
-engineers during production issues. Sounds exciting? This is the potential unlocked when you use custom data with AI models 
-like chatGPT.
+engineers dealing with production issues.
 
 Libraries such as LangChain and LlamaIndex have emerged as popular choices for using custom data with chatGPT. These libraries,
 while impressive, can sometimes feel like black boxes, obscuring the underlying principles at work. In this blog post, I'll 
@@ -15,7 +17,7 @@ try to peel back the layers and explore how to use custom data with chatGPT with
 
 ## Key Concepts
 
-There are some basic concepts that we need to understand before we can use custom data with chatGPT.
+Some basic concepts that we need to understand before we can use custom data with chatGPT.
 
 ### Vector Embeddings
 
@@ -33,24 +35,24 @@ with similar linguistic meaning.
 
 ## Overview
 
-Today's project will be broken down into two fundamental parts: Data Ingestion & Data Retrieval. It is important that we
+Today's project will be split into two fundamental parts: Data Ingestion & Data Retrieval. It is important that we
 organize our data in a way that makes it easy to ingest and retrieve. 
 
 ### Data Ingestion
 
-For this project, we will be using a simple text file broken into chunks of 200 characters. We will store the text chunks
+For this project, we will be using a simple text file divided into chunks of 200 characters. We will store the text chunks
 and vectors in two separate arrays. We will be fetching the vector representation of each text chunk using the OpenAI API.
 
 ![data-ingest](/assets/img/blog/custom-gpt-data/ingest.png)
 
-We will be using FAISS to build a vector database from the vectors stored in our vector list.
+We will be using FAISS to build a vector index from the vectors stored in our vector list.
 
 
 ### Data Retrieval
 
 When a user asks a question, we will convert the question to a vector and perform a similarity search against our vector database.
-We will then use the index of the nearest neighbor vector that was returned to fetch it's corresponding text chunk; The text chunk 
-will be provided alongside the users question to chatGPT so that it can hopefully answer the question based on
+We will then use the index of the nearest neighbor vector that was returned to fetch its corresponding text chunk; The text chunk 
+will be provided alongside the user's question to chatGPT so that it can hopefully answer the question based on
 custom data.
 
 
@@ -65,7 +67,7 @@ import faiss
 import numpy as np
 
 # Set up OpenAI API credentials
-openai.api_key = ''
+openai.api_key = '<YOUR_API_KEY>'
 
 
 ###############################################
@@ -126,7 +128,7 @@ Now we have two lists, a `vector_array` and a `split_text_content` array. The `v
 each text chunk. These two arrays are also the same size & in the same order so a vector at index 0 in the `vector_array` will correspond
 to the text chunk at index 0 in the `split_text_content` array.
 
-We are now ready to build the FAISS index & collect user input.
+We are now ready to build the FAISS index and collect user input.
 
 ```python
 ###############################################
@@ -178,8 +180,8 @@ for i in range(k):
 
 ```
 
-In the above snippet, I'm iterating through a list of the nearest neighbors returned from the similarity search. I'm printing
-all the details about the nearest neighbor & it's corresponding text chunk to help illustrate what is taking place.
+In the above snippet, I'm iterating through a list of the nearest neighbors returned from the similarity search. I've
+left commented code to illustrate some of the information we have access to during the for loop.
 
 Now that we hopefully have all information we need to answer the users question, we can pass it to chatGPT and see if it can
 use our custom data to answer a question.
@@ -218,7 +220,7 @@ reply = response.choices[0].message['content']
 print("Assistant:", reply)
 ```
 
-Before I run the script, take a look at the sample data [here](/tbd). It's basically an essay about computer science,
+Before I run the script, take a look at the sample data [here](https://github.com/johnsosoka/code-examples/blob/main/python/custom-chatGPT-data/resources/sample_data.txt). It's basically an essay about computer science,
 but in the middle of it I slipped in the phrase "The quick brown fox jumped over the lazy zebra."
 
 ```commandline
@@ -239,8 +241,8 @@ information that is not in the context that we provide.
 
 ---
 
-Behind the scenes, the script is performing similarity search on the user query and returning the most similar text chunk, 
-I will adjust the code to print the context that is being provided to chatGPT.
+Behind the scenes, the script is performing similarity search on the user query and returning the most similar text chunk. 
+To see the exact text chunk that was fetched from our custom data, I'll add a line of code to print the populated template
 
 ```python
 Template = """
@@ -267,16 +269,15 @@ question: what did the quick brown fox jump over?
 Assistant: The quick brown fox jumped over the lazy zebra.
 ```
 
-Now that I'm printing the populated template that we're handing off to chatGPT, we can see the exact text chunk that was fetched
+Now that I'm printing the populated template that's provided to chatGPT, we can see the exact text chunk that was fetched
 from a corresponding index in our vector index.
 
 ## Conclusion
 
-In this blog post, we've uncovered what embeddings & vectors are and explored how to use them to integrate custom data with chatGPT.
+In this blog post, we've uncovered what embeddings and vectors are and explored how to use them to integrate custom data with chatGPT.
 We've seen how we can build an in-memory vector database with FAISS, perform similarity searches, and fetch relevant chunks of text from our 
 custom data. While libraries like LangChain and LlamaIndex are undoubtedly powerful tools, understanding the underlying principles 
 can help us make better use of them and even customize them to our specific needs. 
 
-As we look to the future, the ability to inject additional context or information into our AI models opens up exciting possibilities, 
-which I hope to explore in upcoming blog posts. I encourage you to try out the code for yourself, experiment with different data sets, 
-and see firsthand the power and potential of using custom data with chatGPT.
+
+Full code example can be found [here](https://github.com/johnsosoka/code-examples/blob/main/python/custom-chatGPT-data/main.py).
