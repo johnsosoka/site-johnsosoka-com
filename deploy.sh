@@ -122,6 +122,7 @@ check_cloudfront_ids()
   fi
 }
 
+cd website
 # Pre-flight checks
 check_jekyll_installed
 check_bucket_names
