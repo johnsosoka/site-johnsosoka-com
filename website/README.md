@@ -15,15 +15,15 @@ as the jekyll theme, [Klisé](https://github.com/piharpi/jekyll-klise).
 * Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
 * Configure AWS CLI with `aws configure` (have a user provisioned on aws already, with access to the target S3 bucket)
 * Execute `configure_deployer.sh` to set the required environment variables for the `deploy-prod.sh` script.
-* Run `deploy-prod.sh` to build the website and sync the contents to the target S3 bucket. The deployment script also 
+* Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also 
 attempts to invalidate CloudFront caches.
 
 ### Scripts
-| Script Name | Description | 
-| --- | --- |
-| `run-local.sh` | Attempts to serve Jekyll locally at http://localhost:4000/ |
-| `configure_deployer.sh` | Sets the required environment variables for the `deploy-prod.sh` script |
-| `deploy-prod.sh` | Attempts to build Jekyll to the `_site` directory and then sync the contents to the target S3 bucket s3://www.johnsosoka.com |
+| Script Name            | Description                                                                        | 
+|------------------------|------------------------------------------------------------------------------------|
+| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/                         |
+| `configure_deployer.py` | Sets the required environment variables for the `deploy-prod.sh` script            |
+| `deploy.sh`        | Builds Jekyll, syncs to either stage or prod stage.johnsosoka.com / johnsosoka.com |
 
 ## TODO
   * [ ] Add image gallery to minecraft page.

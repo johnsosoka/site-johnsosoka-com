@@ -24,6 +24,8 @@ For more details on getting the site up & running visit a section's readme:
 * [ ] Deployment Pipelines
   * [ ] Build Artifacts & Sync to prod S3 bucket upon merge to main
   * ~~[ ] Rollback capability??~~
+* [ ] Modernize template/move to bootstrap
+* [x] Set up stage.johnsosoka.com
 * [x] Set up terraform s3 backend 
   * [x] S3 bucket for shared output variables & remote state management.
   * [x] DynamoDB table to backend locking mechanism.
