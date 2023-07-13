@@ -29,5 +29,5 @@ is the primary s3 bucket, where the site contents will be stored.
 ### Additional S3 Bucket for File Hosting.
 An additional s3 bucket as well as corresponding route53 records are created so that downloads that I host are
 1. logically separated from the website content by having their own bucket
-2. Pretty download urls, ex.)`http://files.johnsosoka.com/whatever/subject/content.zip`
+2. Pretty download urls, ex.)`http://fileshare.johnsosoka.com/whatever/subject/content.zip`
 
