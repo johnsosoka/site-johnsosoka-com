@@ -90,7 +90,9 @@ exclude:
   - klise-*.gem
   - klise.gemspec
   - run-local.sh
+  - deploy.sh
   - deploy-prod.sh
+  - deploy-stage.sh
   - sosoka-banner
   - old
   - KLISE_THEME_README.md

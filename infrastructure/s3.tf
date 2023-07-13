@@ -1,15 +1,12 @@
+// ==============================================================================
 // S3 buckets for johnsosoka.com.
-//  johnsosoka.com bucket redirects to www.johnsosoka.com, which hosts the blog posts.
-//  file bucket is for logically separating hosted content (minecraft world downloads, music, etc)
-//  from blog/website files.
+// - johnsosoka.com bucket (root_web) redirects to www.johnsosoka.com (www), which hosts the blog posts.
+// - The stage.johnsosoka.com bucket (stage) is used for staging content.
+// ==============================================================================
+
+// Primary bucket (www.johnsosoka.com)
 resource "aws_s3_bucket" "www" {
-  // Our bucket's name is going to be the same as our site's domain name.
-  bucket = local.www_domain_name
-  // Because we want our site to be available on the internet, we set this so
-  // anyone can read this bucket.
-  // We also need to create a policy that allows anyone to view the content.
-  // This is basically duplicating what we did in the ACL but it's required by
-  // AWS. This post: http://amzn.to/2Fa04ul explains why.
+  bucket = local.www_domain_name // Bucket's name is same as site's domain name.
 }
 
 resource "aws_s3_bucket_policy" "www_policy" {
@@ -28,7 +25,7 @@ resource "aws_s3_bucket_policy" "www_policy" {
   })
 }
 
-// enable bucket versioning
+// Enable bucket versioning for primary bucket
 resource "aws_s3_bucket_versioning" "www_versioning" {
   bucket = aws_s3_bucket.www.id
   versioning_configuration {
@@ -36,23 +33,24 @@ resource "aws_s3_bucket_versioning" "www_versioning" {
   }
 }
 
+// Ownership controls for primary bucket
 resource "aws_s3_bucket_ownership_controls" "www_ownership_controls" {
   bucket = aws_s3_bucket.www.id
   rule {
-    # one of [BucketOwnerPreferred ObjectWriter BucketOwnerEnforced]
-    object_ownership = "ObjectWriter"
+    object_ownership = "ObjectWriter" // one of [BucketOwnerPreferred ObjectWriter BucketOwnerEnforced]
   }
 }
 
+// Public access block settings for primary bucket
 resource "aws_s3_bucket_public_access_block" "www_access_block" {
   bucket = aws_s3_bucket.www.id
-
   block_public_acls       = false
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
 }
 
+// ACL settings for primary bucket
 resource "aws_s3_bucket_acl" "acl_www" {
   depends_on = [
     aws_s3_bucket_ownership_controls.www_ownership_controls,
@@ -62,28 +60,29 @@ resource "aws_s3_bucket_acl" "acl_www" {
   acl    = "public-read"
 }
 
+// Website configuration for primary bucket
 resource "aws_s3_bucket_website_configuration" "www_website_configuration" {
   bucket = aws_s3_bucket.www.id
-
   index_document {
     suffix = "index.html"
   }
-
   error_document {
     key = "404.html"
   }
 }
 
-# ==============================================================================
-# Root S3 bucket here (example.com). This S3 bucket will redirect to www
-# ==============================================================================
+// ==============================================================================
+// Root bucket (johnsosoka.com)
+// This bucket will redirect to the primary bucket (www)
+// ==============================================================================
 
-resource "aws_s3_bucket" "root_web" {
-  bucket = local.root_domain_name
+// Root bucket (johnsosoka.com)
+resource "aws_s3_bucket" "root" {
+  bucket = local.root_domain_name // Bucket's name is same as site's domain name.
 }
 
 resource "aws_s3_bucket_policy" "root_policy" {
-  bucket = aws_s3_bucket.root_web.id
+  bucket = aws_s3_bucket.root.id
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -92,62 +91,127 @@ resource "aws_s3_bucket_policy" "root_policy" {
         Effect = "Allow"
         Principal = "*"
         Action = ["s3:GetObject"]
-        Resource = ["arn:aws:s3:::${aws_s3_bucket.root_web.bucket}/*"]
+        Resource = ["arn:aws:s3:::${aws_s3_bucket.root.bucket}/*"]
       }
     ]
   })
 }
 
-// enable bucket versioning
+// Enable bucket versioning for root bucket
 resource "aws_s3_bucket_versioning" "root_versioning" {
-  bucket = aws_s3_bucket.root_web.id
+  bucket = aws_s3_bucket.root.id
   versioning_configuration {
     status = "Enabled"
   }
 }
 
+// Ownership controls for root bucket
 resource "aws_s3_bucket_ownership_controls" "root_ownership_controls" {
-  bucket = aws_s3_bucket.root_web.id
+  bucket = aws_s3_bucket.root.id
   rule {
-    # one of [BucketOwnerPreferred ObjectWriter BucketOwnerEnforced]
-    object_ownership = "ObjectWriter"
+    object_ownership = "ObjectWriter" // one of [BucketOwnerPreferred ObjectWriter BucketOwnerEnforced]
   }
 }
 
+// Public access block settings for root bucket
 resource "aws_s3_bucket_public_access_block" "root_access_block" {
-  bucket = aws_s3_bucket.root_web.id
-
+  bucket = aws_s3_bucket.root.id
   block_public_acls       = false
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
 }
 
+// ACL settings for root bucket
 resource "aws_s3_bucket_acl" "acl_root" {
   depends_on = [
     aws_s3_bucket_ownership_controls.root_ownership_controls,
     aws_s3_bucket_public_access_block.root_access_block
   ]
-  bucket = aws_s3_bucket.root_web.id
+  bucket = aws_s3_bucket.root.id
   acl    = "public-read"
 }
 
+// Website configuration for root bucket
 resource "aws_s3_bucket_website_configuration" "root_website_configuration" {
-  bucket = aws_s3_bucket.root_web.id
-
-  redirect_all_requests_to {
-    host_name = local.www_domain_name
-    protocol = "https"
+  bucket = aws_s3_bucket.root.id
+  index_document {
+    suffix = "index.html"
   }
-
-#  index_document {
-#    suffix = "index.html"
-#  }
-#
-#  error_document {
-#    key = "404.html"
-#  }
+  error_document {
+    key = "404.html"
+  }
 }
 
+// ==============================================================================
+// Stage bucket (stage.johnsosoka.com)
+// Repeat the same process for the stage bucket as we did for the primary bucket.
+// ==============================================================================
 
+// Stage bucket (stage.johnsosoka.com)
+resource "aws_s3_bucket" "stage" {
+  bucket = local.stage_domain_name // Bucket's name is same as site's domain name.
+}
+
+resource "aws_s3_bucket_policy" "stage_policy" {
+  bucket = aws_s3_bucket.stage.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid = "AddPerm"
+        Effect = "Allow"
+        Principal = "*"
+        Action = ["s3:GetObject"]
+        Resource = ["arn:aws:s3:::${aws_s3_bucket.stage.bucket}/*"]
+      }
+    ]
+  })
+}
+
+// Enable bucket versioning for staging bucket
+resource "aws_s3_bucket_versioning" "stage_versioning" {
+  bucket = aws_s3_bucket.stage.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+// Ownership controls for staging bucket
+resource "aws_s3_bucket_ownership_controls" "stage_ownership_controls" {
+  bucket = aws_s3_bucket.stage.id
+  rule {
+    object_ownership = "ObjectWriter" // one of [BucketOwnerPreferred ObjectWriter BucketOwnerEnforced]
+  }
+}
+
+// Public access block settings for staging bucket
+resource "aws_s3_bucket_public_access_block" "stage_access_block" {
+  bucket = aws_s3_bucket.stage.id
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+// ACL settings for staging bucket
+resource "aws_s3_bucket_acl" "acl_stage" {
+  depends_on = [
+    aws_s3_bucket_ownership_controls.stage_ownership_controls,
+    aws_s3_bucket_public_access_block.stage_access_block
+  ]
+  bucket = aws_s3_bucket.stage.id
+  acl    = "public-read"
+}
+
+// Website configuration for staging bucket
+resource "aws_s3_bucket_website_configuration" "stage_website_configuration" {
+  bucket = aws_s3_bucket.stage.id
+  index_document {
+    suffix = "index.html"
+  }
+  error_document {
+    key = "404.html"
+  }
+}
 
