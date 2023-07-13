@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Using Custom Data with ChatGPT from Scratch"
+title: "Using Custom Data with ChatGPT from Scratch in Python"
 category: blog
-tags: ai chatGPT vector datanbase vectors embeddings custom data NLP natural language processing similarity search openai
+tags: ai chatGPT vector datanbase vectors embeddings custom data NLP natural language processing similarity search openai python FAISS
 ---
 
 AI and ChatGPT have taken the world by storm. Being able to interact with intelligent chatbots unlocks a world of possibilities.
@@ -12,9 +12,19 @@ possibilities.
 Imagine training a customer-service agent in seconds that knows your product catalog inside out or an interactive run-book 
 that assists engineers dealing with production issues.
 
-Libraries such as LangChain and LlamaIndex have emerged as popular choices for using custom data with chatGPT. These libraries,
-while impressive, can sometimes feel like black boxes, obscuring the underlying principles at work. In this blog post, I'll 
-try to peel back the layers and explore how to use custom data with chatGPT without using either of these libraries, 'from scratch'.
+Libraries such as LangChain and LlamaIndex have emerged as popular choices for using custom data with chatGPT. These libraries, 
+while impressive, can sometimes be complex and make the underlying principles hard to understand. In this blog post, I'll 
+try to peel back the layers and explore how to use custom data with chatGPT without using either of these libraries.
+
+## 10,000 Foot View
+
+OpenAI doesn't provide a way to use custom data with chatGPT out of the box. As of today it has no mechanism to ingest
+large volumes of data or train on custom data. The only way to use custom data with chatGPT is to use the API to send
+a question along with (hopefully) relevant information that the model can use to answer that question.
+
+We will effectively ingest custom data and organize it in such a way that we can fetch relevant information based on the
+underlying meaning of the text we have stored.  Before getting to the code, we will cover some key concepts around how
+we can retrieve, store and query numeric representations of text.
 
 ## Key Concepts
 
@@ -36,13 +46,15 @@ with similar linguistic meaning.
 
 ## Overview
 
-Today's project will be split into two fundamental parts: Data Ingestion & Data Retrieval. It is important that we
-organize our data in a way that makes it easy to ingest and retrieve. 
+Today's project will be split into two fundamental parts: Today's project will be split into two fundamental parts: Data 
+Ingestion, where we introduce our data into the system, and Data Retrieval, where we extract this data to use as needed." 
+It is important that we organize our data in a way that makes it easy to ingest and retrieve. 
 
 ### Data Ingestion
 
-For this project, we will be using a simple text file divided into chunks of 200 characters. We will store the text chunks
-and vectors in two separate arrays. We will be fetching the vector representation of each text chunk using the OpenAI API.
+For this project, we will be using a simple text file divided into chunks of 200 characters, or 'text chunks'. We will 
+store the text chunks and vectors in two separate arrays. We will be fetching the vector representation of each text 
+chunk using the OpenAI API.
 
 ![data-ingest](/assets/img/blog/custom-gpt-data/ingest.png)
 
@@ -52,9 +64,8 @@ We will be using FAISS to build a vector index from the vectors stored in our ve
 ### Data Retrieval
 
 When a user asks a question, we will convert the question to a vector and perform a similarity search against our vector database.
-We will then use the index of the nearest neighbor vector that was returned to fetch its corresponding text chunk; The text chunk 
-will be provided alongside the user's question to chatGPT so that it can hopefully answer the question based on
-custom data.
+We will then use the index of the nearest neighbor vector that was returned to fetch its corresponding text chunk; The text 
+chunk that we extract will be provided alongside the user's question to ChatGPT, enabling it to answer based on the custom data.
 
 
 ## The Code
@@ -182,7 +193,7 @@ for i in range(k):
 ```
 
 In the above snippet, I'm iterating through a list of the nearest neighbors returned from the similarity search. I've
-left commented code to illustrate some of the information we have access to during the for loop.
+left commented code to illustrate some of the information we have access to during the loop.
 
 Now that we hopefully have all information we need to answer the users question, we can pass it to chatGPT and see if it can
 use our custom data to answer a question.
@@ -275,10 +286,14 @@ from a corresponding index in our vector index.
 
 ## Conclusion
 
-In this blog post, we've uncovered what embeddings and vectors are and explored how to use them to integrate custom data with chatGPT.
-We've seen how we can build an in-memory vector database with FAISS, perform similarity searches, and fetch relevant chunks of text from our 
-custom data. While libraries like LangChain and LlamaIndex are undoubtedly powerful tools, understanding the underlying principles 
-can help us make better use of them and even customize them to our specific needs. 
+I kept the above example very simple. Our custom data was a very short essay, and we only performed a similarity search to retrieve
+the nearest 2 neighbors (of which we only used one). In a real world scenario, we would likely have a much larger dataset and could
+retrieve more than a handful of the nearest neighbors, or perform similarity searches against _multiple_ datasets.
 
+Interestingly enough, chatGPT is great at returning answers that conform to a json schema if you ask nicely. This means that
+we could easily configure agents that prompt chatGPT and give it information about data sources that we could potentially use
+and have chatGPT determine which sources of data it should use to answer the users given question.
+
+It is really fun to imagine the possibilities of what we could do with this technology.
 
 Full code example can be found [here](https://github.com/johnsosoka/code-examples/blob/main/python/custom-chatGPT-data/main.py).
