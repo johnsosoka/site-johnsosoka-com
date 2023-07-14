@@ -1,0 +1,44 @@
+name: Deploy to www and root S3 buckets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+
+      - name: Build site
+        run: |
+          cd website
+          bundle install
+          bundle exec jekyll build
+          cd ..
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Upload to S3
+        run: |
+          aws s3 sync ./website/_site/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
+          aws s3 sync ./website/_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
+
+      - name: Invalidate CloudFront Distribution(s)
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.WWW_CLOUDFRONT_ID }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.ROOT_CLOUDFRONT_ID }} --paths "/*"
