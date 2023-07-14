@@ -1,0 +1,46 @@
+name: Deploy to S3 and Invalidate CloudFront
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y zsh
+          curl -sSL https://get.rvm.io | bash -s stable --ruby
+          source /home/runner/.rvm/scripts/rvm
+          gem install jekyll bundler
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Deploy to S3 and Invalidate CloudFront
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            aws s3 sync ./_site/ s3://${{ secrets.STAGE_S3_BUCKET_NAME }}
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGE_CLOUDFRONT_ID }} --paths "/*"
+          else
+            aws s3 sync ./_site/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
+            aws s3 sync ./_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.WWW_CLOUDFRONT_ID }} --paths "/*"
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.ROOT_CLOUDFRONT_ID }} --paths "/*"
+          fi
