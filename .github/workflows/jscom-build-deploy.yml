@@ -15,7 +15,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +35,11 @@ jobs:
           bundle exec jekyll build
           cd ..
 
+  deploy-to-s3:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -51,6 +56,11 @@ jobs:
             aws s3 sync ./website/_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
           fi
 
+  invalidate-cloudfront:
+    needs: deploy-to-s3
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Invalidate CloudFront Distribution(s)
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
