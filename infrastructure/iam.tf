@@ -40,11 +40,11 @@ resource "aws_iam_user_policy" "deployer_user_policy" {
 EOF
 }
 
-output "access_key_id" {
+output "github_deployer_user_access_key_id" {
   value = aws_iam_access_key.deployer_user_access_key.id
 }
 
-output "secret_access_key" {
+output "github_deployer_user_access_key_secret" {
   value = aws_iam_access_key.deployer_user_access_key.secret
   sensitive = true
 }
