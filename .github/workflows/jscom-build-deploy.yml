@@ -16,22 +16,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+
+      - name: Build site
+        run: |
+          bundle install
+          bundle exec jekyll build
+
       - name: Set up AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get install -y zsh
-          curl -sSL https://get.rvm.io | bash -s stable --ruby
-          source /home/runner/.rvm/scripts/rvm
-          gem install jekyll bundler
-
-      - name: Build site
-        run: bundle exec jekyll build
 
       - name: Deploy to S3 and Invalidate CloudFront
         run: |
