@@ -1,0 +1,40 @@
+name: Deploy to stage S3 bucket
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+
+      - name: Build site
+        run: |
+          cd website
+          bundle install
+          bundle exec jekyll build
+          cd ..
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Upload to S3
+        run: |
+          aws s3 sync ./website/_site/ s3://${{ secrets.STAGE_S3_BUCKET_NAME }}
+
+      - name: Invalidate CloudFront Distribution
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGE_CLOUDFRONT_ID }} --paths "/*"
