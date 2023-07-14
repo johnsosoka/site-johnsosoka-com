@@ -1,9 +1,3 @@
-# -----------------------------------------------------------
-# Deploy Jekyll site to S3 and invalidate CloudFront cache
-# Author: John Sosoka
-# Date: 2023-07-14
-# -----------------------------------------------------------
-
 name: Deploy to S3 and Invalidate CloudFront
 
 on:
@@ -29,17 +23,22 @@ jobs:
           bundler-cache: true
 
       - name: Build site
+        id: build-step
         run: |
           cd website
           bundle install
           bundle exec jekyll build
           cd ..
+          echo "::set-output name=site-dir::website/_site"
 
   deploy-to-s3:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -50,10 +49,10 @@ jobs:
       - name: Upload to S3
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            aws s3 sync ./website/_site/ s3://${{ secrets.STAGE_S3_BUCKET_NAME }}
+            aws s3 sync ${{ needs.build.outputs.site-dir }}/ s3://${{ secrets.STAGE_S3_BUCKET_NAME }}
           else
-            aws s3 sync ./website/_site/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
-            aws s3 sync ./website/_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
+            aws s3 sync ${{ needs.build.outputs.site-dir }}/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
+            aws s3 sync ${{ needs.build.outputs.site-dir }}/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
           fi
 
   invalidate-cloudfront:
@@ -61,6 +60,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
       - name: Invalidate CloudFront Distribution(s)
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
