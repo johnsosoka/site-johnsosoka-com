@@ -1,6 +1,11 @@
-name: Deploy to www and root S3 buckets
+name: Deploy to PROD
 
 on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "yes" to confirm deployment to PRODUCTION!'
+        required: true
   push:
     branches:
       - main
