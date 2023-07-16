@@ -1,6 +1,6 @@
 ---
 layout: post
-title: USB Foot Pedals are a Game Changer!
+title: "USB Foot Pedals: An Ergonomic Way to Interface with Your Computer"
 category: blog
 subtitle: 
 tags: i/o usb pedal ergonomic poweruser injury wrist

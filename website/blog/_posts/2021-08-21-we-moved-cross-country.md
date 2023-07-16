@@ -1,20 +1,20 @@
 ---
 layout: post
-title: We Moved Cross-Country!
+title: "The Big Move: Our Journey from Idaho to North Carolina"
 category: blog
 subtitle: Taking a moment to capture the move.
 tags: charlotte nc travel dogs idaho move
 ---
 
 Way back in October 2020, I accepted a position at a new employer with the understanding that I would relocate to Charlotte, 
-North Carolina. For some time my wife and I had been itching for a "great american adventure" but we never made any concrete
+North Carolina. For some time my wife and I had been itching for a "great American adventure" but we never made any concrete
 plans.
 
 I should note before continuing on that we moved in May. I am just playing catch-up here since I had lost interest in the
 blog for a time.
 
 We have two dogs and decided that driving across the country would be more comfortable for them and a more interesting 
-adventure for us; I personally wanted to _feel_ the distance between Idaho and North Carolina.
+adventure for us; I wanted to _feel_ the distance between Idaho and North Carolina.
 
 ![moving pod](/assets/img/blog/id-nc-move/moving-pod-side.JPEG)
 
@@ -23,7 +23,7 @@ cost-effective. We used a local moving crew to load the pod up after we packed u
 
 ![packed pod](/assets/img/blog/id-nc-move/pod-packed-stuff.JPEG)
 
-Believe it or not there is a baby grand piano hidden in the above image. We weren't sure which pod size to get, so we
+Believe it or not, there is a baby grand piano hidden in the above image. We weren't sure which pod size to get, so we
 landed on the largest available which seemed to be just a little too big. We had a few days between the pod shipping and
 us leaving. We had the choice to live without our items either before we left or after we arrived in Charlotte and we
 decided it would be best to arrive with our items in town. This means that we had a couple of nights with near zero 
@@ -42,7 +42,7 @@ we were able to fill up at another station just down the street.
 
 ![pod-dropoff](/assets/img/blog/id-nc-move/pod-dropoff.JPEG)
 
-Our moving pod was delayed, so despite our best efforts we still had several days with almost no furniture. Not a big
+Despite our best efforts, our moving pod was delayed, leaving us with almost no furniture for several days. Not a big
 deal. Our pod driver did a really great job navigating the narrow roads in our neighborhood. At the time of this writing
  we have been in North Carolina for a couple of months. We are enjoying it so far, the greenery is astounding, the 
 people are delightful and there is plenty to explore. 

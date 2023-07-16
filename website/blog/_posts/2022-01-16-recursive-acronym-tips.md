@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tips for Writing Your First Recursive Acronym
+title: "How to Write Your First Recursive Acronym: A Comprehensive Guide"
 category: blog
 tags: writing acronym recursion recursive nerd humor
 ---

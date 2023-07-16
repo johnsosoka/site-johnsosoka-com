@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fumbling Aspect Oriented Programming in Python
+title: "Exploring Aspect-Oriented Programming in Python: A Learning Experience"
 category: blog
 subtitle: Lot's of mistakes & a hack.
 tags: programming python uml failure

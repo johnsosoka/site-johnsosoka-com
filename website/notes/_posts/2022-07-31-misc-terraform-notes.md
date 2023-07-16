@@ -25,3 +25,22 @@ terraform import aws_cloudfront_distribution.www_distribution <Distribution ID>
 ```shell
 terraform import aws_dynamodb_table.terraform-state terraform-state
 ```
+
+## Reading a Hidden Terraform Variable
+
+A terraform variable might be marked sensitive, such as:
+
+```terraform
+output "github_deployer_user_access_key_secret" {
+  value = aws_iam_access_key.deployer_user_access_key.secret
+  sensitive = true
+}
+```
+
+To read this value, after running `terraform apply`, run:
+
+```shell
+terraform output -raw github_deployer_user_access_key_secret
+```
+
+This will print the value of the masked variable to the console.
