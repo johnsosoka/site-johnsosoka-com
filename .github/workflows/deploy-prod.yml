@@ -43,7 +43,7 @@ jobs:
           aws s3 sync ./website/_site/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
           aws s3 sync ./website/_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
 
-      - name: Invalidate CloudFront Distribution(s)
+      - name: Invalidate CloudFront Distributions
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.WWW_CLOUDFRONT_ID }} --paths "/*"
           aws cloudfront create-invalidation --distribution-id ${{ secrets.ROOT_CLOUDFRONT_ID }} --paths "/*"

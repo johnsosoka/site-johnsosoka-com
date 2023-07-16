@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "GitHub Actions Pipeline to deploy static website to S3"
+title: "How to Use GitHub Actions to Deploy a Website to AWS S3"
 category: blog
-tags: ai chatGPT vector datanbase vectors embeddings custom data NLP natural language processing similarity search openai python FAISS
+tags: GitHub Ations CI/CD pipeline AWS S3 deployment automation continuious deployment delivery terraform IAM Jekyll CloudFront
 ---
 
 
@@ -14,12 +14,16 @@ perfecting this [deploy.sh](https://gist.github.com/johnsosoka/e6897f4d670570497
 my local with either `./deploy.sh stage` or `./deploy.sh prod` depending on my target environment. 
 
 Well, today that changes! I'm going to pull myself out of the stone age and bring myself into the modern era... I'm going 
-to introduce an automated deployment pipeline for my personal website using GitHub Actions, and I'll be covering the process
+to introduce an automated CI/CD pipeline for my personal website using GitHub Actions, and I'll be covering the process
 in this post today.
+
+**What is a CI/CD Pipeline?** A CI/CD pipeline is a process that automates the steps required to build, test, and deploy
+software. My website so I don't need to test it, I just need to generate artifacts and deploy them to S3.
 
 ### Existing Infrastructure
 
-The infrastructure for this website is pretty simple. It's a static website hosted on Amazon S3.
+The infrastructure for this website is pretty simple. It's a static website hosted on Amazon S3. (The details on how my 
+website is created are captured in [this post](/blog/2021/09/20/terraform-provision-blog-infra.html).)
 
 The code to generate it and terraform to provision it is located on [GitHub](https://github.com/johnsosoka/jscom-blog/tree/main).
 I use CloudFront to serve the website over HTTPS and Route53 to manage the DNS records. My website is generated using a 
@@ -41,6 +45,11 @@ the static assets, which will later be uploaded to S3.
 I want the pipeline to deploy to different S3 targets depending on different conditions. If I push or merge to `master` I want to deploy
 to the `live website`. For pushes to `non-master` branches I want to deploy to the `stage website`. After it has deployed to the correct
 target I want to invalidate the CloudFront cache so that the changes are reflected immediately.
+
+My plan for automatically deploying non-master branches to the stage website wouldn't work in a typical CI/CD pipeline with
+multiple contributors. I'm the only contributor to this website, so I can get away with it `:)`. If I had multiple contributors
+I'd establish a different branching convention and workflow so that non-master branches would not constantly overwrite each other
+in the stage environment.
 
 ## Setting up the Pipeline
 
