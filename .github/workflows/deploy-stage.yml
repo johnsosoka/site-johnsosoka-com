@@ -1,4 +1,4 @@
-name: Deploy to stage S3 bucket
+name: Deploy to STAGE
 
 on:
   workflow_dispatch:
