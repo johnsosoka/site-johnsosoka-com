@@ -1,6 +1,6 @@
 # jscom-blog
 
-Welcome to the repository for [John Sosoka's Homepage](https://johnsosoka.com). A personal blog, written by a software engineer
+Welcome to the repository for [My Homepage](https://johnsosoka.com). A personal blog, written by a software engineer
 and dog lover currently living in Boise, Idaho. Writing about technology, software engineering, and my expanding family.
 
 ## Repository Structure
@@ -8,11 +8,11 @@ and dog lover currently living in Boise, Idaho. Writing about technology, softwa
 Everything required to provision resources, build, and deploy the website is contained within this repository. The contents 
 are logically structured into the following directories:
 
-| Directory | Description |
-|-----------|-------------|
-| [Infrastructure](/infrastructure) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
-| [Website](/website) | Contains the Jekyll theme and the content for the blog. |
-| [.github](/.github) | Contains GitHub Actions workflows that automate the deployment of the website. |
+| Directory                         | Description |
+|-----------------------------------|-------------|
+| [infrastructure](/infrastructure) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
+| [website](/website)               | Contains the Jekyll theme and the content for the blog. |
+| [.github](/.github)               | Contains GitHub Actions workflows that automate the deployment of the website. |
 
 ## Scripts
 
@@ -53,23 +53,25 @@ chmod +x run-local.sh
 
 ### From Local
 
-* Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also
-  attempts to invalidate CloudFront caches.
-
 #### First Time Setup:
 
 * Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
 * Configure AWS CLI with `aws configure` (have a user provisioned on aws already, with access to the target S3 bucket)
 * Execute `configure_deployer.py` to set the required environment variables for the `deploy.sh` script.
 
+#### Deploy:
+
+* Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also
+  attempts to invalidate CloudFront caches.
+
 ### GitHub Actions
 
 Deployments to both staging and production environments are automated using GitHub Actions. The workflows for these deployments share the following common steps:
 
-- The workflow checks out the repository and sets up Ruby with the specified version.
-- The website is built using Jekyll.
-- AWS credentials are configured using the secrets stored in the repository.
-- The built site is then uploaded to the specified S3 bucket.
+- Installs Requirements / Sets up Ruby.
+- Generates Assets with Jekyll.
+- AWS Credentials Configured.
+- Uploads Generated Assets to S3.
 - Finally, the CloudFront distribution is invalidated to refresh the cache.
 
 _Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._

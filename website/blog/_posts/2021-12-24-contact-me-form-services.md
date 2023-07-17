@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building a Serverless Backend for HTML Form Submissions: A Guide to Using Api-Gateway, S3, Lambda, and SNS"
+title: "Building a Serverless Backend for HTML Form Submissions: A Guide to Using API Gateway, S3, Lambda, and SNS"
 category: blog
 tags: aws python lambda sns terraform boto3 serverless http forms 
 ---
