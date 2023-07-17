@@ -18,10 +18,10 @@ are logically structured into the following directories:
 
 The following scripts have been written to automate common tasks and simplify the deployment process:
 
-| Script Name            | Description                                                                        | 
-|------------------------|------------------------------------------------------------------------------------|
-| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/                         |
-| `configure_deployer.py` | Sets the required environment variables for the `deploy-prod.sh` script            |
+| Script Name            | Description                                                                   | 
+|------------------------|-------------------------------------------------------------------------------|
+| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/                    |
+| `configure_deployer.py` | Sets the required environment variables for the `deploy.sh` script            |
 | `deploy.sh`        | Builds Jekyll, syncs to either stage or prod stage.johnsosoka.com / johnsosoka.com |
 
 ## Getting Started
