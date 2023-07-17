@@ -66,7 +66,8 @@ chmod +x run-local.sh
 
 ### GitHub Actions
 
-Deployments to both staging and production environments are automated using GitHub Actions. The workflows for these deployments share the following common steps:
+Deployments to both staging and production environments are also possible using GitHub Actions. The workflows for these 
+deployments share the following common steps:
 
 - Installs Requirements / Sets up Ruby.
 - Generates Assets with Jekyll.
@@ -84,8 +85,6 @@ _Please ensure that the necessary AWS credentials and other secrets are stored i
 - Targets `https://stage.johnsosoka.com`
 - Workflow File: `.github/workflows/deploy-stage.yml`
 
-
-
 #### Prod Deployment
 [![Deploy to PROD](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-prod.yml/badge.svg?branch=main)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-prod.yml)
 
@@ -96,9 +95,11 @@ _Please ensure that the necessary AWS credentials and other secrets are stored i
 
 ## AWS Website Infrastructure
 
-This repository contains Terraform configuration files to provision the infrastructure required for hosting a website on AWS.
-It sets up three CloudFront distributions for the "www", "root", and "stage" subdomains, along with corresponding S3 buckets.
-The Terraform state is managed remotely using an S3 backend.
+Terrform is used to provision the AWS resources required to host the website. The infrastructure is defined in the 
+`infrastructure` directory. It sets up three CloudFront distributions for the "www", "root", and "stage" subdomains, along 
+with corresponding S3 buckets. The Terraform state is managed remotely using an S3 backend. Please note that some shared 
+resources may be defined in the [jscom-core-infrastructure](https://github.com/johnsosoka/jscom-core-infrastructure) 
+repository.
 
 ### Resources Provisioned
 
