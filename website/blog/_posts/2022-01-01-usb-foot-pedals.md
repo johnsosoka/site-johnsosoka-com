@@ -1,6 +1,6 @@
 ---
 layout: post
-title: USB Foot Pedals are a Game Changer!
+title: "USB Foot Pedals: A New Way to Interact with Your Computer"
 category: blog
 subtitle: 
 tags: i/o usb pedal ergonomic poweruser injury wrist
@@ -28,7 +28,6 @@ I just use these as an alternative for when my injury is flaring up.
 The triggers for these can be adjusted fairly easily. As I continue using the computer with foot pedals, I am coming up 
 with new configurations. For example, when I play Minecraft, I change `scroll down` to `w` (walk forward) & `scroll up` 
 to `d` (walk backward).
-
 
 There are many other applications for these foot pedals beyond gaming. If I was spending more time in the command line, 
 I would probably set up one of the pedals to act as a vim clutch to toggle between insert & normal mode. That pretty 

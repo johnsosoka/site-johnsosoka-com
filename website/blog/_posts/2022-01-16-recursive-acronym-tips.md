@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Tips for Writing Your First Recursive Acronym
+title: "Tips for Crafting Your First Recursive Acronym"
 category: blog
-tags: writing acronym recursion recursive nerd humor
+tags: writing acronym recursion recursive nerd humor tips
 ---
 
 Writing a recursive acronym is a rite of passage for some and a trivial (potentially asinine)  pursuit for others. What

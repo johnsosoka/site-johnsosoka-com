@@ -142,7 +142,7 @@ terraform output -raw github_deployer_user_access_key_secret
 Now that I have a new IAM user for GitHub to use, I need to add the access key id and secret to my GitHub repository so
 that the Actions pipeline can use them. I'll navigate to my repository on GitHub and click on `Settings` > 
 `Secrets and variables` > `Actions` and then select `New repository secret`. I've added secrets for both the access key id
-as well as other aws resources that I need my script to interact with, the final result looks like this:
+and other aws resources that I need my script to interact with, the final result looks like this:
 
 ![GitHub Secrets](/assets/img/blog/gitlab-pipeline/secrets-config.png)
 
@@ -215,7 +215,7 @@ I have the script change back to the project's root directory.
 ### Deploy to S3
 
 Now that the website assets are generated, we'll configure the aws cli and then sync the assets to the appropriate S3 bucket. Here in the 
-pipeline I'm accessing the secrets that I configured earlier via `${{ secrets.SECRET_NAME }}`. I'm also using a conditional to determine 
+pipeline I'm accessing the secrets that I configured earlier via `{% raw %}${{ secrets.SECRET_NAME }}{% endraw %}`. I'm also using a conditional to determine 
 which S3 bucket to sync to based on the event that triggered the pipeline. If the event was a pull request, I'll sync to the `stage` bucket 
 and if it was a push to the `main` branch, I'll sync to the `www` and `root` buckets.
 
@@ -223,17 +223,17 @@ and if it was a push to the `main` branch, I'll sync to the `www` and `root` buc
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: {% raw %}${{ secrets.AWS_ACCESS_KEY_ID }}{% endraw %}
+          aws-secret-access-key: {% raw %}${{ secrets.AWS_SECRET_ACCESS_KEY }}{% endraw %}
+          aws-region: {% raw %}${{ secrets.AWS_REGION }}{% endraw %}
 
       - name: Upload to S3
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            aws s3 sync ./website/_site/ s3://${{ secrets.STAGE_S3_BUCKET_NAME }}
+          if [[ "{% raw %}${{ github.event_name }}{% endraw %}" == "pull_request" ]]; then
+            aws s3 sync ./website/_site/ s3://{% raw %}${{ secrets.STAGE_S3_BUCKET_NAME }}{% endraw %}
           else
-            aws s3 sync ./website/_site/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
-            aws s3 sync ./website/_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
+            aws s3 sync ./website/_site/ s3://{% raw %}${{ secrets.WWW_S3_BUCKET_NAME }}{% endraw %}
+            aws s3 sync ./website/_site/ s3://{% raw %}${{ secrets.ROOT_S3_BUCKET_NAME }}{% endraw %}
           fi
 ```
 
@@ -245,11 +245,11 @@ immediately, which is great for those of us who might be a little impatient :).
 ```yaml
       - name: Invalidate CloudFront Distribution(s)
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGE_CLOUDFRONT_ID }} --paths "/*"
+          if [[ "{% raw %}${{ github.event_name }}{% endraw %}" == "pull_request" ]]; then
+            aws cloudfront create-invalidation --distribution-id {% raw %}${{ secrets.STAGE_CLOUDFRONT_ID }}{% endraw %}} --paths "/*"
           else
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.WWW_CLOUDFRONT_ID }} --paths "/*"
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.ROOT_CLOUDFRONT_ID }} --paths "/*"
+            aws cloudfront create-invalidation --distribution-id {% raw %}${{ secrets.WWW_CLOUDFRONT_ID }}{% endraw %} --paths "/*"
+            aws cloudfront create-invalidation --distribution-id {% raw %}${{ secrets.ROOT_CLOUDFRONT_ID }}{% endraw %} --paths "/*"
           fi
 ```
 
@@ -302,26 +302,26 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: {% raw %}${{ secrets.AWS_ACCESS_KEY_ID }}{% endraw %}
+          aws-secret-access-key: {% raw %}${{ secrets.AWS_SECRET_ACCESS_KEY }}{% endraw %}
+          aws-region: {% raw %}${{ secrets.AWS_REGION }}{% endraw %}
 
       - name: Upload to S3
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            aws s3 sync ./website/_site/ s3://${{ secrets.STAGE_S3_BUCKET_NAME }}
+          if [[ "{% raw %}${{ github.event_name }}{% endraw %}" == "pull_request" ]]; then
+            aws s3 sync ./website/_site/ s3://{% raw %}${{ secrets.STAGE_S3_BUCKET_NAME }}{% endraw %}
           else
-            aws s3 sync ./website/_site/ s3://${{ secrets.WWW_S3_BUCKET_NAME }}
-            aws s3 sync ./website/_site/ s3://${{ secrets.ROOT_S3_BUCKET_NAME }}
+            aws s3 sync ./website/_site/ s3://{% raw %}${{ secrets.WWW_S3_BUCKET_NAME }}{% endraw %}
+            aws s3 sync ./website/_site/ s3://{% raw %}${{ secrets.ROOT_S3_BUCKET_NAME }}{% endraw %}
           fi
 
       - name: Invalidate CloudFront Distribution(s)
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGE_CLOUDFRONT_ID }} --paths "/*"
+          if [[ "{% raw %}${{ github.event_name }}{% endraw %}" == "pull_request" ]]; then
+            aws cloudfront create-invalidation --distribution-id {% raw %}${{ secrets.STAGE_CLOUDFRONT_ID }}{% endraw %}} --paths "/*"
           else
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.WWW_CLOUDFRONT_ID }} --paths "/*"
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.ROOT_CLOUDFRONT_ID }} --paths "/*"
+            aws cloudfront create-invalidation --distribution-id {% raw %}${{ secrets.WWW_CLOUDFRONT_ID }}{% endraw %} --paths "/*"
+            aws cloudfront create-invalidation --distribution-id {% raw %}${{ secrets.ROOT_CLOUDFRONT_ID }}{% endraw %} --paths "/*"
           fi
 ```
 

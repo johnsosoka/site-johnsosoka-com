@@ -1,6 +1,6 @@
 ---
 layout: post
-title: First Post
+title: "The Beginning: My First Blog Post"
 category: blog
 subtitle: how exciting.
 image: /assets/img/blog/hello-world.png
