@@ -79,7 +79,7 @@ _Please ensure that the necessary AWS credentials and other secrets are stored i
 #### Stage Deployment
 [![Deploy to STAGE](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml/badge.svg)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml)
 
-- Deployed Manually
+- Triggered **Manually**
 - Actions -> Deploy to STAGE -> Select Branch -> Run Workflow
 - Targets `https://stage.johnsosoka.com`
 - Workflow File: `.github/workflows/deploy-stage.yml`
@@ -89,8 +89,8 @@ _Please ensure that the necessary AWS credentials and other secrets are stored i
 #### Prod Deployment
 [![Deploy to PROD](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-prod.yml/badge.svg?branch=main)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-prod.yml)
 
-- Triggered Automatically
-- Merges to `main` branch trigger deployment
+- Triggered **Automatically**
+- Merges to `main` Branch Trigger Deployment
 - Targets `https://johnsosoka.com` & `https://www.johnsosoka.com`
 - Workflow File: `.github/workflows/deploy-prod.yml`
 
