@@ -102,7 +102,7 @@ The Terraform state is managed remotely using an S3 backend.
 
 ### Resources Provisioned
 
-- CloudFront distributions for "www", "root", and "stage" subdomains
+- CloudFront distributions for "www", "root", and "stage" domains
 - S3 buckets for the www, root, and staging websites
 - IAM user with deployer access and permissions (Used for GitHub Actions CO/CD)
 - Route53 records for mapping subdomains to CloudFront distributions
