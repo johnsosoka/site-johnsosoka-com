@@ -77,16 +77,22 @@ Deployments to both staging and production environments are automated using GitH
 _Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
 
 #### Stage Deployment
-
 [![Deploy to STAGE](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml/badge.svg)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml)
 
-The staging deployment is **triggered manually** from the GitHub Actions tab and targets `https://stage.johnsosoka.com`. The workflow file for this process is located at `.github/workflows/deploy-stage.yml`.
+- Deployed Manually
+- Actions -> Deploy to STAGE -> Select Branch -> Run Workflow
+- Targets `https://stage.johnsosoka.com`
+- Workflow File: `.github/workflows/deploy-stage.yml`
+
+
 
 #### Prod Deployment
-
 [![Deploy to PROD](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-prod.yml/badge.svg?branch=main)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-prod.yml)
 
-The production deployment is **triggered automatically** when a commit is merged to the `main` branch. It targets `https://johnsosoka.com` & `https://www.johnsosoka.com`. The workflow file for this process is located at `.github/workflows/deploy-prod.yml`.
+- Triggered Automatically
+- Merges to `main` branch trigger deployment
+- Targets `https://johnsosoka.com` & `https://www.johnsosoka.com`
+- Workflow File: `.github/workflows/deploy-prod.yml`
 
 ## AWS Website Infrastructure
 
@@ -115,7 +121,7 @@ Refer to the Terraform configuration files for more details.
 ### Notes
 
 - This infrastructure uses CloudFront as a content delivery network and S3 buckets to host the website content.
-- The IAM user created has permissions to manage the S3 buckets and create CloudFront invalidations.
+- The IAM user created has permissions to manage the S3 buckets and create CloudFront invalidations. It is intended to be used by the GitHub Actions workflows.
 - The Terraform state is managed remotely using an S3 backend.
 
 ## Contributing
