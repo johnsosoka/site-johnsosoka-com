@@ -18,7 +18,8 @@ to introduce an automated CI/CD pipeline for my personal website using GitHub Ac
 in this post today.
 
 **What is a CI/CD Pipeline?** A CI/CD pipeline is a process that automates the steps required to build, test, and deploy
-software. My website so I don't need to test it, I just need to generate artifacts and deploy them to S3.
+software. My website is a static site, so there isn't much to test, I just need to generate artifacts and deploy them to 
+S3.
 
 ### Existing Infrastructure
 

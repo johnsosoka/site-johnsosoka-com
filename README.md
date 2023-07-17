@@ -3,6 +3,13 @@
 Welcome to the repository for [My Homepage](https://johnsosoka.com). A personal blog, written by a software engineer
 and dog lover currently living in Boise, Idaho. Writing about technology, software engineering, and my expanding family.
 
+
+## About
+This website is built using [Jekyll](https://jekyllrb.com/), a static site generator written in Ruby. The website is hosted
+on [Amazon Web Services](https://aws.amazon.com/) using [Amazon S3](https://aws.amazon.com/s3/) and [Amazon CloudFront](https://aws.amazon.com/cloudfront/).
+All the AWS resources are provisioned using [Terraform](https://www.terraform.io/). The website is deployed using either
+a local script or via GitHub Actions.
+
 ## Repository Structure
 
 Everything required to provision resources, build, and deploy the website is contained within this repository. The contents 
