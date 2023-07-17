@@ -1,9 +1,16 @@
 # jscom-blog
 
 Welcome to the repository for [My Homepage](https://johnsosoka.com). A personal blog, written by a software engineer
-and dog lover currently living in Boise, Idaho. Writing about technology, software engineering, and my expanding family.
+and lover-of-dogs currently living in Boise, Idaho. Writing about technology, software engineering, and my expanding family.
 
-## Repository Structure
+## About
+
+My website is built using [Jekyll](https://jekyllrb.com/), a static site generator written in Ruby. The website is hosted
+on [Amazon Web Services](https://aws.amazon.com/) using [Amazon S3](https://aws.amazon.com/s3/) and [Amazon CloudFront](https://aws.amazon.com/cloudfront/).
+All the AWS resources are provisioned using [Terraform](https://www.terraform.io/). The website is deployed using either
+a local script or via GitHub Actions.
+
+### Repository Structure
 
 Everything required to provision resources, build, and deploy the website is contained within this repository. The contents 
 are logically structured into the following directories:
@@ -14,15 +21,15 @@ are logically structured into the following directories:
 | [website](/website)               | Contains the Jekyll theme and the content for the blog. |
 | [.github](/.github)               | Contains GitHub Actions workflows that automate the deployment of the website. |
 
-## Scripts
+### Scripts
 
-The following scripts have been written to automate common tasks and simplify the deployment process:
+The following scripts have been written to automate common tasks and simplify common tasks:
 
-| Script Name            | Description                                                                   | 
-|------------------------|-------------------------------------------------------------------------------|
-| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/                    |
-| `configure_deployer.py` | Sets the required environment variables for the `deploy.sh` script            |
-| `deploy.sh`        | Builds Jekyll, syncs to either stage or prod stage.johnsosoka.com / johnsosoka.com |
+| Script Name            | Description                                                        | 
+|------------------------|--------------------------------------------------------------------|
+| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/         |
+| `configure_deployer.py` | Sets the required environment variables for the `deploy.sh` script |
+| `deploy.sh`        | Builds Jekyll, syncs to either stage or prod targets               |
 
 ## Getting Started
 
