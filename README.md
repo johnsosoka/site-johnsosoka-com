@@ -1,7 +1,7 @@
 # jscom-blog
 
-Welcome to the repository for [John Sosoka's Homepage](https://johnsosoka.com). This repository houses all the necessary 
-components, including the blog content, assets, Jekyll template, and Terraform scripts for infrastructure management.
+Welcome to the repository for [John Sosoka's Homepage](https://johnsosoka.com). A personal blog, written by a software engineer
+and dog lover currently living in Boise, Idaho. Writing about technology, software engineering, and my expanding family.
 
 ## Repository Structure
 
@@ -14,7 +14,15 @@ are logically structured into the following directories:
 | [Website](/website) | Contains the Jekyll theme and the content for the blog. |
 | [.github](/.github) | Contains GitHub Actions workflows that automate the deployment of the website. |
 
-Certainly, here's how you can structure the "Getting Started" section with brief steps:
+## Scripts
+
+The following scripts have been written to automate common tasks and simplify the deployment process:
+
+| Script Name            | Description                                                                        | 
+|------------------------|------------------------------------------------------------------------------------|
+| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/                         |
+| `configure_deployer.py` | Sets the required environment variables for the `deploy-prod.sh` script            |
+| `deploy.sh`        | Builds Jekyll, syncs to either stage or prod stage.johnsosoka.com / johnsosoka.com |
 
 ## Getting Started
 
@@ -35,7 +43,7 @@ Ensure you have the following installed and configured:
    ```
 3. Open your web browser and navigate to [http://localhost:4000](http://localhost:4000) to visit the website.
 
-Please note that you might need to grant execute permissions to the `run-local.sh` script before running it. You can do this with the `chmod` command:
+_Please note that you might need to grant execute permissions to the `run-local.sh` script before running it. You can do this with the `chmod` command:_
 
 ```bash
 chmod +x run-local.sh
@@ -45,9 +53,14 @@ chmod +x run-local.sh
 
 ### From Local
 
-1. Install and configure the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html).
-2. Run `configure_deployer.py` to set the required environment variables for the `deploy.sh` script.
-3. Execute `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. This script also attempts to invalidate CloudFront caches.
+* Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also
+  attempts to invalidate CloudFront caches.
+
+#### First Time Setup:
+
+* Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
+* Configure AWS CLI with `aws configure` (have a user provisioned on aws already, with access to the target S3 bucket)
+* Execute `configure_deployer.py` to set the required environment variables for the `deploy.sh` script.
 
 ### GitHub Actions
 
@@ -86,16 +99,16 @@ The Terraform state is managed remotely using an S3 backend.
 - IAM user with deployer access and permissions (Used for GitHub Actions CO/CD)
 - Route53 records for mapping subdomains to CloudFront distributions
 
+Refer to the Terraform configuration files for more details.
+
 ### Usage
 
 1. Install Terraform.
 2. Set up your AWS credentials.
-3. Modify the variables in `variables.tf` to match your desired configuration.
+3. If Necessary, Modify the variables in `variables.tf`.
 4. Run `terraform init` to initialize the backend and providers.
 5. Run `terraform plan` to preview the infrastructure changes.
 6. Run `terraform apply` to provision the AWS resources.
-
-For detailed instructions, refer to the documentation or the comments in the Terraform configuration files.
 
 ### Notes
 
@@ -122,10 +135,4 @@ would like to contribute a post, please either reach out to me directly or fork 
   * [x] configure website access logging
 * [x] Create independent files S3 bucket for keeping hosted download content separate from website content
   * [x] create related cloudfront resources
-  * [x] create related dns entries (rout e53 resources)
-
-## License
-
-The Jekyll Template used ([Klisé](/johnsosoka/jscom-blog/blob/main/website/klise.now.sh)) is under the [MIT License](/johnsosoka/jscom-blog/blob/main/website/JEKYLL_TEMPLATE_LICENSE).
-
-All other content is under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+  * [x] create related dns entries (route e53 resources)

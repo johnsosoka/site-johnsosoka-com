@@ -1,22 +1,23 @@
 #!/usr/bin/env zsh
 
-export AWS_PROFILE=jscom
-# Author: john sosoka
+# -----------------------------------------------------------------------------
+# Script Name: deploy.sh
+# Description: This script builds the website via Jekyll, syncs the generated
+#              artifacts to S3, and invalidates CloudFront distributions. It
+#              requires several environment variables to be set in your rc file.
+# Usage:       ./deploy.sh stage | prod
+# Author:      John Sosoka
+# Date:        [Date]
+# Version:     1.0
 #
-# This script builds the website via Jekyll, syncs the generated artifacts to S3 and invalidates cloudfront distributions.
-#
-# Usage: ./deploy.sh stage | prod
-#
-# Set the required environment variables in your rc file.
-#
-# Requires the Following environment variables:
-#     WWW_CLOUDFRONT_ID - to id of production www distribution which must be invalidated upon deployment.
-#     ROOT_CLOUDFRONT_ID - to id of the root production distribution which must be invalidated upon deployment.
-#     STAGE_CLOUDFRONT_ID - to id of stage distribution which must be invalidated upon deployment.
-#     WWW_S3_BUCKET_NAME - to name of target production s3 bucket.
-#     ROOT_S3_BUCKET_NAME - to name of root production s3 bucket.
-#     STAGE_S3_BUCKET_NAME - to name of stage s3 bucket.
-#
+# Required Environment Variables:
+#     WWW_CLOUDFRONT_ID - ID of production www distribution to be invalidated upon deployment.
+#     ROOT_CLOUDFRONT_ID - ID of the root production distribution to be invalidated upon deployment.
+#     STAGE_CLOUDFRONT_ID - ID of stage distribution to be invalidated upon deployment.
+#     WWW_S3_BUCKET_NAME - Name of target production S3 bucket.
+#     ROOT_S3_BUCKET_NAME - Name of root production S3 bucket.
+#     STAGE_S3_BUCKET_NAME - Name of stage S3 bucket.
+# -----------------------------------------------------------------------------
 
 # Parse the command line argument
 if [[ "$#" -ne 1 ]] || [[ "$1" != "stage" && "$1" != "prod" ]]; then
