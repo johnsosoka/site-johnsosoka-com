@@ -1,26 +1,11 @@
 <footer class="footer bg-transparent mt-auto py-3 text-light">
   <div class="container text-center">
-    <a class="mb-1 mx-2 footer_item" href="/contact/">Contact</a>
-    <a class="mb-1 mx-2 footer_item" href="https://github.com/johnsosoka">Github</a>
-    <a class="mb-1 mx-2 footer_item" href="/feed.xml">RSS</a>
+    {% for link in site.data.footer_links %}
+    <a class="mb-1 mx-2 footer_item" href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
   </div>
   <small class="copyright-text">
     John Sosoka<br>
     &copy; {{site.site_est_year}} - {{ site.time | date: "%Y" }}
   </small>
 </footer>
-
-
-
-
-{%- if page.url == '/archive/' -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-    });
-  </script>
-{%- endif -%}
-

@@ -1,8 +1,11 @@
 ---
-layout: default
+layout: new_default
 home: true
 ---
 
-<main class="page-content" aria-label="Content">
-  {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
+<main class="page-content d-flex justify-content-center align-items-center" aria-label="Content">
+    <div class="text-left">
+        {% include author.html %}
+        {{ content }}
+    </div>
 </main>

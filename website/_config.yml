@@ -6,7 +6,7 @@ lang: en-US # default lang
 timezone: US/Eastern # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: # Repository
-mode: dark # default theme "dark" | "light"
+# mode: dark # default theme "dark" | "light"
 
 # Site Messaging (sosoka customizations)
 error_404_text: I cannot find that page :-(
@@ -70,7 +70,6 @@ jekyll_compose:
 number_of_posts: 5
 
 # Build settings
-# theme: klise
 sass:
   style: compressed
 
@@ -87,8 +86,8 @@ exclude:
   - README.md
   - node_modules
   - lighthouse.png
-  - klise-*.gem
-  - klise.gemspec
+  - sosleek-*.gem
+  - sosleek.gemspec
   - run-local.sh
   - deploy.sh
   - deploy-prod.sh

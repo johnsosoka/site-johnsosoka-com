@@ -1,0 +1,10 @@
+- title: contact
+  url: /contact/
+
+- title: github
+  url: https://github.com/johnsosoka
+  external: false
+
+- title: rss
+  url: /feed.xml
+  external: false
