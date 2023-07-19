@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: Learn TDD in Java
 note_type: Udemy
 ---

@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: Misc Terraform Notes
 note_type: AWS Misc
 ---

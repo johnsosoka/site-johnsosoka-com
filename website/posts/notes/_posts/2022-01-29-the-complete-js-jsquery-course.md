@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: The Complete Javascript & Jquery Course
 note_type: Udemy
 ---

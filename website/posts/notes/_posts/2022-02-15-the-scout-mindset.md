@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: The Scout Mindset
 note_type: Book
 ---

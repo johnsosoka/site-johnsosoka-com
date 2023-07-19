@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: Bitnami EC2 Administration
 note_type: AWS Misc
 ---

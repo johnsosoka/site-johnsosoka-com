@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: ChatGPT Convo
 note_type: Misc
 ---

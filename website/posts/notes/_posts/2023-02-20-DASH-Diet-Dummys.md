@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: DASH Diet for Dummies
 note_type: Book
 ---

@@ -1,5 +1,6 @@
 ---
-layout: note
+layout: post
+category: note
 title: AutoHotKey Notes, Recipes & Examples
 note_type: AHK Scripting
 ---
