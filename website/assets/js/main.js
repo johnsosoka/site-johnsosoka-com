@@ -28,6 +28,8 @@
     this.checked
       ? area.classList.add("blurry") && area2.classList.add("blurry")
       : area.classList.remove("blurry") && area2.classList.remove("blurry");
+    if (this.checked) {
+      $("html").toggleClass("blurry");
+    }
   });
-  document.querySelectorAll("html").style.overflow = "hidden";
 })();
