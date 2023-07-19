@@ -15,17 +15,19 @@
     }
   };
 
-  lamp.addEventListener("click", () =>
-    toggleTheme(localStorage.getItem("theme"))
-  );
+  // lamp.addEventListener("click", () =>
+  //   toggleTheme(localStorage.getItem("theme"))
+  // );
 
   // Blur the content when the menu is open
   const cbox = document.getElementById("menu-trigger");
 
   cbox.addEventListener("change", function () {
     const area = document.querySelector(".wrapper");
+    const area2 = document.querySelector(".wrapper-2");
     this.checked
-      ? area.classList.add("blurry")
-      : area.classList.remove("blurry");
+      ? area.classList.add("blurry") && area2.classList.add("blurry")
+      : area.classList.remove("blurry") && area2.classList.remove("blurry");
   });
+  document.querySelectorAll("html").style.overflow = "hidden";
 })();

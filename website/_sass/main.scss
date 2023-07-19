@@ -61,6 +61,10 @@ $on-widescreen: 1152px;
   font-size: $base-font-size * $ratio;
 }
 
+.wrapper-2 {
+  overflow: hidden;
+}
+
 // Import sass files
 @import "klise/fonts", "klise/base", "klise/layout", "klise/post",
   "klise/miscellaneous", "klise/syntax", "klise/dark";
