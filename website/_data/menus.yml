@@ -34,7 +34,13 @@
 - title: etc.
   url: /etc/
   external: false
-
+  subitems:
+    - title: subitem1
+      url: /etc/subitem1/
+      external: false
+    - title: subitem2
+      url: /etc/subitem2/
+      external: false
 #- title: archive
 #  url: /archive/
 #  external: false

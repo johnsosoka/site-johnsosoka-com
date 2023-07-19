@@ -108,6 +108,11 @@ body[data-theme="dark"] {
     }
   }
 
+  // No List in Navbar
+  .navbar li:before {
+    content: none; /* This removes the before content */
+  }
+
   // Blockquote
   blockquote {
     color: $dark-gray;
