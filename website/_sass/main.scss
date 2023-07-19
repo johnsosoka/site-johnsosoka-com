@@ -28,14 +28,18 @@ $white: #fff;
 
 // Dark Colors
 $dark-text-base-color: #c7bebe;
-$dark-text-link-blue: #ff5277;
-$dark-text-link-blue-active: #ff2957;
+$dark-text-link-blue: #84a5ff;
+$dark-text-link-blue-active: #2934ff;
 
 $dark-black: #131418;
 $dark-white: #eaeaea;
 $dark-light: #1b1d25;
 $dark-smoke: #4a4d56;
-$dark-gray: #767f87;
+$light-blue: #0088ff;
+$orange: #c58209;
+$grey-blue: #3e4a70;
+$red-title: #b7002b;
+$dark-gray: #565656;
 
 // Width of the content area
 $wide-size: 890px; // this only impacts nav bar
@@ -67,4 +71,4 @@ $on-widescreen: 1152px;
 
 // Import sass files
 @import "klise/fonts", "klise/base", "klise/layout", "klise/post",
-  "klise/miscellaneous", "klise/syntax", "klise/dark";
+  "klise/miscellaneous", "klise/syntax", "klise/theme";

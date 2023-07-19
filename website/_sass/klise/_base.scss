@@ -12,12 +12,25 @@
 form {
   /* Center the form on the page */
   margin: 0 auto;
-  width: 500px;
+  /* scale */
+  width: 100%;
   /* Form outline */
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
 }
+
+/* Add space between the form fields */
+.form-control {
+  margin-bottom: 10px;  /* This adds 20px of space below each form-control element */
+}
+/* make contact msg form fixed */
+//#msg {
+//  width: 300px;  /* This sets the width of the textarea to 300px */
+//  height: 150px;  /* This sets the height of the textarea to 150px */
+//}
+
+
 
 ul {
   list-style: none;
@@ -110,6 +123,8 @@ figure {
 
 // Basic styling
 body {
+  //display: flex;
+  //flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -124,6 +139,10 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   box-sizing: border-box;
+}
+
+main {
+  flex-grow: 1;
 }
 
 // Set `margin-bottom` to maintain vertical rhythm

@@ -4,7 +4,7 @@
 
 - title: about
   url: /about/
-  external: false # set true if you using external link, see below
+  external: false
 
 - title: blog
   url: /blog/
@@ -18,36 +18,20 @@
   url: /bits/
   external: false
 
-#- title: books
-#  url: /books/
-#  external: false
-#
-#- title: music
-#  url: /music/
-#  external: false
-#
-#- title: minecraft
-#  url: /minecraft/
-#  external: false
-
-
 - title: etc.
   url: /etc/
   external: false
-  subitems:
-    - title: subitem1
-      url: /etc/subitem1/
-      external: false
-    - title: subitem2
-      url: /etc/subitem2/
-      external: false
-#- title: archive
-#  url: /archive/
-#  external: false
-
-
-
-# Example:
-# - title: github
-#   url: https://github.com/piharpi/jekyll-klise
-#   external: true
+# TODO - SubItems Broken...
+#  subitems:
+#    - title: Books
+#      url: /Books/
+#      external: false
+#    - title: Music
+#      url: /Music/
+#      external: false
+#    - title: Minecraft
+#      url: /Minecraft/
+#      external: false
+#    - title: Workflow
+#      url: /Workflow/
+#      external: false
