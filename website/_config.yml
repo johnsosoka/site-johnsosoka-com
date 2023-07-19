@@ -3,7 +3,7 @@ title: johnsosoka.com # site title
 description: A Boise based software engineer
 site_est_year: 2020
 lang: en-US # default lang
-timezone: US/Eastern # set your timezone
+timezone: US/Mountain # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: # Repository
 # mode: dark # default theme "dark" | "light"
@@ -101,8 +101,6 @@ exclude:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-postfiles
-
 
 # Contact Me Form Settings
 contact:

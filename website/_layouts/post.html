@@ -42,12 +42,7 @@ layout: new_default
         </header>
 
         <div class="page-content" itemprop="articleBody">
-          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
-          {% if page.tweet %}
-          <p>Comments this article on 
-            <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
-          </p>
-          {% endif %}
+          {{ content }}
         </div>
       </article>
     </main>
@@ -56,7 +51,7 @@ layout: new_default
       <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
     {% endif %}
     {% if page.next or page.previous %}
-      {% include navigation.html %}
+      {% include post_navigation.html %}
     {% endif %}
   </div>
 </body>
