@@ -18,6 +18,15 @@
 
 .navbar-toggler {
   margin-left: auto;
+
+}
+
+// Center navbar links when collapsed
+// TODO - align center on the same trigger that shows the menu...
+@media (max-width: 800px) {
+  .navbar-nav .nav-link {
+    text-align: center;
+  }
 }
 
 
