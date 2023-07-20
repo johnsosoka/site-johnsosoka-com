@@ -1,13 +1,17 @@
 code {
-  font-family: $mono-family;
+  font-family: "Fira Code", monospace;
   text-rendering: optimizeLegibility;
   font-feature-settings: "calt" 1;
   font-variant-ligatures: normal;
-  white-space: pre;
+  //white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  font-size: inherit;
+  font-size: 1em;
+  line-height: 1.5em;
+  border-radius: 2px;
+  padding: 0.5em;
+  color: #333;
 
   &.highlighter-rouge {
     padding: 1px 3px;

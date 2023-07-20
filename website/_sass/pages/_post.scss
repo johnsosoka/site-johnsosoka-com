@@ -1,5 +1,7 @@
 /* Post Wrapper */
 .wrapper.post {
+
+  margin-inline: 15px;
   @include media-query($on-mobile) {
     padding-left: $spacing-half;
     padding-right: $spacing-half;
@@ -35,6 +37,7 @@
         font-size: 1.9em;
       }
     }
+
 
   }
 

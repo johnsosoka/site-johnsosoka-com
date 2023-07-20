@@ -1,26 +1,4 @@
-.navbar {
-  height: auto;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  border-bottom: 1px solid $light;
-  padding: $spacing-full - 15px $spacing-full;
-}
 
-.navbar .dropdown-menu {
-  background-color: #343a40;
-  color: $dark-white;
-}
-
-.navbar-toggler {
-  margin-left: auto;
-}
-
-@media (max-width: 800px) {
-  .navbar-nav .nav-link {
-    text-align: center;
-  }
-}
 
 // Added below
 

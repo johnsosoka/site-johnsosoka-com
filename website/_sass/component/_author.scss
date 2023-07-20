@@ -1,11 +1,13 @@
 // Author
 .john-landing {
-  margin-top: 3.3rem;
-  margin-bottom: $homepage-author-bottom-buffer;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
   text-align: center;
+  margin-inside: 15px;
 
   @include media-query($on-mobile) {
-    margin-bottom: 3em;
+    margin-top: 3.5em;
+    margin-bottom: 3.5em;
   }
 
   .author-avatar {

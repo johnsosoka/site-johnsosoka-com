@@ -1,11 +1,38 @@
 // Navbar
 .navbar {
   border-color: $dark-light;
-
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom: 1px solid $dark-smoke;
   /* This removes the list dashes in the navbar */
   li:before {
     content: none;
   }
+
+  .dropdown-menu {
+    background-color: #343a40;
+    color: $dark-white;
+  }
+
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  @media ($on-mobile) {
+    .navbar-nav .nav-link {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .navbar-nav .nav-link {
+      text-align: center;
+    }
+  }
+
+
   .menu {
     a#mode {
       display: none;
@@ -30,3 +57,6 @@
     }
   }
 }
+
+
+

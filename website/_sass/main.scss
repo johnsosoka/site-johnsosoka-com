@@ -4,9 +4,6 @@
 $homepage-author-bottom-buffer: 3.25rem;
 
 
-
-
-
 // Fonts preferences
 $sans-family: Roboto, sans-serif;
 $mono-family: Consolas, monospace;
@@ -41,6 +38,7 @@ $dark-text-link-blue-active: #2934ff;
 
 $dark-black: #131418;
 $dark-white: #eaeaea;
+$darker-white: #a1a0a0;
 $dark-light: #1b1d25;
 $dark-smoke: #4a4d56;
 $light-blue: #0088ff;
@@ -158,6 +156,18 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   box-sizing: border-box;
+
+  // should grow content area?
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+
   // List
   li {
     &:before {
@@ -178,13 +188,12 @@ body {
 }
 
 
-
 // Bootstrap
 // main.scss
 //@import "bootstrap/scss/bootstrap"; // Path to Bootstrap's SCSS
 
 // Customizations
 // "base/_fonts", "base/_base"
-@import "layout/_layout", "layout/footer", "themes/jscom", "component/post-navigation",
+@import "layout/_layout", "layout/footer", "themes/jscom", "component/post-navigation", "component/posts", 'pages/page',
 "component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post",
 "component/navbar", "component/table";

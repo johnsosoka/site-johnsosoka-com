@@ -12,11 +12,11 @@ lang: en-US
 timezone: US/Mountain
 image: assets/img/ogp.png
 
-# Profile Settings
+# John Landing Page
 author:
   name: john sosoka
   bio: >-
-    <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a>. <br>
+    <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a><br>
     A Boise-Based Software Engineer.
   username: jsosoka
   github: johnsosoka
@@ -26,7 +26,7 @@ author:
 
 # URL Settings
 url: "https://www.johnsosoka.com"
-baseurl:
+baseurl: "https://johnsosoka.com"
 
 # Collection Settings
 collections:
