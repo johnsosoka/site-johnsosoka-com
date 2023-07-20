@@ -1,0 +1,35 @@
+// Author
+.author {
+  margin-top: 6.3rem;
+  margin-bottom: $homepage-author-bottom-buffer;
+  text-align: center;
+
+  @include media-query($on-mobile) {
+    margin-bottom: 3em;
+  }
+
+  .author-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    user-select: none;
+    background-color: $black;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -webkit-animation: 0.5s ease-in forwards fadein;
+    animation: 0.5s ease-in forwards fadein;
+    opacity: 1;
+  }
+
+  .author-name {
+    font-size: 1.7em;
+    margin-bottom: 2px;
+  }
+
+  .author-bio {
+    margin: 0 auto;
+    opacity: 0.9;
+    max-width: 393px;
+    line-height: 1.688;
+  }
+}

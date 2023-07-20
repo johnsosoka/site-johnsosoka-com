@@ -6,16 +6,31 @@
     <meta charset="UTF-8">
     <title>{{ page.title }}</title>
 </head>
+{% include header.html %}
 <body>
 <!-- Shared/Common Styles -->
-{% include header.html %}
+<div class="container">
+    <header class="header row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Site Navigation -->
+            {% include navbar.html %}
+        </div>
+    </header>
 
-<!-- Site Navigation -->
-{% include navbar.html %}
+    <main class="body row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Page Content -->
+            {{ content }}
+        </div>
+    </main>
 
-{{ content }}
-
-{% include footer.html %}
+    <footer class="footer row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Footer content -->
+            {% include footer.html %}
+        </div>
+    </footer>
+</div>
 
 <!-- Shared/Common Scripts -->
 {% include scripts.html %}

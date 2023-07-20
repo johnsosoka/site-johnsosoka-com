@@ -69,6 +69,15 @@ $on-widescreen: 1152px;
   overflow: hidden;
 }
 
-// Import sass files
-@import "sosleek/fonts", "sosleek/base", "sosleek/layout", "sosleek/post",
-"sosleek/miscellaneous", "sosleek/syntax", "sosleek/theme";
+// Bootstrap
+// main.scss
+//@import "bootstrap/scss/bootstrap"; // Path to Bootstrap's SCSS
+//@import "layout/header";
+//@import "layout/footer";
+//@import "layout/body";
+
+// Customizations
+@import "base/_base", "base/_fonts", "layout/_layout", "themes/jscom-dark",
+"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author";
+
+// , "pages/_post" < -- commenting this out made a big difference in page spacing
