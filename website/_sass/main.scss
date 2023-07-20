@@ -29,6 +29,8 @@ $white: #fff;
 // Dark Colors
 $dark-text-base-color: #c7bebe;
 $dark-text-link-blue: #84a5ff;
+$darker-text-link-blue: #8ba8ff;
+$darker-blue-grey: #3e4a70;
 $dark-text-link-blue-active: #2934ff;
 
 $dark-black: #131418;
@@ -69,6 +71,12 @@ $on-widescreen: 1152px;
   overflow: hidden;
 }
 
+// Universally Remove Href Underlines
+a {
+  text-decoration: none;
+}
+
+
 // Bootstrap
 // main.scss
 //@import "bootstrap/scss/bootstrap"; // Path to Bootstrap's SCSS
@@ -77,7 +85,5 @@ $on-widescreen: 1152px;
 //@import "layout/body";
 
 // Customizations
-@import "base/_base", "base/_fonts", "layout/_layout", "themes/jscom-dark",
-"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author";
-
-// , "pages/_post" < -- commenting this out made a big difference in page spacing
+@import "base/_base", "base/_fonts", "layout/_layout", "themes/jscom", "component/post-navigation",
+"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post";

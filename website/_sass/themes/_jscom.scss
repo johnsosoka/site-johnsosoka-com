@@ -1,0 +1,46 @@
+body {
+  color: $dark-text-base-color;
+  background-color: $dark-black;
+
+
+  // Heading
+  h1 {
+    color: $dark-white;
+  }
+  h2 {
+    color: $dark-white;
+  }
+  h3 {
+    color: $dark-white;
+  }
+  h4 {
+    color: $dark-white;
+  }
+  h5 {
+    color: $dark-white;
+  }
+  h6 {
+    color: $dark-white;
+  }
+
+  /** for `code tags` **/
+  code {
+    color: #2881d3;
+    // code highlight color
+    &.highlighter-rouge {
+      background-color: $dark-light;
+    }
+  }
+
+  // Blockquote
+  blockquote {
+    color: $dark-gray;
+    border-color: $dark-light;
+  }
+
+  // Bold and Strong
+  strong,
+  b {
+    color: $dark-white;
+  }
+}

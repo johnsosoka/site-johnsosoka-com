@@ -2,9 +2,11 @@
 layout: home
 ---
 
-# Things to Do Around Here...
+Welcome to my homepage, it's both a work in progress and lacking clear direction. I'm mostly using it as a place
+to collect my thoughts, document my projects and share some family updates.
 
-# [Blog](/blog)
+
+## [Blog](/blog)
 So far I've posted some technical content and some family updates.
 {% include blog_posts.html post_display_limit=5 post_collection_title="Recent Blog Posts"  %}
 
@@ -12,7 +14,7 @@ So far I've posted some technical content and some family updates.
 
 --------------------------
 
-# [Bytes / Notes](/notes)
+## [Bytes / Notes](/notes)
 If you think my blog posts are cluttered & unorganized, just wait until you view my notes.
 
 {% include notes_category_posts.html post_display_limit=5 post_collection_title="Recent Notes" %}
