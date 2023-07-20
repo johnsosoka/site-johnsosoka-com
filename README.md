@@ -19,9 +19,10 @@ are logically structured into the following directories:
 |-----------------------------------|-------------|
 | [infrastructure](/infrastructure) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
 | [website](/website)               | Contains the Jekyll theme and the content for the blog. |
+| [scripts](/scripts)               | Contains scripts that automate common tasks. |
 | [.github](/.github)               | Contains GitHub Actions workflows that automate the deployment of the website. |
 
-### Scripts
+#### Scripts
 
 The following scripts have been written to automate common tasks and simplify common tasks:
 
@@ -43,7 +44,7 @@ Ensure you have the following installed and configured:
 
 ### Running Locally
 
-1. Navigate to the root directory of the project in your terminal.
+1. Navigate to the scripts directory of the project in your terminal.
 2. Execute `run-local.sh` to serve the website locally. This will start a local server where you can preview the website.
    ```bash
    ./run-local.sh
@@ -58,7 +59,25 @@ chmod +x run-local.sh
 
 ## Deployment
 
+### GitHub Actions
+
+Deployments to both staging and production environments are also possible using GitHub Actions. The workflows for these
+deployments share the following common steps:
+
+- Installs Requirements / Sets up Ruby.
+- Generates Assets with Jekyll.
+- AWS Credentials Configured.
+- Uploads Generated Assets to S3.
+- Finally, the CloudFront distribution is invalidated to refresh the cache.
+
+_Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
+
+
 ### From Local
+
+While deploying from GitHub Actions is the preferred method, it is also possible to deploy the website from your local.
+THe `configure_deployer.py` script must be executed first to set the required environment variables for the `deploy.sh`
+to run correctly.
 
 #### First Time Setup:
 
@@ -71,18 +90,6 @@ chmod +x run-local.sh
 * Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also
   attempts to invalidate CloudFront caches.
 
-### GitHub Actions
-
-Deployments to both staging and production environments are also possible using GitHub Actions. The workflows for these 
-deployments share the following common steps:
-
-- Installs Requirements / Sets up Ruby.
-- Generates Assets with Jekyll.
-- AWS Credentials Configured.
-- Uploads Generated Assets to S3.
-- Finally, the CloudFront distribution is invalidated to refresh the cache.
-
-_Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
 
 #### Stage Deployment
 [![Deploy to STAGE](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml/badge.svg)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml)
@@ -138,8 +145,8 @@ While this is a personal blog and I don't expect any contributions I do still we
 would like to contribute a post, please either reach out to me directly or fork this repository and submit a pull request.
 
 ## Todo
-* [ ] Migrate from Jekyll to Pelican
-* [ ] Modernize template/move to bootstrap
+* [ ] Migrate from Jekyll to Pelican??
+* [x] Modernize template/move to bootstrap
 * [x] Deployment Pipelines
   * [x] Build Artifacts & Sync to prod S3 bucket upon merge to main
   * ~~[ ] Rollback capability??~~

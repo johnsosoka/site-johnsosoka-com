@@ -8,7 +8,7 @@ image: assets/img/ogp.png # This image used for Open Graph more info https://ogp
 repo: # Repository
 # mode: dark # default theme "dark" | "light"
 
-# Site Messaging (sosoka customizations)
+# Site Messaging
 error_404_text: I cannot find that page :-(
 lore_go_back_text: go back # Text for lore pages
 
@@ -20,7 +20,6 @@ author:
     A Boise-Based Software Engineer.
   username: jsosoka # general username
   github: johnsosoka # github username
-#  twitter: twitter_username # twitter username
   facebook: 100070345623723 # facebook username
   email: owner-1940790@johnsosoka.com.whoisprivacyservice.org # email address
   avatar: /assets/img/avatar.jpg # change with your own avatar
@@ -81,20 +80,13 @@ exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
-  - JEKYLL_TEMPLATE_LICENSE
   - CHANGELOG.md
   - README.md
-  - node_modules
   - lighthouse.png
   - sosleek-*.gem
   - sosleek.gemspec
-  - run-local.sh
-  - deploy.sh
-  - deploy-prod.sh
-  - deploy-stage.sh
   - sosoka-banner
   - old
-  - KLISE_THEME_README.md
   - erase-image-meta-data.sh
 
 # Plugins
