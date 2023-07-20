@@ -1,0 +1,20 @@
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  border-color: $dark-light;
+
+  a.footer_item {
+    color: $dark-white;
+    text-decoration: none;
+  }
+
+  a.footer_item:hover {
+    color: $grey-blue;
+    text-decoration: none;
+  }
+}
+
+.copyright-text {
+  color: $smoke;
+}

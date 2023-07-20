@@ -10,7 +10,9 @@
       opacity: 0.9;
     }
 
-    &:hover,
+    //&:hover {
+    //  color: $grey-blue;
+    //}
     &:focus {
       .post-title {
         color: $grey-blue;
@@ -19,6 +21,9 @@
 
     .nav-arrow {
       color: $dark-gray;
+      //&:hover {
+      //  color: $grey-blue;
+      //}
     }
   }
 

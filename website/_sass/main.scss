@@ -1,5 +1,11 @@
-// Spacing Preference
-$homepage-author-bottom-buffer: 7.25rem;
+/*
+    JSCOM Theme for Jekyll
+ */
+$homepage-author-bottom-buffer: 3.25rem;
+
+
+
+
 
 // Fonts preferences
 $sans-family: Roboto, sans-serif;
@@ -49,7 +55,7 @@ $narrow-size: 720px;
 
 // Padding unit
 $spacing-full: 30px;
-$spacing-half: 250;
+$spacing-half: 15px;
 
 // State of devices
 $on-mobile: 768px;
@@ -76,14 +82,109 @@ a {
   text-decoration: none;
 }
 
+// horizontal rule
+hr {
+  border-bottom: 0;
+  border-style: solid;
+  border-color: $light;
+}
+
+// Blockquotes
+blockquote {
+  color: $gray;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.9;
+  border-top: 1px solid $light;
+  border-bottom: 1px solid $light;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1em;
+
+  > :last-child {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+// List
+ul {
+  list-style: none;
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  li::before {
+    content: "\FE63";
+    display: inline-block;
+    top: -1px;
+    width: 1.2em;
+    position: relative;
+    margin-left: -1.3em;
+    font-weight: 700;
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: li;
+  li {
+    position: relative;
+    counter-increment: li;
+    &::before {
+      content: counter(li);
+      display: inline-block;
+      width: 1em;
+      margin-right: 0.5em;
+      margin-left: -1.6em;
+      text-align: right;
+      direction: rtl;
+      font-weight: $bold-weight;
+      font-size: $small-font-size;
+    }
+  }
+}
+
+body {
+  // Universal Font to Reduce Footprint
+  font-family: Arial, sans-serif;
+  // make text easier on the eyes
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  box-sizing: border-box;
+  // List
+  li {
+    &:before {
+      color: $dark-white;
+    }
+  }
+
+  a {
+    // Link Colors
+    color: $darker-text-link-blue;
+    &:hover,
+    &:active,
+    &:focus {
+      // On Hover Color
+      color: $darker-blue-grey;
+    }
+  }
+}
+
+
 
 // Bootstrap
 // main.scss
 //@import "bootstrap/scss/bootstrap"; // Path to Bootstrap's SCSS
-//@import "layout/header";
-//@import "layout/footer";
-//@import "layout/body";
 
 // Customizations
-@import "base/_base", "base/_fonts", "layout/_layout", "themes/jscom", "component/post-navigation",
-"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post";
+// "base/_fonts", "base/_base"
+@import "layout/_layout", "layout/footer", "themes/jscom", "component/post-navigation",
+"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post",
+"component/navbar", "component/table";

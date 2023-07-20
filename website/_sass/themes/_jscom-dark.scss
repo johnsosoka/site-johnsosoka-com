@@ -43,15 +43,6 @@ body {
 
   // Post
   .page-content {
-    a {
-      color: $dark-text-link-blue;
-
-      &:hover,
-      &:active,
-      &:focus {
-        color: $dark-text-link-blue-active;
-      }
-    }
 
     h3 {
       border-color: $dark-light;
@@ -262,43 +253,9 @@ body {
 
 
 
-  // Footer
-  .footer {
-    span.footer_item,
-    a.footer_item {
-      color: $dark-white;
-
-      &:hover {
-        color: $grey-blue;
-      }
-    }
-  }
 
 
-  // 404 Page
-  .not-found {
-    .title {
-      color: $dark-white;
-      text-shadow: 1px 0px 0px $dark-text-link-blue;
-    }
-    .phrase {
-      color: $dark-text-base-color;
-    }
-    .solution {
-      color: $dark-text-link-blue;
-    }
-    .solution:hover {
-      color: $dark-text-link-blue-active;
-    }
-  }
 
-  .search-article {
-    input[type="search"] {
-      color: $dark-text-base-color;
-      &::-webkit-input-placeholder {
-        color: rgba(128,128,128,0.8);
-      }
-    }
-  }
+
 }
 
