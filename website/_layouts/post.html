@@ -6,6 +6,17 @@ layout: default
 
 <div class="wrapper">
     <header class="header">
+        {% if page.tags and page.tags != empty %}
+        <div class="tags">
+            {% assign tags = page.tags %}
+            <span itemprop="keywords">
+              {% for tag in tags %}
+              <a class="tag"
+                 href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            </span>
+        </div>
+        {% endif %}
         <h1 class="header-title text-left display-12" itemprop="headline">{{ page.title | escape }}.</h1>
     </header>
 
