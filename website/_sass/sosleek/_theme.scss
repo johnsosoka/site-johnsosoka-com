@@ -243,7 +243,7 @@ body {
       &:hover,
       &:focus {
         .post-title {
-          color: $dark-text-link-blue-active;
+          color: $grey-blue;
         }
       }
 
@@ -259,19 +259,21 @@ body {
     }
   }
 
+
+
+
   // Footer
   .footer {
-    span.footer_item {
-      color: $dark-white;
-    }
+    span.footer_item,
     a.footer_item {
       color: $dark-white;
-    }
-    .footer_copyright {
-      color: $dark-gray;
-      opacity: 1;
+
+      &:hover {
+        color: $grey-blue;
+      }
     }
   }
+
 
   // 404 Page
   .not-found {

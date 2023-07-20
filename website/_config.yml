@@ -1,48 +1,47 @@
-# the settings
-title: johnsosoka.com # site title
+# -----------------------------------------------------
+# Jekyll Site Configuration for johnsosoka.com
+# Author: john sosoka
+# Date: 2021-11-08, 2023-07-19
+# -----------------------------------------------------
+
+# Basic Settings
+title: johnsosoka.com
 description: A Boise based software engineer
 site_est_year: 2020
-lang: en-US # default lang
-timezone: US/Mountain # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: # Repository
-# mode: dark # default theme "dark" | "light"
+lang: en-US
+timezone: US/Mountain
+image: assets/img/ogp.png
 
-# Site Messaging
-error_404_text: I cannot find that page :-(
-lore_go_back_text: go back # Text for lore pages
-
-# Profile settings
+# Profile Settings
 author:
-  name: john sosoka # author name
-  bio: >- # tell to the world
+  name: john sosoka
+  bio: >-
     <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a>. <br>
     A Boise-Based Software Engineer.
-  username: jsosoka # general username
-  github: johnsosoka # github username
-  facebook: 100070345623723 # facebook username
-  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org # email address
-  avatar: /assets/img/avatar.jpg # change with your own avatar
+  username: jsosoka
+  github: johnsosoka
+  facebook: 100070345623723
+  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org
+  avatar: /assets/img/avatar.jpg
 
-# URL settings
-url: "https://www.johnsosoka.com" #
+# URL Settings
+url: "https://www.johnsosoka.com"
 baseurl:
-fb_appid:
 
-# Collection setting
+# Collection Settings
 collections:
   blog:
     output: true
   notes:
     output: true
 
-# Markdown settings
+# Markdown Settings
 markdown: kramdown
 highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
 
-# Default front matter
+# Default Front Matter
 defaults:
   - scope:
       path: ""
@@ -50,51 +49,37 @@ defaults:
       layout: post
       comments: false
 
-# Jekyll Compose default front matter
+# Jekyll Compose Default Front Matter
 jekyll_compose:
   post_default_front_matter:
     modified:
     tags: []
     description:
-  note_default_front_matter:
-    modified:
-    tags: [ ]
-    description:
-  draft_default_front_matter:
-    modified:
-    tags: []
-    description:
 
-# Homepage limit posts
+# Homepage Post Limit
 number_of_posts: 5
 
-# Build settings
+# Build Settings
 sass:
   style: compressed
-
 include:
   - _redirects
   - .htaccess
-
 exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
-  - CHANGELOG.md
-  - README.md
-  - lighthouse.png
   - sosleek-*.gem
   - sosleek.gemspec
   - sosoka-banner
   - old
-  - erase-image-meta-data.sh
 
-# Plugins
+# Plugin Settings
 plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Contact Me Form Settings
+# Contact Form Settings
 contact:
   api:
     url: https://api.johnsosoka.com/v1/contact

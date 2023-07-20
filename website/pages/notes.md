@@ -11,4 +11,4 @@ others may be quick reference notes that I may have scraped together for future 
 be less coherent than blog posts.
 
 
-{% include notes_posts.html post_display_limit=site.number_of_notes post_collection_title="All Notes" %}
+{% include notes_category_posts.html post_display_limit=site.number_of_notes post_collection_title="All Notes" %}

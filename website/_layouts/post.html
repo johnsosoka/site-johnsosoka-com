@@ -1,58 +1,35 @@
 ---
-layout: new_default
+layout: default
 ---
-
 
 <body class="notransition">
 
+<div class="wrapper">
+    <header class="header">
+        <h1 class="header-title text-left display-12" itemprop="headline">{{ page.title | escape }}.</h1>
+    </header>
 
-  <div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-      <article itemscope itemtype="https://schema.org/BlogPosting">
-
-        <header class="header">
-          {% if page.tags and page.tags != empty %}
-          <div class="tags">
-            {% assign tags = page.tags %}
-            <span itemprop="keywords">
-              {% for tag in tags %}
-              <a class="tag"
-                href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
-              {% endfor %}
-            </span>
-          </div>
-          {% endif %}
-          <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
-          {% if page.date %}
-          <div class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%b %d, %Y" }}
-            </time>
-            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name">{{ site.author.name }}</span>
-            </span>
-            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.date | date: "%b %d, %Y" }}
-            </time>
-            <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
-            <span hidden itemprop="image">{{ page.image }}</span>
-            <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
-          </div>
-          {% endif %}
-        </header>
-
-        <div class="page-content" itemprop="articleBody">
-          {{ content }}
+    <div class="header-subtitle">
+        <div class="row">
+            <div class="col text-right">
+                <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <span itemprop="name">{{ site.author.name }}</span>
+                </span>
+            </div>
         </div>
-      </article>
-    </main>
+        <div class="row">
+            <div class="col text-right">
+                <span itemprop="publishDate" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {{ page.date | date: "%b %d, %Y" }}
+                </span>
+            </div>
+        </div>
+    </div>
 
-    {% if page.modified %}
-      <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
-    {% endif %}
-    {% if page.next or page.previous %}
-      {% include post_navigation.html %}
-    {% endif %}
-  </div>
+    <main class="flex-grow-1 page-content" aria-label="Content">
+        {{ content }}
+    </main>
+</div>
+
 </body>
-</html>
+
