@@ -1,6 +1,6 @@
 ---
 title: About (Retired)
-permalink: /retired/about
+permalink: /retired/about/
 layout: page
 excerpt: Retired Snippets from the About page
 ---
