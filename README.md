@@ -19,9 +19,10 @@ are logically structured into the following directories:
 |-----------------------------------|-------------|
 | [infrastructure](/infrastructure) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
 | [website](/website)               | Contains the Jekyll theme and the content for the blog. |
+| [scripts](/scripts)               | Contains scripts that automate common tasks. |
 | [.github](/.github)               | Contains GitHub Actions workflows that automate the deployment of the website. |
 
-### Scripts
+#### Scripts
 
 The following scripts have been written to automate common tasks and simplify common tasks:
 
@@ -43,7 +44,7 @@ Ensure you have the following installed and configured:
 
 ### Running Locally
 
-1. Navigate to the root directory of the project in your terminal.
+1. Navigate to the scripts directory of the project in your terminal.
 2. Execute `run-local.sh` to serve the website locally. This will start a local server where you can preview the website.
    ```bash
    ./run-local.sh
@@ -58,7 +59,25 @@ chmod +x run-local.sh
 
 ## Deployment
 
+### GitHub Actions
+
+Deployments to both staging and production environments are also possible using GitHub Actions. The workflows for these
+deployments share the following common steps:
+
+- Installs Requirements / Sets up Ruby.
+- Generates Assets with Jekyll.
+- AWS Credentials Configured.
+- Uploads Generated Assets to S3.
+- Finally, the CloudFront distribution is invalidated to refresh the cache.
+
+_Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
+
+
 ### From Local
+
+While deploying from GitHub Actions is the preferred method, it is also possible to deploy the website from your local.
+THe `configure_deployer.py` script must be executed first to set the required environment variables for the `deploy.sh`
+to run correctly.
 
 #### First Time Setup:
 
@@ -71,18 +90,6 @@ chmod +x run-local.sh
 * Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also
   attempts to invalidate CloudFront caches.
 
-### GitHub Actions
-
-Deployments to both staging and production environments are also possible using GitHub Actions. The workflows for these 
-deployments share the following common steps:
-
-- Installs Requirements / Sets up Ruby.
-- Generates Assets with Jekyll.
-- AWS Credentials Configured.
-- Uploads Generated Assets to S3.
-- Finally, the CloudFront distribution is invalidated to refresh the cache.
-
-_Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
 
 #### Stage Deployment
 [![Deploy to STAGE](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml/badge.svg)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml)
@@ -132,14 +139,55 @@ Refer to the Terraform configuration files for more details.
 - The IAM user created has permissions to manage the S3 buckets and create CloudFront invalidations. It is intended to be used by the GitHub Actions workflows.
 - The Terraform state is managed remotely using an S3 backend.
 
+## Usage / Customizations
+
+### Image Carousel
+
+I have written a `carousel.html` include that can be used to display a carousel of images. It expects an array of strings
+indicating image paths. You can easily configure images using the `_data/carousels.yml` file.
+
+Add images to the yml file in the following format, name your collection i.e. `baby-moon-mccall` and then populate it
+with the image paths.
+
+```yaml
+baby-moon-mccall:
+  - /assets/img/slider/1/IMG_1061.jpeg
+  - /assets/img/slider/1/IMG_1066.jpeg
+  - /assets/img/slider/1/IMG_1075.jpeg
+```
+
+Wherever you'd like to display the carousel, add the following snippet:
+
+```liquid
+{% assign carousel = site.data.carousels['baby-moon-mccall'] %}
+
+{% include carousel.html images=carousel %}
+```
+
+### Post Snippets
+
+Posts may be published in multiple categories on this website, but I like to try and keep them somewhat organized. I
+created the `posts.html` include to fetch posts of a particular category & display them in a list.
+
+Example Usage:
+
+```yaml
+
+  {% raw %}
+  {% include posts.html category="blog" post_display_limit=5 post_collection_title="Recent Blog Posts" %}
+  {% endraw %}
+```
+
+This is currently used in the homepage as well as both the blog & notes landing pages.
+
 ## Contributing
 
 While this is a personal blog and I don't expect any contributions I do still welcome them. If you have a suggestion or 
 would like to contribute a post, please either reach out to me directly or fork this repository and submit a pull request.
 
 ## Todo
-* [ ] Migrate from Jekyll to Pelican
-* [ ] Modernize template/move to bootstrap
+* [ ] Migrate from Jekyll to Pelican??
+* [x] Modernize template/move to bootstrap
 * [x] Deployment Pipelines
   * [x] Build Artifacts & Sync to prod S3 bucket upon merge to main
   * ~~[ ] Rollback capability??~~

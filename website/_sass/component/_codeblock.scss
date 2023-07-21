@@ -1,0 +1,32 @@
+pre.highlight, pre {
+  margin: 0px; // this helped partially resolve code block spacing in articles
+  @include media-query($on-mobile) {
+    margin: 0 calc(51% - 51vw);
+    padding-left: 20px;
+  }
+  border: 1px solid rgba(128,128,128,0.1);
+  background-color: #1a1b21;
+  border-radius: 1px;
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+
+  > code {
+    width: 100%;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-size: smaller;
+    display: block;
+    border: 0;
+  }
+}
+
+.highlight table td {
+  padding: 5px;
+}
+
+.highlight table pre {
+  margin: 0;
+}

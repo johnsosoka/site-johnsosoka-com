@@ -1,0 +1,36 @@
+.posts-wrapper {
+  background-color: transparent;
+  padding: 10px;
+
+  .posts-item-note {
+    color: $dark-text-link-blue;
+    font-size: 25px;
+  }
+
+  .post-item {
+    border-top: transparent;
+  }
+
+  // last post item won't have a border
+  .post-item:not(:last-child) {
+    border-bottom: 1px solid $dark-light;
+    margin-bottom: 1px;
+  }
+
+  span.post-item-date {
+    display: block;
+    color: $dark-white;
+    font-weight: bold;
+  }
+
+  .post-item-title a {
+    color: $smoke;
+    //font-weight: bold;
+  }
+
+  .post-item-title a:hover {
+    color: $darker-blue-grey
+  }
+}
+
+

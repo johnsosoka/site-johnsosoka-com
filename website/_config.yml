@@ -1,49 +1,47 @@
-# the settings
-title: johnsosoka.com # site title
+# -----------------------------------------------------
+# Jekyll Site Configuration for johnsosoka.com
+# Author: john sosoka
+# Date: 2021-11-08, 2023-07-19
+# -----------------------------------------------------
+
+# Basic Settings
+title: johnsosoka.com
 description: A Boise based software engineer
 site_est_year: 2020
-lang: en-US # default lang
-timezone: Eastern # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: # Repository
-mode: dark # default theme "dark" | "light"
+lang: en-US
+timezone: US/Mountain
+image: assets/img/ogp.png
 
-# Site Messaging (sosoka customizations)
-error_404_text: I cannot find that page :-(
-lore_go_back_text: go back # Text for lore pages
-
-# Profile settings
+# John Landing Page
 author:
-  name: john sosoka # author name
-  bio: >- # tell to the world
-    <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a>. <br>
-    A Boise-Based Software Engineer.
-  username: jsosoka # general username
-  github: johnsosoka # github username
-  twitter: twitter_username # twitter username
-  facebook: 100070345623723 # facebook username
-  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org # email address
-  avatar: /assets/img/avatar.jpg # change with your own avatar
+  name: John Sosoka
+  bio: >-
+    <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a><br>
+    A Software Engineer in Boise.
+  username: jsosoka
+  github: johnsosoka
+  facebook: 100070345623723
+  email: web@johnsosoka.com
+  avatar: /assets/img/avatar-small.jpg
 
-# URL settings
-url: "https://www.johnsosoka.com" #
-baseurl:
-fb_appid:
+# URL Settings
+url: "https://www.johnsosoka.com"
+baseurl: ""
 
-# Collection setting
+# Collection Settings
 collections:
   blog:
     output: true
   notes:
     output: true
 
-# Markdown settings
+# Markdown Settings
 markdown: kramdown
 highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
 
-# Default front matter
+# Default Front Matter
 defaults:
   - scope:
       path: ""
@@ -51,61 +49,37 @@ defaults:
       layout: post
       comments: false
 
-# Jekyll Compose default front matter
+# Jekyll Compose Default Front Matter
 jekyll_compose:
   post_default_front_matter:
     modified:
     tags: []
     description:
-  note_default_front_matter:
-    modified:
-    tags: [ ]
-    description:
-  draft_default_front_matter:
-    modified:
-    tags: []
-    description:
 
-# Homepage limit posts
+# Homepage Post Limit
 number_of_posts: 5
 
-# Build settings
-# theme: klise
+# Build Settings
 sass:
   style: compressed
-
 include:
   - _redirects
   - .htaccess
-
 exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
-  - JEKYLL_TEMPLATE_LICENSE
-  - CHANGELOG.md
-  - README.md
-  - node_modules
-  - lighthouse.png
-  - klise-*.gem
-  - klise.gemspec
-  - run-local.sh
-  - deploy.sh
-  - deploy-prod.sh
-  - deploy-stage.sh
+  - sosleek-*.gem
+  - sosleek.gemspec
   - sosoka-banner
   - old
-  - KLISE_THEME_README.md
-  - erase-image-meta-data.sh
 
-# Plugins
+# Plugin Settings
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-postfiles
 
-
-# Contact Me Form Settings
+# Contact Form Settings
 contact:
   api:
     url: https://api.johnsosoka.com/v1/contact

@@ -1,0 +1,57 @@
+/* Post Wrapper */
+.wrapper.post {
+
+  margin-inline: 15px;
+  @include media-query($on-mobile) {
+    padding-left: $spacing-half;
+    padding-right: $spacing-half;
+  }
+
+  /* Post Title / Header */
+  .header {
+    margin-top: 1em;
+    margin-bottom: 0em;
+
+    .tags {
+      margin-left: 3px;
+      letter-spacing: 0.5px;
+
+      .tag {
+        font-weight: $bold-weight;
+        font-size: $small-font-size - 2;
+        color: $dark-text-link-blue;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .header-title {
+      font-size: 2.2em;
+      line-height: 1.2;
+      margin-top: 10px;
+      margin-bottom: 20px;
+
+      @include media-query($on-mobile) {
+        font-size: 1.9em;
+      }
+    }
+  }
+
+  /* Header Subtitle / Author Segment */
+
+  /* Change the color of the author name and date */
+  .header-subtitle [itemprop="name"],
+  .header-subtitle [itemprop="publishDate"] {
+    color: $darker-text-link-blue;
+    opacity: .7;
+  }
+
+  /* Adjust the margin of the header-subtitle div */
+  .header-subtitle {
+    margin-top: 1px;
+    margin-bottom: 25px;
+    text-align: left;
+  }
+}

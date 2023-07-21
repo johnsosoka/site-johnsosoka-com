@@ -1,24 +1,11 @@
-<footer class="footer" xmlns="http://www.w3.org/1999/html">
-  <a class="footer_item" href="/contact/">contact</a>
-  <a class="footer_item" href="https://github.com/johnsosoka">github</a>
-  <a class="footer_item" href="/feed.xml">rss</a>
-  <small class="footer_copyright">
-    john sosoka</br>
+<footer class="footer bg-transparent mt-auto py-3 text-light">
+  <div class="container text-center">
+    {% for link in site.data.footer_links %}
+    <a class="mb-1 mx-2 footer_item" href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+  <small class="copyright-text">
+    John Sosoka<br>
     &copy; {{site.site_est_year}} - {{ site.time | date: "%Y" }}
   </small>
 </footer>
-<script src="/assets/js/main.js" defer="defer"></script>
-
-
-
-{%- if page.url == '/archive/' -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-    });
-  </script>
-{%- endif -%}
-

@@ -1,0 +1,33 @@
+<!--
+    This include will display recent posts of a specified category & number..
+
+    Parameters:
+    - category: The category of the posts to display.
+    - post_display_limit: The maximum number of posts to display.
+    - post_collection_title: The title to display above the list of posts.
+
+    Example Usage:
+    {% raw %}
+    {% include posts.html category="blog" post_display_limit=5 post_collection_title="Recent Blog Posts" %}
+    {% endraw %}
+
+    The above example would display the 5 most recent posts from the 'blog' category, with the title 'Recent Blog Posts'
+    above the list.
+
+-->
+
+<div class="posts-wrapper">
+<!--    <h3 class="posts-item-note" aria-label="Recent Posts">{{ include.post_collection_title }}</h3>-->
+    {%- for post in site.categories[include.category] limit: include.post_display_limit -%}
+    <article class="post-item row">
+        <div class="col-md-3">
+            <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        </div>
+        <div class="col-md-9">
+            <span class="post-item-title">
+                <a href="{{ post.url }}">{{ post.title | escape }}</a>
+            </span>
+        </div>
+    </article>
+    {%- endfor -%}
+</div>

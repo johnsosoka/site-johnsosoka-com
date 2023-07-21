@@ -1,0 +1,178 @@
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+.blurry {
+  overflow: hidden;
+}
+
+// Universally Remove Href Underlines
+a {
+  text-decoration: none;
+}
+
+// horizontal rule
+hr {
+  border-bottom: 0;
+  border-style: solid;
+  border-color: $light;
+}
+
+// Blockquotes
+blockquote {
+  color: $gray;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.9;
+  border-top: 1px solid $light;
+  border-bottom: 1px solid $light;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1em;
+
+  > :last-child {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+// List
+ul {
+  list-style: none;
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  li::before {
+    content: "\FE63";
+    display: inline-block;
+    top: -1px;
+    width: 1.2em;
+    position: relative;
+    margin-left: -1.3em;
+    font-weight: 700;
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: li;
+  li {
+    position: relative;
+    counter-increment: li;
+    &::before {
+      content: counter(li);
+      display: inline-block;
+      width: 1em;
+      margin-right: 0.5em;
+      margin-left: -1.6em;
+      text-align: right;
+      direction: rtl;
+      font-weight: $bold-weight;
+      font-size: $small-font-size;
+    }
+  }
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+body {
+  // Universal Font to Reduce Footprint
+  font-family: Arial, sans-serif;
+  // make text easier on the eyes
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  box-sizing: border-box;
+
+  // should grow content area?
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  color: $dark-text-base-color;
+  background-color: $dark-black;
+
+
+  // Universal Headers
+  h1 {
+    color: $smoke;
+  }
+  h2 {
+    color: $smoke;
+  }
+  h3 {
+    color: $smoke;
+  }
+  h4 {
+    color: $smoke;
+  }
+  h5 {
+    color: $smoke;
+  }
+  h6 {
+    color: $smoke;
+  }
+
+  /** for `code tags` **/
+  code {
+    color: #2881d3;
+    // code highlight color
+    &.highlighter-rouge {
+      background-color: $dark-light;
+    }
+  }
+
+  // Blockquote
+  blockquote {
+    color: $darker-white;
+    border-color: $dark-light;
+  }
+
+  // Bold and Strong
+  strong,
+  b {
+    color: $dark-white;
+  }
+
+
+  // List
+  li {
+    &:before {
+      color: $dark-white;
+    }
+  }
+
+  a {
+    // Link Colors
+    color: $darker-text-link-blue;
+    &:hover,
+    &:active,
+    &:focus {
+      // On Hover Color
+      color: $darker-blue-grey;
+    }
+  }
+}

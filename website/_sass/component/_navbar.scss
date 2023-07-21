@@ -1,0 +1,77 @@
+// Navbar
+.navbar {
+  border-color: $dark-light;
+  position: relative;
+
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom: 1px solid $dark-smoke;
+
+
+  .nav-link:not(:last-child) {
+    //font-size: 18px;
+    color: whitesmoke;
+    opacity: .7;
+  }
+  .nav-link {
+    &:hover {
+      color: $white;
+      opacity: 1;
+    }
+  }
+
+  /* This removes the list dashes in the navbar */
+  li:before {
+    content: none;
+  }
+
+  .dropdown-menu {
+    background-color: #343a40;
+    color: $dark-white;
+  }
+
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  @media ($on-mobile) {
+    .navbar-nav .nav-link {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .navbar-nav .nav-link {
+      text-align: center;
+    }
+  }
+
+
+  .menu {
+    a#mode {
+      display: none;
+    }
+
+    .menu-link {
+      color: $dark-white;
+    }
+    @include media-query($on-mobile) {
+      background-color: $dark-black;
+      border-color: $dark-light;
+
+      .menu-icon {
+        > svg {
+          fill: $dark-white;
+        }
+      }
+
+      input[type="checkbox"]:checked ~ .trigger {
+        background: $dark-black;
+      }
+    }
+  }
+}
+
+
+

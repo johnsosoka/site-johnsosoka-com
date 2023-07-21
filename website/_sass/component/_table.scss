@@ -1,0 +1,19 @@
+table {
+  width: 95%;
+  margin-top: $spacing-half;
+  margin-bottom: $spacing-half;
+  border-collapse: collapse;
+  font-size: $small-font-size;
+
+  thead {
+    font-weight: $bold-weight;
+    color: $black;
+    border-bottom: 1px solid $light;
+  }
+  th,
+  td,
+  tr {
+    border: 1px solid $dark-smoke;
+    padding: 2px 7px;
+  }
+}
