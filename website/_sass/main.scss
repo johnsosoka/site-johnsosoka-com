@@ -5,8 +5,6 @@ $homepage-author-bottom-buffer: 3.25rem;
 
 
 // Fonts preferences
-$sans-family: Roboto, sans-serif;
-$mono-family: Consolas, monospace;
 $base-font-size: 16px;
 $medium-font-size: $base-font-size * 0.938;
 $small-font-size: $base-font-size * 0.875;
@@ -64,7 +62,6 @@ $on-widescreen: 1152px;
 
 @import "layout/_layout",
 "layout/footer",
-"themes/jscom",
 "pages/page",
 "pages/post",
 "pages/home";

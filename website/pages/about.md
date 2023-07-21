@@ -27,7 +27,7 @@ I have been on GitHub for a while under a pseudonym, but have recently created a
 Friendly requests/comments/corrections are always welcome, feel free to contact me via the [contact form](/contact/). 
 Be sure to leave a valid e-mail so that I can follow up with you.
 
-## Website:
+#### Website:
 
 This website is intended to serve as a base of operations for me. I enjoy running this website as somebody might enjoy 
 keeping a garden, I like contributing to it and watching it grow but don't have any ambitious plans for it.
@@ -37,6 +37,17 @@ published; But, a public record of all changes will be available in the GitHub r
 
 View the source for this website on [GitHub](https://github.com/johnsosoka/jscom-blog). This includes the
 Terraform to provision AWS infrastructure for johnsosoka.com as well.
+
+#### Snippets
+
+Below are a few shots from our recent trip to McCall, Idaho.
+
+{% assign carousel = site.data.carousels['baby-moon-mccall'] %}
+
+
+{% include carousel.html images=carousel %}
+
+---
 
 ##### Retired About Page Snippets
 

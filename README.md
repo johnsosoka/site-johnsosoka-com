@@ -139,6 +139,47 @@ Refer to the Terraform configuration files for more details.
 - The IAM user created has permissions to manage the S3 buckets and create CloudFront invalidations. It is intended to be used by the GitHub Actions workflows.
 - The Terraform state is managed remotely using an S3 backend.
 
+## Usage / Customizations
+
+### Image Carousel
+
+I have written a `carousel.html` include that can be used to display a carousel of images. It expects an array of strings
+indicating image paths. You can easily configure images using the `_data/carousels.yml` file.
+
+Add images to the yml file in the following format, name your collection i.e. `baby-moon-mccall` and then populate it
+with the image paths.
+
+```yaml
+baby-moon-mccall:
+  - /assets/img/slider/1/IMG_1061.jpeg
+  - /assets/img/slider/1/IMG_1066.jpeg
+  - /assets/img/slider/1/IMG_1075.jpeg
+```
+
+Wherever you'd like to display the carousel, add the following snippet:
+
+```liquid
+{% assign carousel = site.data.carousels['baby-moon-mccall'] %}
+
+{% include carousel.html images=carousel %}
+```
+
+### Post Snippets
+
+Posts may be published in multiple categories on this website, but I like to try and keep them somewhat organized. I
+created the `posts.html` include to fetch posts of a particular category & display them in a list.
+
+Example Usage:
+
+```yaml
+
+  {% raw %}
+  {% include posts.html category="blog" post_display_limit=5 post_collection_title="Recent Blog Posts" %}
+  {% endraw %}
+```
+
+This is currently used in the homepage as well as both the blog & notes landing pages.
+
 ## Contributing
 
 While this is a personal blog and I don't expect any contributions I do still welcome them. If you have a suggestion or 
