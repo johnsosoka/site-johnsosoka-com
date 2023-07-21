@@ -27,12 +27,19 @@ layout: compress
   </script>
 
   {% include navbar.html %}
+
   <div class="wrapper">
+    <div class="container-sm">
+  <div class="row mx-auto">
+  <div class="col-xl-12">
     {% include author.html %}
     <main aria-label="Content">
       {{ content }}
     </main>
     {% include footer.html %}
+  </div>
+  </div>
+  </div>
   </div>
   <script src="/assets/js/bootstrap.bundle.min.js" defer="defer"></script>
 </body>
