@@ -3,7 +3,7 @@ layout: home
 permalink: /
 ---
 
-Welcome to my homepage, it's both a work in progress and lacking clear direction. I'm mostly using it as a place
+Welcome to my homepage. It's definitely a work in progress, but I do enjoy maintaining it. I'm mostly using it as a place
 to collect my thoughts, document my projects and share some family updates.
 
 

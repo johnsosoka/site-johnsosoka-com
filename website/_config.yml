@@ -14,14 +14,14 @@ image: assets/img/ogp.png
 
 # John Landing Page
 author:
-  name: john sosoka
+  name: John Sosoka
   bio: >-
     <a href="https://github.com/johnsosoka" target="_blank" rel="noopener">@github</a><br>
-    A Boise-Based Software Engineer.
+    A Software Engineer in Boise.
   username: jsosoka
   github: johnsosoka
   facebook: 100070345623723
-  email: owner-1940790@johnsosoka.com.whoisprivacyservice.org
+  email: web@johnsosoka.com
   avatar: /assets/img/avatar-small.jpg
 
 # URL Settings
