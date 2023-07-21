@@ -9,7 +9,7 @@ comments: false
 ## Me:
 
 I am John Sosoka, a Boise based software engineer. I am a backend developer and usually work 
-with java & python day to day. Over the course of my career I have worked in a variety of roles in software development,
+with Java & Python day to day. Over the course of my career I have worked in a variety of roles in software development,
 including software tester, release engineer, software engineer and tech lead.
 
 When I'm not coding you can find me hiking the trails around Boise with my dogs, hanging out with my family, or 
@@ -35,21 +35,10 @@ keeping a garden, I like contributing to it and watching it grow but don't have 
 As I'm not a professional writer and this is a very low traffic site I might edit or update posts after they are 
 published; But, a public record of all changes will be available in the GitHub repository, linked below.
 
-View the source for this website is available on [GitHub](https://github.com/johnsosoka/jscom-blog). This includes the
+View the source for this website on [GitHub](https://github.com/johnsosoka/jscom-blog). This includes the
 Terraform to provision AWS infrastructure for johnsosoka.com as well.
 
-### Home Office Setup:
+##### Retired About Page Snippets
 
-Here is a pic of my home office setup. I am currently in a work from home configuration. Work setup is to the left and home setup is to the right.
-
-![home office](/assets/img/office.jpg){: .center-block :}
-
-#### Computer Specs
-
-- **Monitor:** [Acer Predator Z35P 35"](https://www.amazon.com/gp/product/B06ZZDYVQM/)
-- **Graphics Card:** [EVGA GeForce RTX 2080 Ti Xc Hybrid](https://www.amazon.com/gp/product/B07MGZJP77/)
-- **Keyboard:** [CORSAIR K70 RGB - Cherry MX Blue](https://www.amazon.com/gp/product/B07D5W7R2X/)
-- **Processor:** [Intel Core i9-10900K](https://www.amazon.com/gp/product/B086MHSTVD/)
-- **Motherboard:** [ROG Strix Z590-E ](https://www.amazon.com/gp/product/B08T6HTXF9/)
-- **RAM:** [Corsair Vengeance RGB Pro SL 64GB](https://www.amazon.com/gp/product/B08SQRF8MJ/)
+* [Retired Snippets](/retired/about/)
 

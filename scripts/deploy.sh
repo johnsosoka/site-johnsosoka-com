@@ -145,12 +145,13 @@ else
   echo "WEBSITE_DIR is already set to $WEBSITE_DIR. Continuing..."
 fi
 
+# Banner moved to scripts dir, cat before navigating to website dir
+cat soso-banner
 
 # Navigate to the website directory
 cd $WEBSITE_DIR || { echo "Could not navigate to the website directory. Please check the path and try again."; exit 1; }
 
-# If the program hasn't exited, return the banner in all its glory.
-cat soso-banner
+
 echo ""
 echo ""
 

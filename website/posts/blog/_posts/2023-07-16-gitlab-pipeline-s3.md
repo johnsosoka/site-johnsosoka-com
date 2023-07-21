@@ -2,7 +2,7 @@
 layout: post
 title: "How to Use GitHub Actions to Deploy a Website to AWS S3"
 category: blog
-tags: GitHub Ations CI/CD pipeline AWS S3 deployment automation continuious deployment delivery terraform IAM Jekyll CloudFront
+tags: GitHub Actions CI/CD pipeline AWS S3 deployment automation continuious deployment delivery terraform IAM Jekyll CloudFront
 ---
 
 

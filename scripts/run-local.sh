@@ -45,11 +45,13 @@ else
 fi
 
 
+# Banner moved to scripts dir, cat before navigating to website dir
+cat soso-banner
+
 # Navigate to the website directory
 cd $WEBSITE_DIR || { echo "Could not navigate to the website directory. Please check the path and try again."; exit 1; }
-
 echo "Starting local instance of $WEBSITE_NAME"
-cat soso-banner
+
 
 # Check if Jekyll is installed
 if ! command -v jekyll &> /dev/null

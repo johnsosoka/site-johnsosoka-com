@@ -1,5 +1,6 @@
 ---
 layout: home
+permalink: /
 ---
 
 Welcome to my homepage, it's both a work in progress and lacking clear direction. I'm mostly using it as a place
