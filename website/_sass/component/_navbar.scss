@@ -2,9 +2,24 @@
 .navbar {
   border-color: $dark-light;
   position: relative;
+
   margin-right: auto;
   margin-left: auto;
   border-bottom: 1px solid $dark-smoke;
+
+
+  .nav-link:not(:last-child) {
+    //font-size: 18px;
+    color: whitesmoke;
+    opacity: .7;
+  }
+  .nav-link {
+    &:hover {
+      color: $white;
+      opacity: 1;
+    }
+  }
+
   /* This removes the list dashes in the navbar */
   li:before {
     content: none;

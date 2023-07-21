@@ -13,10 +13,8 @@ $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.85;
 
 // Font weight
-// $light-weight: 300; // uncomment if necessary
-$normal-weight: 400;
 $bold-weight: 700;
-// $black-weight: 900; // uncomment if necessary
+
 
 //Light Colors
 $text-base-color: #434648;
@@ -61,150 +59,8 @@ $on-tablet: 769px;
 $on-desktop: 1024px;
 $on-widescreen: 1152px;
 
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
 
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-.blurry {
-  overflow: hidden;
-}
-
-// Universally Remove Href Underlines
-a {
-  text-decoration: none;
-}
-
-// horizontal rule
-hr {
-  border-bottom: 0;
-  border-style: solid;
-  border-color: $light;
-}
-
-// Blockquotes
-blockquote {
-  color: $gray;
-  font-style: italic;
-  text-align: center;
-  opacity: 0.9;
-  border-top: 1px solid $light;
-  border-bottom: 1px solid $light;
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 1em;
-
-  > :last-child {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-}
-
-// List
-ul {
-  list-style: none;
-  li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-  }
-  li::before {
-    content: "\FE63";
-    display: inline-block;
-    top: -1px;
-    width: 1.2em;
-    position: relative;
-    margin-left: -1.3em;
-    font-weight: 700;
-  }
-}
-
-ol {
-  list-style: none;
-  counter-reset: li;
-  li {
-    position: relative;
-    counter-increment: li;
-    &::before {
-      content: counter(li);
-      display: inline-block;
-      width: 1em;
-      margin-right: 0.5em;
-      margin-left: -1.6em;
-      text-align: right;
-      direction: rtl;
-      font-weight: $bold-weight;
-      font-size: $small-font-size;
-    }
-  }
-}
-
-.container {
-  flex: 1 0 auto;
-}
-
-.footer {
-  flex-shrink: 0;
-}
-
-body {
-  // Universal Font to Reduce Footprint
-  font-family: Arial, sans-serif;
-  // make text easier on the eyes
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
-  -o-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern" 1;
-  font-kerning: normal;
-  box-sizing: border-box;
-
-  // should grow content area?
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-
-  // List
-  li {
-    &:before {
-      color: $dark-white;
-    }
-  }
-
-  a {
-    // Link Colors
-    color: $darker-text-link-blue;
-    &:hover,
-    &:active,
-    &:focus {
-      // On Hover Color
-      color: $darker-blue-grey;
-    }
-  }
-}
-
-
-// Bootstrap
-// main.scss
-//@import "bootstrap/scss/bootstrap"; // Path to Bootstrap's SCSS
-
-// Customizations
-// "base/_fonts", "base/_base"
-//@import "layout/_layout", "layout/footer", "themes/jscom", "component/post-navigation", "component/posts", 'pages/page',
-//"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post",
-//"component/navbar", "component/table", "component/contact";
+@import "base/base";
 
 @import "layout/_layout",
 "layout/footer",

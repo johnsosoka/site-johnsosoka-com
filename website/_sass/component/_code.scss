@@ -8,14 +8,15 @@ code {
   word-break: normal;
   word-wrap: normal;
   font-size: 1em;
-  line-height: 1.5em;
-  border-radius: 2px;
-  padding: 0.5em;
+  //line-height: 1.5em;
+  //border-radius: 2px;
+  //padding: 0.5em;
   color: #333;
+  padding-bottom: 0;
 
   &.highlighter-rouge {
     padding: 1px 3px;
-    position: relative;
+    //position: relative;
     top: -1px;
     background-color: #f6f6f6;
     border-radius: 2px;
