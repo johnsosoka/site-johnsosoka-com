@@ -18,7 +18,7 @@ So far I've posted some technical content and some family updates.
 
 --------------------------
 
-# Byes/Notes
+# Bytes (Notes)
 If you think my blog posts are cluttered & unorganized, just wait until you view my notes.
 
 #### Recent Notes
