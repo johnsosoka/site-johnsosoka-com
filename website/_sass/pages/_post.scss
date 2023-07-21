@@ -37,8 +37,6 @@
         font-size: 1.9em;
       }
     }
-
-
   }
 
   /* Header Subtitle / Author Segment */
@@ -46,15 +44,14 @@
   /* Change the color of the author name and date */
   .header-subtitle [itemprop="name"],
   .header-subtitle [itemprop="publishDate"] {
-    color: $grey-blue;
+    color: $darker-text-link-blue;
+    opacity: .7;
   }
 
   /* Adjust the margin of the header-subtitle div */
   .header-subtitle {
     margin-top: 1px;
-    margin-bottom: 1px;
+    margin-bottom: 25px;
+    text-align: right; /* Add this line to align the subtitle to the right */
   }
 }
-
-
-

@@ -144,6 +144,14 @@ ol {
   }
 }
 
+.container {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
 body {
   // Universal Font to Reduce Footprint
   font-family: Arial, sans-serif;
@@ -194,6 +202,14 @@ body {
 
 // Customizations
 // "base/_fonts", "base/_base"
-@import "layout/_layout", "layout/footer", "themes/jscom", "component/post-navigation", "component/posts", 'pages/page',
-"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post",
-"component/navbar", "component/table";
+//@import "layout/_layout", "layout/footer", "themes/jscom", "component/post-navigation", "component/posts", 'pages/page',
+//"component/_codeblock", "component/_highlight", "component/_code", "component/_form", "component/author" , "pages/_post",
+//"component/navbar", "component/table", "component/contact";
+
+@import "layout/_layout",
+"layout/footer",
+"themes/jscom",
+'pages/page',
+'pages/post';
+
+@import "component/all-components";

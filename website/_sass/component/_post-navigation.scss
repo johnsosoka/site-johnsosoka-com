@@ -1,35 +1,77 @@
-// Post Navigation
-.post-nav {
-  border-color: $dark-light;
+$post-nav-item-color: #000; // Black color for post-nav-item
+$post-title-color: #666; // Dark gray color for post-title
 
+.post-navigation {
   .post-nav-item {
-    font-weight: $bold-weight;
+    color: $post-nav-item-color;
+    font-weight: bold;
 
     .post-title {
-      color: $dark-white;
-      opacity: 0.9;
-    }
-
-    //&:hover {
-    //  color: $grey-blue;
-    //}
-    &:focus {
-      .post-title {
-        color: $grey-blue;
-      }
-    }
-
-    .nav-arrow {
-      color: $dark-gray;
-      //&:hover {
-      //  color: $grey-blue;
-      //}
+      color: $post-title-color;
+      // Add any additional styles for the title here
     }
   }
 
-  @include media-query($on-mobile) {
-    .post-nav-item:nth-child(even) {
-      border-color: $dark-light;
+  .post-nav-prev {
+    color: $dark-text-link-blue;
+    font-family: Arial !important;
+    opacity: 0.9;
+    text-align: left;
+
+    &:hover {
+      color: $grey-blue;
+    }
+  }
+
+  .post-nav-next {
+    color: $dark-text-link-blue;
+    font-family: Arial !important;
+    opacity: 0.9;
+    text-align: right;
+
+    .post-title {
+      text-align: right;
+    }
+
+    &:hover {
+      color: $grey-blue;
     }
   }
 }
+
+
+//// Post Navigation
+//.post-nav {
+//  border-color: $dark-light;
+//
+//  .post-nav-item {
+//    font-weight: $bold-weight;
+//
+//    .post-title {
+//      color: $dark-white;
+//      opacity: 0.9;
+//    }
+//
+//    //&:hover {
+//    //  color: $grey-blue;
+//    //}
+//    &:focus {
+//      .post-title {
+//        color: $grey-blue;
+//      }
+//    }
+//
+//    .nav-arrow {
+//      color: $dark-gray;
+//      //&:hover {
+//      //  color: $grey-blue;
+//      //}
+//    }
+//  }
+//
+//  @include media-query($on-mobile) {
+//    .post-nav-item:nth-child(even) {
+//      border-color: $dark-light;
+//    }
+//  }
+//}

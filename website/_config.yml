@@ -26,7 +26,7 @@ author:
 
 # URL Settings
 url: "https://www.johnsosoka.com"
-baseurl: "https://johnsosoka.com"
+baseurl: ""
 
 # Collection Settings
 collections:
