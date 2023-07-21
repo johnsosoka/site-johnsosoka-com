@@ -17,7 +17,7 @@
 -->
 
 <div class="posts-wrapper">
-    <h3 class="posts-item-note" aria-label="Recent Posts">{{ include.post_collection_title }}</h3>
+<!--    <h3 class="posts-item-note" aria-label="Recent Posts">{{ include.post_collection_title }}</h3>-->
     {%- for post in site.categories[include.category] limit: include.post_display_limit -%}
     <article class="post-item row">
         <div class="col-md-3">

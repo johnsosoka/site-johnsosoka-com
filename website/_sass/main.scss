@@ -65,7 +65,8 @@ $on-widescreen: 1152px;
 @import "layout/_layout",
 "layout/footer",
 "themes/jscom",
-'pages/page',
-'pages/post';
+"pages/page",
+"pages/post",
+"pages/home";
 
 @import "component/all-components";
