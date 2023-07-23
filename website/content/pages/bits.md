@@ -9,6 +9,12 @@ comments: false
 Welcome to `Bits`, the microblog portion of my website.
 
 # 2023
+---
+
+
+## 2023/07/22
+
+- RIP [Kevin Mitnick](https://www.dignitymemorial.com/obituaries/las-vegas-nv/kevin-mitnick-11371668). 
 
 ## 2023/05/20
 
