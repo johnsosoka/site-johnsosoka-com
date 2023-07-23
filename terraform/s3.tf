@@ -215,3 +215,73 @@ resource "aws_s3_bucket_website_configuration" "stage_website_configuration" {
   }
 }
 
+
+// ==============================================================================
+// Stage bucket (media.johnsosoka.com)
+// Houses images for gallery and blog posts.
+// ==============================================================================
+resource "aws_s3_bucket" "media" {
+  bucket = local.media_domain_name // Bucket's name is same as site's domain name.
+}
+
+resource "aws_s3_bucket_policy" "media_policy" {
+  bucket = aws_s3_bucket.media.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid = "AddPerm"
+        Effect = "Allow"
+        Principal = "*"
+        Action = ["s3:GetObject"]
+        Resource = ["arn:aws:s3:::${aws_s3_bucket.media.bucket}/*"]
+      }
+    ]
+  })
+}
+
+// Enable bucket versioning for media bucket
+resource "aws_s3_bucket_versioning" "media_versioning" {
+  bucket = aws_s3_bucket.media.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+// Ownership controls for media bucket
+resource "aws_s3_bucket_ownership_controls" "media_ownership_controls" {
+  bucket = aws_s3_bucket.media.id
+  rule {
+    object_ownership = "ObjectWriter" // one of [BucketOwnerPreferred ObjectWriter BucketOwnerEnforced]
+  }
+}
+
+// Public access block settings for media bucket
+resource "aws_s3_bucket_public_access_block" "media_access_block" {
+  bucket = aws_s3_bucket.media.id
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+// ACL settings for media bucket
+resource "aws_s3_bucket_acl" "acl_media" {
+  depends_on = [
+    aws_s3_bucket_ownership_controls.media_ownership_controls,
+    aws_s3_bucket_public_access_block.media_access_block
+  ]
+  bucket = aws_s3_bucket.media.id
+  acl    = "public-read"
+}
+
+// Website configuration for media bucket
+resource "aws_s3_bucket_website_configuration" "media_website_configuration" {
+  bucket = aws_s3_bucket.media.id
+  index_document {
+    suffix = "index.html"
+  }
+  error_document {
+    key = "404.html"
+  }
+}

@@ -21,6 +21,8 @@ locals {
   www_domain_name = "www.${local.root_domain_name}"
   // stage.johnsosoka.com
   stage_domain_name = "stage.${local.root_domain_name}"
+  // media.johnsosoka.com
+  media_domain_name = "media.${local.root_domain_name}"
 }
 
 data "terraform_remote_state" "jscom_common_data" {

@@ -37,3 +37,16 @@ resource "aws_route53_record" "stage" {
     evaluate_target_health = false // Living dangerously.
   }
 }
+
+// This Route53 record will point to our CloudFront distribution for 'media' which in turn points to s3.
+resource "aws_route53_record" "media" {
+  zone_id = data.terraform_remote_state.jscom_common_data.outputs.root_johnsosokacom_zone_id
+  name    = local.media_domain_name
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.media_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.media_distribution.hosted_zone_id
+    evaluate_target_health = false // Living dangerously.
+  }
+}
