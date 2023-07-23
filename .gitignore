@@ -6,6 +6,8 @@
 
 website/Gemfile
 
+# Ulysses
+*.plist
 
 # Jekyll
 _site/
