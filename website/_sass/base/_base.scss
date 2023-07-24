@@ -117,24 +117,11 @@ body {
 
 
   // Universal Headers
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
     color: $smoke;
+    font-weight: bold;
   }
-  h2 {
-    color: $smoke;
-  }
-  h3 {
-    color: $smoke;
-  }
-  h4 {
-    color: $smoke;
-  }
-  h5 {
-    color: $smoke;
-  }
-  h6 {
-    color: $smoke;
-  }
+
 
   /** for `code tags` **/
   code {
@@ -156,7 +143,6 @@ body {
   b {
     color: $dark-white;
   }
-
 
   // List
   li {
