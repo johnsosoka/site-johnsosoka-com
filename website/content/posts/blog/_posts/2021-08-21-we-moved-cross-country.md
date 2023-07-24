@@ -16,12 +16,12 @@ blog for a time.
 We have two dogs and decided that driving across the country would be more comfortable for them and a more interesting 
 adventure for us; I wanted to _feel_ the distance between Idaho and North Carolina.
 
-![moving pod](/assets/img/blog/id-nc-move/moving-pod-side.JPEG)
+![moving pod](https://media.johnsosoka.com/old/img/blog/id-nc-move/moving-pod-side.JPEG)
 
 We decided to use a moving pod to transport our items. The whole pod experience was great, and they are very 
 cost-effective. We used a local moving crew to load the pod up after we packed up our items.
 
-![packed pod](/assets/img/blog/id-nc-move/pod-packed-stuff.JPEG)
+![packed pod](https://media.johnsosoka.com/old/img/blog/id-nc-move/pod-packed-stuff.JPEG)
 
 Believe it or not, there is a baby grand piano hidden in the above image. We weren't sure which pod size to get, so we
 landed on the largest available which seemed to be just a little too big. We had a few days between the pod shipping and
@@ -29,18 +29,18 @@ us leaving. We had the choice to live without our items either before we left or
 decided it would be best to arrive with our items in town. This means that we had a couple of nights with near zero 
 furniture. We did have some furniture, which we gave away/donated leading up to our final night at the old place.
 
-![utah trailer shot](/assets/img/blog/id-nc-move/utah-uhaul-shot.JPEG)
+![utah trailer shot](https://media.johnsosoka.com/old/img/blog/id-nc-move/utah-uhaul-shot.JPEG)
 
 Above is nice shot of our car with some mountains behind. This was shot just outside of Salt Lake City, Utah.
 
-![no gas, car hungry](/assets/img/blog/id-nc-move/gas.JPEG)
+![no gas, car hungry](https://media.johnsosoka.com/old/img/blog/id-nc-move/gas.JPEG)
 
 The colonial pipeline was hacked during our drive to North Carolina. We did not notice the effects of it until we crossed 
 into NC state lines. We were very worried that we would not be able to purchase gas and would wind up stranded before 
 making it to our new home. I snapped the above photo at the first gas station we stopped at in NC state lines. Luckily,
 we were able to fill up at another station just down the street.
 
-![pod-dropoff](/assets/img/blog/id-nc-move/pod-dropoff.JPEG)
+![pod-dropoff](https://media.johnsosoka.com/old/img/blog/id-nc-move/pod-dropoff.JPEG)
 
 Despite our best efforts, our moving pod was delayed, leaving us with almost no furniture for several days. Not a big
 deal. Our pod driver did a really great job navigating the narrow roads in our neighborhood. At the time of this writing

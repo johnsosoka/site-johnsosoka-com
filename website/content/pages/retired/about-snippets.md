@@ -21,7 +21,7 @@ to put into my home office setup & getting this website up and running.
 
 Here is a pic of my home office setup. I am currently in a work from home configuration. Work setup is to the left and home setup is to the right.
 
-![home office](/assets/img/office.jpg){: .center-block :}
+![home office](https://media.johnsosoka.com/old/img/office.jpg){: .center-block :}
 
 #### Computer Specs
 

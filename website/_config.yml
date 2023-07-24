@@ -10,7 +10,7 @@ description: A Boise based software engineer
 site_est_year: 2020
 lang: en-US
 timezone: US/Mountain
-image: assets/img/ogp.png
+image: https://media.johnsosoka.com/old/img/ogp.png
 
 # John Landing Page
 author:

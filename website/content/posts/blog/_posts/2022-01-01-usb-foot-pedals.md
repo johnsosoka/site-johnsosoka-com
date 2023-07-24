@@ -18,7 +18,7 @@ set me on my quest to find alternatives to clicking. I started off only interest
 but soon realized a few other common operations could be attached to these pedals. I currently have 5 pedals, below is a 
 picture with each role labeled.
 
-![pic](/assets/img/blog/foot-pedal/foot-pedal-label.png)
+![pic](https://media.johnsosoka.com/old/img/blog/foot-pedal/foot-pedal-label.png)
 
 The Play/Pause media controls are utilized regularly enough to warrant a foot pedal. The scroll down / Scroll down 
 pedals are bound to down arrow / up arrow; These pedal bindings are enormously helpful when reading, browsing & 
