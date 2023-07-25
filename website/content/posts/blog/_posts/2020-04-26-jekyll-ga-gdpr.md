@@ -6,7 +6,7 @@ subtitle: Integrating the official Jekyll cookie-consent solution with a 3rd par
 image: /img/gdpr/cc-icon.png
 tags: jekyll theme analytics ga google analytics
 ---
-![gdpr](/assets/img/blog/gdpr/gdpr-jekyll-ga.png)
+![gdpr](https://media.johnsosoka.com/old/img/blog/gdpr/gdpr-jekyll-ga.png)
 
 I'm currently in the process of setting up the infrastructure needed to run my site and at some point in the future 
 I want to enable Google Analytics (GA) to get some usage statistics. _Why Google Analytics?_ 
@@ -75,12 +75,12 @@ site again.
 
 {{ file.cookie-consent-banner.png }}
 
-![consent banner](/assets/img/blog/gdpr/cookie-consent-banner.png){: .center-block :}
+![consent banner](https://media.johnsosoka.com/old/img/blog/gdpr/cookie-consent-banner.png){: .center-block :}
 
 I see the banner below the footer, which is what I was hoping for. Next up I will test the script by clicking approve. When I click that
 button, I am expecting a cookie named `cookie-notice-dismissed` to be created with the value `true`. I used chrome dev tools to quickly reveal:
 
-![cookie](/assets/img/blog/gdpr/cookie-set.png){: .center-block :}
+![cookie](https://media.johnsosoka.com/old/img/blog/gdpr/cookie-set.png){: .center-block :}
 
 Wonderful! I now have the banner displaying and the cookie being properly set. When I load other pages after accepting the cookie consent policy the banner no longer
 displays which is perfect. Now all that remains is to:

@@ -15,12 +15,12 @@ a local script or via GitHub Actions.
 Everything required to provision resources, build, and deploy the website is contained within this repository. The contents 
 are logically structured into the following directories:
 
-| Directory                         | Description |
-|-----------------------------------|-------------|
-| [infrastructure](/infrastructure) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
-| [website](/website)               | Contains the Jekyll theme and the content for the blog. |
-| [scripts](/scripts)               | Contains scripts that automate common tasks. |
-| [.github](/.github)               | Contains GitHub Actions workflows that automate the deployment of the website. |
+| Directory               | Description |
+|-------------------------|-------------|
+| [terraform](/terraform) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
+| [website](/website)     | Contains the Jekyll theme and the content for the blog. |
+| [scripts](/scripts)     | Contains scripts that automate common tasks. |
+| [.github](/.github)     | Contains GitHub Actions workflows that automate the deployment of the website. |
 
 #### Scripts
 
@@ -110,15 +110,15 @@ to run correctly.
 ## AWS Website Infrastructure
 
 Terrform is used to provision the AWS resources required to host the website. The infrastructure is defined in the 
-`infrastructure` directory. It sets up three CloudFront distributions for the "www", "root", and "stage" subdomains, along 
-with corresponding S3 buckets. The Terraform state is managed remotely using an S3 backend. Please note that some shared 
+`terraform` directory. It sets up three CloudFront distributions for the "www", "root", "media", and "stage" subdomains, 
+along with corresponding S3 buckets. The Terraform state is managed remotely using an S3 backend. Please note that some shared 
 resources may be defined in the [jscom-core-infrastructure](https://github.com/johnsosoka/jscom-core-infrastructure) 
 repository.
 
 ### Resources Provisioned
 
-- CloudFront distributions for "www", "root", and "stage" domains
-- S3 buckets for the www, root, and staging websites
+- CloudFront distributions for "www", "root", "media", and "stage" domains
+- S3 buckets for the www, root, media, and staging websites
 - IAM user with deployer access and permissions (Used for GitHub Actions CI/CD)
 - Route53 records for mapping subdomains to CloudFront distributions
 

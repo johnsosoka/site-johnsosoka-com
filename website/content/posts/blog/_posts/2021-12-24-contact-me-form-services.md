@@ -19,7 +19,7 @@ I decided to take advantage of some AWS serverless offerings to build my form su
 overview of how I will utilize each. The Contact-me form submission originates from the client, but is provided by
 resources hosted on an S3 bucket.
 
-![overview](/assets/img/blog/contact-form-prj/form-submission-svc.png)
+![overview](https://media.johnsosoka.com/old/img/blog/contact-form-prj/form-submission-svc.png)
 
 The gist is that I will have an html form post to an api gateway endpoint (for nice url formatting & more granular control) 
 API gateway will then forward the request to a lambda which will then validate the message, transform it to json & then 

@@ -13,8 +13,8 @@ comments: false
 
 ## Information Aggregation
 
-* [Readwise](https://readwise.io/) - I use Readwise to aggreagte highlights from a variety of sources including instapaper, web & kindle. Every day I review a handful of quotes and choose to discard or <3 them.
-* [MyMind](https://mymind.com/) - I use MyMind to dump all sorts of things into. Links, memes, movies, books, etc. It isn't perfect, but I haven't found anything better. The dynamic spaces are also really useful, but they don't appear to exist in the mobile version.
+* ~~[Readwise](https://readwise.io/) - I use Readwise to aggreagte highlights from a variety of sources including instapaper, web & kindle. Every day I review a handful of quotes and choose to discard or <3 them.~~
+* [MyMind](https://mymind.com/) - I use MyMind to dump all sorts of things into. Links, memes, movies, books, etc. It isn't perfect, but I haven't found anything better. The dynamic spaces are also really useful, but they don't appear to exist in the mobile version **[Edit 2023-07-23: Spaces feature now exists in mobile]**.
 
 ## Writing
 

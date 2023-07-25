@@ -21,7 +21,7 @@ the task at hand. I must stress that all the examples in this post are simplifie
 Here is UML:
 
 {:refdef: style="text-align: center;"}
-![class relationship](/assets/img/blog/aspect-fumble/initial-overiew-uml.png)
+![class relationship](https://media.johnsosoka.com/old/img/blog/aspect-fumble/initial-overiew-uml.png)
 {: refdef}
 
 This means that our ChildDAO would have a method `execute_some_sql()` that can acquire a connection object, and that the 

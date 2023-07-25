@@ -3,26 +3,22 @@ layout: home
 permalink: /
 ---
 
-Welcome to my homepage. It's definitely a work in progress, but I do enjoy maintaining it. I'm mostly using it as a place
-to collect my thoughts, document my projects and share some family updates.
+👋 Hello and welcome to my homepage. It's a little chaotic, but it's mine 🙂. I'm mostly using it as a place to share
+family updates, document my projects, collect my thoughts and practice writing.
 
+Most of the technical content is in the [blog](/blog) section. The [notes](/notes) section is a bit of a mess--it contains 
+book notes, Udemy course notes and probably a few barely coherent notes with bits of information I've picked up along 
+the way.
 
-# Blog
-So far I've posted some technical content and some family updates.
+There are other pages such as [books](/books), where I'll share _some_ books that I recommend and [bits](/bits), my little 
+microblog experiment. The [etc](/etc) page serves as an index for some of the other miscellaneous pages.
 
+Feel free to check out the source code for this website on [GitHub](https://github.com/johnsosoka/jscom-blog).
+
+![Aiur](https://media.johnsosoka.com/test/2023-01-01-aiur.jpeg)
+> Meet Aiur, my youngest dog, pictured above on the Polecat Loop Trail in the Boise foothills on a foggy New Years Day, 2023.
 
 #### Recent Blog Posts
 {% include posts.html category="blog" post_display_limit=5 post_collection_title="Recent Blog Posts" %}
 
-[view more blog posts](/blog)
-
---------------------------
-
-# Bytes (Notes)
-If you think my blog posts are cluttered & unorganized, just wait until you view my notes.
-
-#### Recent Notes
-{% include posts.html category="note" post_display_limit=5 post_collection_title="Recent Notes" %}
-
-[view more notes](/notes)
-
+_[Discover more blog posts](/blog)_
