@@ -65,6 +65,13 @@ $on-widescreen: 1152px;
   overflow: hidden;
 }
 
+.navbar-toggler {
+  max-width: 150px;
+  margin-left: auto;
+}
+.navbar-nav {
+  margin-left: 50%;
+}
 // Import sass files
 @import "klise/fonts", "klise/base", "klise/layout", "klise/post",
   "klise/miscellaneous", "klise/syntax", "klise/dark";
