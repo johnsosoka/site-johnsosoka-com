@@ -12,11 +12,10 @@
 form {
   /* Center the form on the page */
   margin: 0 auto;
-  width: 500px;
   /* Form outline */
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
+  padding: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 ul {
@@ -71,13 +70,13 @@ textarea {
 button {
   /* This extra margin represent roughly the same space as the space
      between the labels and their text fields */
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 // End Form CSS
 
 .notransition {
   -webkit-transition: none;
-  -moz-transition: none; 
+  -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
   transition: none;

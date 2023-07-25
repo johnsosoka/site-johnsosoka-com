@@ -29,6 +29,7 @@ layout: compress
   </script>
 
   {% include navbar.html %}
+  <div class="container">
   <div class="wrapper">
     <header class="header">
       <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}.</h1>
@@ -37,6 +38,7 @@ layout: compress
       {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
     </main>
     {% include footer.html %}
+  </div>
   </div>
    <script src="/assets/js/bootstrap.bundle.min.js" defer="defer"></script>
 </body>

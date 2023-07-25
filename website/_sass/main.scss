@@ -72,5 +72,19 @@ $on-widescreen: 1152px;
 .navbar-nav {
   margin-left: 50%;
 }
+#contactMeForm {
+  .form-control {
+    height: 45px;
+  }
+  textarea {
+    height: 160px !important;
+  }
+  #contact_submit {
+    background-color: #ff5277;
+    color: #fff;
+    border-color: #ff5277;
+  }
+}
 // Import sass files
-@import "klise/fonts", "klise/base", "klise/layout", "klise/post", "klise/syntax", "klise/dark";
+@import "klise/fonts", "klise/base", "klise/layout", "klise/post",
+  "klise/syntax", "klise/dark";
