@@ -4,14 +4,26 @@ variable "project_name" {
 
 // WWW and Root
 
-variable "domain_name" {
+variable "stage_domain_name" {
   type = string
-  default = "johnsosoka"
+  default = "stage.johnsosoka.com"
   description = "My websites domain name"
 }
 
-variable "domain" {
+variable "www_domain_name" {
   type = string
-  default = "com"
-  description = "The domain my site belongs to"
+  default = "www.johnsosoka.com"
+  description = "My websites domain name"
+}
+
+variable "root_domain_name" {
+  type = string
+  default = "johnsosoka.com"
+  description = "My websites domain name"
+}
+
+variable "media_domain_name" {
+  type = string
+  default = "media.johnsosoka.com"
+  description = "My websites domain name"
 }
