@@ -1,3 +1,12 @@
+PATH
+  remote: /Users/john/code/johnsosoka-com/jscom-ice
+  specs:
+    jscom_ice (0.0.1)
+      jekyll (~> 4.3.2)
+      jekyll-compose (~> 0.12.0)
+      jekyll-feed (~> 0.13)
+      jekyll-sitemap (~> 1.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,9 +80,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.3.2)
-  jekyll-compose (~> 0.12.0)
-  jekyll-feed (~> 0.13)
-  jekyll-sitemap (~> 1.4.0)
+  jscom_ice!
 
 BUNDLED WITH
    2.2.3

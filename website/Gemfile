@@ -7,10 +7,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.3.2"
 
 group :jekyll_plugins do
-  # for RSS feed
-  gem 'jekyll-feed', '~> 0.13'
-  # Sitemap
-  gem 'jekyll-sitemap', '~> 1.4.0'
-  # For Easier Links
-  gem 'jekyll-compose', '~> 0.12.0'
+  # jscom theme
+  gem "jscom_ice", '~> 0.0.1'
+
 end
