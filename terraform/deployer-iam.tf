@@ -25,9 +25,9 @@ resource "aws_iam_user_policy" "deployer_user_policy" {
         "s3:PutObjectAcl"
       ],
       "Resource": [
-        "arn:aws:s3:::${aws_s3_bucket.www.id}/*",
-        "arn:aws:s3:::${aws_s3_bucket.root.id}/*",
-        "arn:aws:s3:::${aws_s3_bucket.stage.id}/*"
+        "arn:aws:s3:::${module.www_website.website_bucket_id}/*",
+        "arn:aws:s3:::${module.root_website.website_bucket_id}/*",
+        "arn:aws:s3:::${module.stage_website.website_bucket_id}/*"
       ]
     },
     {
