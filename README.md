@@ -113,11 +113,12 @@ Terrform is used to provision the AWS resources required to host the website. Th
 `terraform` directory. It sets up three CloudFront distributions for the "www", "root", "media", and "stage" subdomains, 
 along with corresponding S3 buckets. The Terraform state is managed remotely using an S3 backend. Please note that some shared 
 resources may be defined in the [jscom-core-infrastructure](https://github.com/johnsosoka/jscom-core-infrastructure) 
-repository.
+repository. Additionally, the module used to provision the website is in [jscom-tf-modules](https://github.com/johnsosoka/jscom-tf-modules)
 
 ### Resources Provisioned
 
 - CloudFront distributions for "www", "root", "media", and "stage" domains
+- Media is used for assets such as images, videos, and other files
 - S3 buckets for the www, root, media, and staging websites
 - IAM user with deployer access and permissions (Used for GitHub Actions CI/CD)
 - Route53 records for mapping subdomains to CloudFront distributions
