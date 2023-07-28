@@ -41,6 +41,11 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jscom_ice (0.0.2)
+      jekyll (~> 4.3.2)
+      jekyll-compose (~> 0.12.0)
+      jekyll-feed (~> 0.13)
+      jekyll-sitemap (~> 1.4.0)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -71,9 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.3.2)
-  jekyll-compose (~> 0.12.0)
-  jekyll-feed (~> 0.13)
-  jekyll-sitemap (~> 1.4.0)
+  jscom_ice (~> 0.0.2)
 
 BUNDLED WITH
    2.2.3
