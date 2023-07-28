@@ -1,5 +1,5 @@
 resource "aws_iam_user" "deployer_user" {
-  name = local.deployer_user
+  name = local.deployer_user_name
   path = "/system/"
 }
 

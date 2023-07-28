@@ -1,3 +1,4 @@
+// Creates all websites defined in the websites variable
 module "website" {
   for_each = var.websites
   source = "git::https://github.com/johnsosoka/jscom-tf-modules.git//modules/static-website?ref=main"
