@@ -10,27 +10,18 @@ on [Amazon Web Services](https://aws.amazon.com/) using [Amazon S3](https://aws.
 All the AWS resources are provisioned using [Terraform](https://www.terraform.io/). The website is deployed using either
 a local script or via GitHub Actions.
 
-### Repository Structure
+The template for the jscom blog is [jscom-ice](https://github.com/johnsosoka/jscom-ice) and the Terraform modules used to 
+provision the AWS resources are located in [jscom-tf-modules](https://github.com/johnsosoka/jscom-tf-modules) 
 
-Everything required to provision resources, build, and deploy the website is contained within this repository. The contents 
-are logically structured into the following directories:
+
+### Repository Structure
 
 | Directory               | Description |
 |-------------------------|-------------|
 | [terraform](/terraform) | Contains Terraform scripts that provision all necessary AWS resources for the blog. |
-| [website](/website)     | Contains the Jekyll theme and the content for the blog. |
-| [scripts](/scripts)     | Contains scripts that automate common tasks. |
+| [website](/website)     | Contains the content for the blog. |
 | [.github](/.github)     | Contains GitHub Actions workflows that automate the deployment of the website. |
 
-#### Scripts
-
-The following scripts have been written to automate common tasks and simplify common tasks:
-
-| Script Name            | Description                                                        | 
-|------------------------|--------------------------------------------------------------------|
-| `run-local.sh`         | Attempts to serve Jekyll locally at http://localhost:4000/         |
-| `configure_deployer.py` | Sets the required environment variables for the `deploy.sh` script |
-| `deploy.sh`        | Builds Jekyll, syncs to either stage or prod targets               |
 
 ## Getting Started
 
@@ -44,18 +35,11 @@ Ensure you have the following installed and configured:
 
 ### Running Locally
 
-1. Navigate to the scripts directory of the project in your terminal.
-2. Execute `run-local.sh` to serve the website locally. This will start a local server where you can preview the website.
-   ```bash
-   ./run-local.sh
-   ```
-3. Open your web browser and navigate to [http://localhost:4000](http://localhost:4000) to visit the website.
+1. Navigate to the website directory
+2. Install the dependencies with `bundle install` (or `bundle update` if you already have the dependencies installed)
+3. Run the website locally with `bundle exec jekyll serve`
+4. Open your web browser and navigate to [http://localhost:4000](http://localhost:4000) to visit the website.
 
-_Please note that you might need to grant execute permissions to the `run-local.sh` script before running it. You can do this with the `chmod` command:_
-
-```bash
-chmod +x run-local.sh
-```
 
 ## Deployment
 
@@ -71,25 +55,6 @@ deployments share the following common steps:
 - Finally, the CloudFront distribution is invalidated to refresh the cache.
 
 _Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
-
-
-### From Local
-
-While deploying from GitHub Actions is the preferred method, it is also possible to deploy the website from your local.
-THe `configure_deployer.py` script must be executed first to set the required environment variables for the `deploy.sh`
-to run correctly.
-
-#### First Time Setup:
-
-* Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
-* Configure AWS CLI with `aws configure` (have a user provisioned on aws already, with access to the target S3 bucket)
-* Execute `configure_deployer.py` to set the required environment variables for the `deploy.sh` script.
-
-#### Deploy:
-
-* Run `deploy.sh stage | prod` to build the website and sync the contents to the target S3 bucket. The deployment script also
-  attempts to invalidate CloudFront caches.
-
 
 #### Stage Deployment
 [![Deploy to STAGE](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml/badge.svg)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml)
@@ -130,7 +95,7 @@ Refer to the Terraform configuration files for more details.
 1. Install Terraform.
 2. Set up your AWS credentials.
 3. If Necessary, Modify the variables in `variables.tf`.
-4. Run `terraform init` to initialize the backend and providers.
+4. Run `terraform init` to initialize the backend and providers and fetch modules.
 5. Run `terraform plan` to preview the infrastructure changes.
 6. Run `terraform apply` to provision the AWS resources.
 
@@ -187,11 +152,14 @@ While this is a personal blog and I don't expect any contributions I do still we
 would like to contribute a post, please either reach out to me directly or fork this repository and submit a pull request.
 
 ## Todo
-* [ ] Migrate from Jekyll to Pelican??
+
+* [x] Separate theme--place into separate repository install via gem
+* [x] create a terraform module for the website
+* [ ] ~~Migrate from Jekyll to Pelican??~~
 * [x] Modernize template/move to bootstrap
 * [x] Deployment Pipelines
   * [x] Build Artifacts & Sync to prod S3 bucket upon merge to main
-  * ~~[ ] Rollback capability??~~
+  * [ ] ~~Rollback capability??~~
 * [x] Set up stage.johnsosoka.com
 * [x] Set up terraform s3 backend
   * [x] S3 bucket for shared output variables & remote state management.

@@ -66,13 +66,8 @@ include:
   - _redirects
   - .htaccess
 exclude:
-  - CNAME
   - Gemfile
   - Gemfile.lock
-  - sosleek-*.gem
-  - sosleek.gemspec
-  - sosoka-banner
-  - old
 
 # Plugin Settings
 plugins:
