@@ -5,7 +5,6 @@ provider "aws" {
 // Terraform state managed remotely.
 terraform {
   backend "s3" {
-    // WARNING  -- Couldn't read from variables.tf in this block!!
     bucket         = "jscom-tf-backend"
     key            = "project/jscom-blog/state/terraform.tfstate"
     region         = "us-west-2"
