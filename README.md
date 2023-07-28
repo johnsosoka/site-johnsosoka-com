@@ -30,6 +30,8 @@ provision the AWS resources are located in [jscom-tf-modules](https://github.com
 Ensure you have the following installed and configured:
 
 - **Jekyll & dependencies (Ruby):** Install Ruby and then use Ruby's package manager to install Jekyll and Bundler. You can refer to the [Jekyll Documentation](https://jekyllrb.com/docs/installation/) for detailed instructions.
+
+If you intend to apply terraform changes locally, you will also need the following:
 - **AWS CLI:** Download and install the AWS CLI from the [official AWS CLI website](https://aws.amazon.com/cli/). After installation, run `aws configure` in your terminal and follow the prompts to input your AWS credentials.
 - **Terraform:** Download the appropriate package for your system from the [Terraform downloads page](https://www.terraform.io/downloads.html). Unzip the package and ensure that the `terraform` binary is available in your `PATH`.
 
@@ -44,17 +46,6 @@ Ensure you have the following installed and configured:
 ## Deployment
 
 ### GitHub Actions
-
-Deployments to both staging and production environments are also possible using GitHub Actions. The workflows for these
-deployments share the following common steps:
-
-- Installs Requirements / Sets up Ruby.
-- Generates Assets with Jekyll.
-- AWS Credentials Configured.
-- Uploads Generated Assets to S3.
-- Finally, the CloudFront distribution is invalidated to refresh the cache.
-
-_Please ensure that the necessary AWS credentials and other secrets are stored in your GitHub repository's secrets section for these workflows to function correctly._
 
 #### Stage Deployment
 [![Deploy to STAGE](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml/badge.svg)](https://github.com/johnsosoka/jscom-blog/actions/workflows/deploy-stage.yml)
@@ -75,16 +66,18 @@ _Please ensure that the necessary AWS credentials and other secrets are stored i
 ## AWS Website Infrastructure
 
 Terrform is used to provision the AWS resources required to host the website. The infrastructure is defined in the 
-`terraform` directory. It sets up three CloudFront distributions for the "www", "root", "media", and "stage" subdomains, 
+`terraform` directory. It utilizes the `static-website` module from the [jscom-tf-modules](https://github.com/johnsosoka/jscom-tf-modules)
+repository to provision _most_ of the resources.
+
+It sets up three CloudFront distributions for the "www", "root", "stage" subdomains, 
 along with corresponding S3 buckets. The Terraform state is managed remotely using an S3 backend. Please note that some shared 
 resources may be defined in the [jscom-core-infrastructure](https://github.com/johnsosoka/jscom-core-infrastructure) 
-repository. Additionally, the module used to provision the website is in [jscom-tf-modules](https://github.com/johnsosoka/jscom-tf-modules)
+repository. 
 
 ### Resources Provisioned
 
 - CloudFront distributions for "www", "root", "media", and "stage" domains
-- Media is used for assets such as images, videos, and other files
-- S3 buckets for the www, root, media, and staging websites
+- S3 buckets for the www, root, and staging websites
 - IAM user with deployer access and permissions (Used for GitHub Actions CI/CD)
 - Route53 records for mapping subdomains to CloudFront distributions
 
@@ -168,4 +161,4 @@ would like to contribute a post, please either reach out to me directly or fork 
   * [x] configure website access logging
 * [x] Create independent files S3 bucket for keeping hosted download content separate from website content
   * [x] create related cloudfront resources
-  * [x] create related dns entries (route e53 resources)
+  * [x] create related dns entries (route53 resources)
