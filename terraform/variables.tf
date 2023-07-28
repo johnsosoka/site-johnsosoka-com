@@ -2,28 +2,21 @@ variable "project_name" {
   default = "jscom-blog"
 }
 
-// WWW and Root
-
-variable "stage_domain_name" {
-  type = string
-  default = "stage.johnsosoka.com"
-  description = "My websites domain name"
+variable "websites" {
+  type = map(string)
+  default = {
+    "stage" = "stage.johnsosoka.com",
+    "www"   = "www.johnsosoka.com",
+    "root"  = "johnsosoka.com",
+    "media" = "media.johnsosoka.com"
+  }
+  description = "The websites to create"
 }
 
-variable "www_domain_name" {
-  type = string
-  default = "www.johnsosoka.com"
-  description = "My websites domain name"
-}
 
-variable "root_domain_name" {
-  type = string
-  default = "johnsosoka.com"
-  description = "My websites domain name"
-}
 
-variable "media_domain_name" {
-  type = string
-  default = "media.johnsosoka.com"
-  description = "My websites domain name"
+locals {
+  deployer_user = "github-deployer-user"
+  root_zone_id = data.terraform_remote_state.jscom_common_data.outputs.root_johnsosokacom_zone_id
+  acm_cert_id = data.terraform_remote_state.jscom_common_data.outputs.jscom_acm_cert
 }

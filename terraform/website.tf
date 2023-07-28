@@ -1,27 +1,7 @@
-module "stage_website" {
+module "website" {
+  for_each = var.websites
   source = "git::https://github.com/johnsosoka/jscom-tf-modules.git//modules/static-website?ref=main"
-  domain_name = var.stage_domain_name
-  root_zone_id = data.terraform_remote_state.jscom_common_data.outputs.root_johnsosokacom_zone_id
-  acm_cert_id = data.terraform_remote_state.jscom_common_data.outputs.jscom_acm_cert
-}
-
-module "www_website" {
-  source = "git::https://github.com/johnsosoka/jscom-tf-modules.git//modules/static-website?ref=main"
-  domain_name = var.www_domain_name
-  root_zone_id = data.terraform_remote_state.jscom_common_data.outputs.root_johnsosokacom_zone_id
-  acm_cert_id = data.terraform_remote_state.jscom_common_data.outputs.jscom_acm_cert
-}
-
-module "root_website" {
-  source = "git::https://github.com/johnsosoka/jscom-tf-modules.git//modules/static-website?ref=main"
-  domain_name = var.root_domain_name
-  root_zone_id = data.terraform_remote_state.jscom_common_data.outputs.root_johnsosokacom_zone_id
-  acm_cert_id = data.terraform_remote_state.jscom_common_data.outputs.jscom_acm_cert
-}
-
-module "media_website" {
-  source = "git::https://github.com/johnsosoka/jscom-tf-modules.git//modules/static-website?ref=main"
-  domain_name = var.media_domain_name
-  root_zone_id = data.terraform_remote_state.jscom_common_data.outputs.root_johnsosokacom_zone_id
-  acm_cert_id = data.terraform_remote_state.jscom_common_data.outputs.jscom_acm_cert
+  domain_name = each.value
+  root_zone_id = local.root_zone_id
+  acm_cert_id = local.acm_cert_id
 }
