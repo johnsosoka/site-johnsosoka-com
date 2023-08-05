@@ -12,3 +12,4 @@ More things to check out:
 - [Music](/music/) - Music that I've written.
 - [Minecraft](/minecraft/) - Realms, Servers, etc. that I've hosted.
 - [Workflow](/workflow/) - Apps/Tools/Services that I use for running my life.
+- [Quotes](/quotes/) - Some quotes I've collected.
