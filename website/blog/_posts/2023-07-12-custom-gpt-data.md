@@ -56,7 +56,7 @@ For this project, we will be using a simple text file divided into chunks of 200
 store the text chunks and vectors in two separate arrays. We will be fetching the vector representation of each text 
 chunk using the OpenAI API.
 
-![data-ingest](/assets/img/blog/custom-gpt-data/ingest.png)
+![data-ingest](https://media.johnsosoka.com/old/img/blog/custom-gpt-data/ingest.png)
 
 We will be using FAISS to build a vector index from the vectors stored in our vector list.
 
