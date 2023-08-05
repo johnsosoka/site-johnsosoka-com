@@ -8,7 +8,6 @@ gem "jekyll", "~> 4.3.2"
 
 group :jekyll_plugins do
   # jscom theme
-  #  gem "jscom_ice", path: "/Users/john/code/johnsosoka-com/jscom-ice"
-   gem "jscom_ice", '~> 0.0.2'
+   gem "jscom_ice", '~> 0.0.3'
 
 end
