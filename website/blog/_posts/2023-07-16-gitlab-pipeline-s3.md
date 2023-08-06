@@ -145,7 +145,7 @@ that the Actions pipeline can use them. I'll navigate to my repository on GitHub
 `Secrets and variables` > `Actions` and then select `New repository secret`. I've added secrets for both the access key id
 and other aws resources that I need my script to interact with, the final result looks like this:
 
-![GitHub Secrets](/assets/img/blog/gitlab-pipeline/secrets-config.png)
+![GitHub Secrets](https://media.johnsosoka.com/old/img/blog/gitlab-pipeline/secrets-config.png)
 
 With all secrets configured, I can now move on to writing the pipeline.
 
@@ -330,9 +330,6 @@ jobs:
 
 Well, that's it! I've got a pipeline that will build my website and deploy it to S3! Better yet, it will deploy
 to a different target "environment" based on the event that triggered the pipeline.
-
-
-![GitHub Actions Pipeline](/assets/img/blog/gitlab-pipeline/pipeline.png)
 
 It's satisfying to see the pipeline run successfully! I have written Jenkins pipelines in the past, this was my first time 
 writing a GitHub Actions pipeline. I have to say, I'm impressed with how easy it was to get up and running.
