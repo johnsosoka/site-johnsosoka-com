@@ -8,7 +8,7 @@ tags: LangChain AI chatGPT custom tools spotify spotipy themed playlist generato
 Large Language Models (LLMs) have showcased an incredible capacity for tool usage. ChatGPT does a great job of formatting
 responses to fit a spec if you define it. For example, we can politely ask chatGPT to format its response as a json string,
 which makes it very easy to toggle back-and-fourth between legacy programming and prompt engineering. We can do this 
-from scratch, but a library exists that handles much of this under the hood. [LangChain](https://docs.langchain.com/docs/),
+from scratch, but a library exists that handles much of this under the hood-- [LangChain](https://docs.langchain.com/docs/),
 which "is a framework for developing applications powered by language models."
 
 ## Today's Project
@@ -29,7 +29,12 @@ interact with the Spotify API. The general flow will be as follows:
 ## Custom Tools
 
 Let's begin by constructing our custom tools. LangChain provides an interface `BaseTool` that we can implement to start
-building custom tools.
+building custom tools. In particular, we will need to implement the `_run` method. This method will be "called" by the LLM
+when it opts to use the tool. The `_run` method will be passed the input parameters defined in the `args_schema` as well.
+
+I'm placing "called" in quotes because in reality, the LangChain framework will be parsing the response from the LLM and
+determining if the response is a tool command. If it is, the framework will parse the command and hand it off to the 
+custom tool.
 
 ### Find Song Tool
 
@@ -53,6 +58,12 @@ from spotipy.oauth2 import SpotifyOAuth
 
 scope = "user-library-read playlist-modify-public playlist-modify-private"
 spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+
+class FindSongInput(BaseModel):
+   """Input for WriteFileTool."""
+
+   artist: str = Field(..., description="name of artist/band")
+   title: str = Field(..., description="The title of the song")
 ```
 
 The `FindSongInput` class is ultimately used to tell the LLM _how_ to interact with the tool. It defines two input
