@@ -7,8 +7,14 @@ excerpt: Misc quotes I've collected over the years.
 
 Below is a collection of quotes that I have collected over the years.
 
->“Tthere’s no problem so bad that you can’t make it worse”
+>“There’s no problem so bad that you can’t make it worse”
 - Astronaut Chris Hadfield
+
+>"The easy way to tell which side is wrong: it’s the side that shoots its dissidents."
+- Jonathan Haidt
+
+>“You take care of yourself. You take care of your intimate partner. You take care of your damn family, you don’t run off. You take care of your community. You rescue the wisdom from the past. You stand up straight and you be courageous despite the fact that life is tragic and tainted by malevolence. Ancient wisdom, that’s what that is.” 
+- Jordan Peterson
 
 >“Smart people believe weird things because they are skilled at defending beliefs they arrived at for non-smart reasons.”
 - Michael Shermer
