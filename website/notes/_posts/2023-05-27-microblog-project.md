@@ -384,6 +384,6 @@ section of the readme. You can view how the project turned out [here](https://gi
 ## Conclusion
 
 This has been a fascinating project, next up I'll need to explore building a project using Github co-pilot, which is powered
-by chatGPT, but would save me time copy/pasting from the terminal. Using AI to write code dramatically speeds up the rate
+by chatGPT, but would save me time copy/pasting from the web browser. Using AI to write code dramatically speeds up the rate
 of development. The code that chatGPT produces is not perfect, but it's a great starting point. I'm excited to see what
 the future holds.
