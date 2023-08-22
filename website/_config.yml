@@ -4,12 +4,14 @@
 # Date: 2021-11-08, 2023-07-19
 # -----------------------------------------------------
 theme: jscom_ice
+
 # Basic Settings
 title: johnsosoka.com
 description: Writing Code in Boise.
 site_est_year: 2020
 lang: en-US
 timezone: US/Mountain
+
 # open graph image
 og_image: https://media.johnsosoka.com/old/img/ogp.png
 
@@ -26,13 +28,14 @@ author:
 
 # URL Settings
 url: "https://www.johnsosoka.com"
-baseurl: ""
 
 # Collection Settings
 collections:
   blog:
     output: true
   notes:
+    output: true
+  pages:
     output: true
 
 # Markdown Settings
@@ -41,30 +44,13 @@ highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
 
-# Default Front Matter
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: post
-      comments: false
-
-# Jekyll Compose Default Front Matter
-jekyll_compose:
-  post_default_front_matter:
-    modified:
-    tags: []
-    description:
-
 # Homepage Post Limit
 number_of_posts: 5
 
 # Build Settings
 sass:
   style: compressed
-include:
-  - _redirects
-  - .htaccess
+
 exclude:
   - Gemfile
   - Gemfile.lock
