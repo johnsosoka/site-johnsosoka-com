@@ -22,7 +22,7 @@ I'm a bit of a digital hoarder, so this helps me keep things tidy.
 
 # Retired
 
-## deploy-sh
+## deploy.sh
 The old deploy script for this very website. I've since moved to deploying via github actions.
 
 <script src="https://gist.github.com/johnsosoka/e6897f4d6705704972c014d84ec7b6b1.js"></script>
