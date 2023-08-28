@@ -13,3 +13,4 @@ More things to check out:
 - [Minecraft](/minecraft/) - Realms, Servers, etc. that I've hosted.
 - [Workflow](/workflow/) - Apps/Tools/Services that I use for running my life.
 - [Quotes](/quotes/) - Some quotes I've collected.
+- [Scriptorium](/scriptorium/) - Scripts that I've written. 
