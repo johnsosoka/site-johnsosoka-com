@@ -3,7 +3,6 @@ title: Workflow
 permalink: /workflow/
 layout: page
 excerpt: Workflow
-comments: false
 ---
 
 
@@ -25,6 +24,6 @@ comments: false
 ## Planning/Organizing
 * [Things](https://culturedcode.com/things/) - I use this as a general to do app for both home & work.
 * [Habitify](https://www.habitify.me/) - For managing habits/routines. The reminders & data tracking are really wonderful.
-* [Anylist](https://www.anylist.com/) - I use AnyList for most list creation. Grocery lists, packing lists, moving lists, etc. The collaborative/Shared lists feature is great for managing a grocery list with my wife.
+* [Anylist](https://www.anylist.com/) - I use AnyList for most list creation. Grocery lists, packing lists, moving lists, etc. The collaborative/shared lists feature is great for managing a grocery list with my wife.
 
 
