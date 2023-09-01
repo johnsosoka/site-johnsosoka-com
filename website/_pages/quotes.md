@@ -13,6 +13,9 @@ Below is a collection of quotes that I've collected.
 >"The easy way to tell which side is wrong: it’s the side that shoots its dissidents."
 - Jonathan Haidt
 
+>"There are some ideas so absurd that only an intellectual could believe them.”
+- George Orwell
+
 >“You take care of yourself. You take care of your intimate partner. You take care of your damn family, you don’t run off. You take care of your community. You rescue the wisdom from the past. You stand up straight and you be courageous despite the fact that life is tragic and tainted by malevolence.” 
 - Jordan Peterson
 
