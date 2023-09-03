@@ -1,5 +1,5 @@
 ---
-title: etc
+title: Etc
 permalink: /etc/
 layout: page
 excerpt: I am John Sosoka, a Boise based software engineer.
