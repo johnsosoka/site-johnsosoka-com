@@ -2,7 +2,7 @@
 layout: post
 title: "Using Custom Data with ChatGPT from Scratch in Python"
 category: blog
-tags: ai chatGPT vector datanbase vectors embeddings custom data NLP natural language processing similarity search openai python FAISS
+tags: ai chatGPT vector database vectors embeddings custom data NLP natural language processing similarity search openai python FAISS
 ---
 
 AI and ChatGPT have taken the world by storm. Being able to interact with intelligent chatbots unlocks a world of possibilities.
@@ -46,9 +46,9 @@ with similar linguistic meaning.
 
 ## Overview
 
-Today's project will be split into two fundamental parts: Today's project will be split into two fundamental parts: Data 
-Ingestion, where we introduce our data into the system, and Data Retrieval, where we extract this data to use as needed." 
-It is important that we organize our data in a way that makes it easy to ingest and retrieve. 
+Today's project will be split into two fundamental parts: Data Ingestion, where we introduce our data into the system, 
+and Data Retrieval, where we extract this data to use as needed. It is important that we organize our data in a way that 
+makes it easy to ingest and retrieve. 
 
 ### Data Ingestion
 

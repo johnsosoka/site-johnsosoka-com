@@ -19,10 +19,7 @@ interact with the Spotify API. The general flow will be as follows:
 
 1. We provide a theme to chatGPT, "Songs about Mountains" or "Songs about Idaho"
 2. chatGPT will use an existing LangChain tool `google-search` to find a list of songs that match the theme.
-3. The LLM will need to use custom tools that we create to interact with spotify to:
-   1. Search for songs in spotify (to find the spotify URI)
-   2. Check if the song is already in the playlist
-   3. Add songs to the playlist
+3. The LLM will need to use custom tools that we create to interact with spotify to find songs and add them to a playlist.
 
 **Note:** This article will focus on the interesting parts of the project. The full code can be found on [github](https://github.com/johnsosoka/playlist-generator)
 
