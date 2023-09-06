@@ -7,16 +7,17 @@ layout: page
 
 ![grinkers-outside](https://media.johnsosoka.com/pages/grinkers/grinkers-front.jpeg)
 
-Grinker's was a charming arcade in Eagle, Idaho. It hosted a large variety of arcade games and pinball machines. It 
+Grinkers was a charming arcade in Eagle, Idaho. It hosted a large variety of arcade games and pinball machines. It 
 was a great place to hang out, grab a sandwich and play some games. They changed business models, at one point offering
 a membership. We supported them throughout, purchasing memberships and playing games. Unfortunately, they closed in October 2020. 
 
-This page is a tribute to Grinker's. We miss you!
+This page is a tribute to Grinkers. We miss you!
 
 ![grinkers-inside](https://media.johnsosoka.com/pages/grinkers/IMG_4280.jpeg)
 
 ## Menu
-Grinker's had surprisingly good sandwiches.
+
+Grinkers had surprisingly good sandwiches.
 
 {% assign carousel = site.data.carousels['grinkers-menu'] %}
 {% include carousel.html images=carousel %}
@@ -29,6 +30,15 @@ Above is a picture from the Grinkers Pinball Knockout in 2017.
 
 ![me-playing](https://media.johnsosoka.com/pages/grinkers/IMG_20161125_182515_Original.jpg)
 Above is a picture of me playing pinball at Grinkers in 2016.
+
+### My Favorite Pinball Machines at Grinkers
+
+1. Terminator 2 Judgement Day (Williams)
+2. Star Wars (Data East) -- I know, I know, but I love it.
+3. Earthshaker (Williams)
+4. Whirlwind (Williams)
+5. Cyclone (Williams)
+
 
 ## Game List
 
@@ -314,29 +324,30 @@ Below is a mostly complete list of the Grinkers collection:
 278. Turbo
 279. Tutankham
 280. Twilight Zone
-281. Twin Eagle 282. Two Tigers
-282. Uniwars
-283. Up 'N Down
-284. Upper Deck
-285. Vanguard
-286. Venture
-287. Video Pinball
-288. Vs. Baseball - Dualsystem
-289. Vs. Excitebike
-290. Vs. Ice Climber
-291. Vs. The Goonies
-292. Wacko
-293. Warlords - cocktail
-294. Warp Warp
-295. Warrior
-296. Whirlwind
-297. Wild Western
-298. Wizard of Wor
-299. Xenon
-300. Xenophobe
-301. Xevious
-302. X-Men
-303. Zaraon
-304. Zaxxon
-305. Zektor
-306. Zoo Keeper
+281. Twin Eagle 
+282. wo Tigers
+283. Uniwars
+284. Up 'N Down
+285. Upper Deck
+286. Vanguard
+287. Venture
+288. Video Pinball
+289. Vs. Baseball - Dualsystem
+290. Vs. Excitebike
+291. Vs. Ice Climber
+292. Vs. The Goonies
+293. Wacko
+294. Warlords - cocktail
+295. Warp Warp
+296. Warrior
+297. Whirlwind
+298. Wild Western
+299. Wizard of Wor
+300. Xenon
+301. Xenophobe
+302. Xevious
+303. X-Men
+304. Zaraon
+305. Zaxxon
+306. Zektor
+307. Zoo Keeper
