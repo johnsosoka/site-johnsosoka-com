@@ -3,7 +3,6 @@ title: Bytes / Notes
 permalink: /notes/
 layout: page
 excerpt: The Notes that I keep.
-comments: false
 ---
 
 Contained here is a collection of various notes. Some are notes that I have taken from udemy courses, book-notes, and 
