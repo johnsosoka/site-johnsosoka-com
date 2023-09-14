@@ -3,7 +3,6 @@ title: Bits
 permalink: /bits/
 layout: page
 excerpt: Thought Feed.
-comments: false
 ---
 
 Welcome to `Bits`, the microblog portion of my website.
@@ -11,16 +10,13 @@ Welcome to `Bits`, the microblog portion of my website.
 # 2023
 ---
 
-## 2023/09/11
-- Post-modernism is an intellectual dead end. It rots brains & harms society. It's a shame that it's so prevalent in academia, no wonder the Academy is dying.
-
 ## 2023/09/06
 
 - [LangChain4J](https://github.com/langchain4j/langchain4j) is a very promising project, I recently messed around with it briefly and was impressed with the ease of use. It's great to have a LangChain equivalent for Java.
 
 ## 2023/09/01
 
-- “There are some ideas so absurd that only an intellectual could believe them.” - George Orwell. I'm slowly beginning to understand Orwell's quote. Living in an era where universities have sorted themselves into ideological orthodoxy, it's becoming increasingly clear that the most absurd ideas are being pushed by the most "educated." JS Mill warned about unchallenged ideas. We are witnessing highly credentialed stupidity wreak havoc on our society. To be clear: it doesn't matter which way a group ideologically sorts itself. If there are no challenges to ideas, the group will become increasingly radicalized and stupid.
+- “There are some ideas so absurd that only an intellectual could believe them.” - George Orwell. I'm slowly beginning to understand Orwell's quote. Living in an era where universities have sorted themselves into ideological orthodoxy, it's becoming increasingly clear that the most absurd ideas are being pushed by the most "educated." JS Mill warned about unchallenged ideas. We are witnessing highly credentialed stupidity wreak havoc on the world beyond the university. To be clear: it doesn't matter which way a group ideologically sorts itself. If there are no challenges to ideas, the group will become increasingly radicalized and stupid.
 
 ## 2023/07/22
 
