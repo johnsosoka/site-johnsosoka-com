@@ -3,7 +3,6 @@ title: Bits
 permalink: /bits/
 layout: page
 excerpt: Thought Feed.
-comments: false
 ---
 
 Welcome to `Bits`, the microblog portion of my website.
@@ -17,7 +16,7 @@ Welcome to `Bits`, the microblog portion of my website.
 
 ## 2023/09/01
 
-- “There are some ideas so absurd that only an intellectual could believe them.” - George Orwell. I'm slowly beginning to understand Orwell's quote. Living in an era where universities have sorted themselves into ideological orthodoxy, it's becoming increasingly clear that the most absurd ideas are being pushed by the most "educated." JS Mill warned about unchallenged ideas. We are witnessing highly credentialed stupidity wreak havoc on our society. To be clear: it doesn't matter which way a group ideologically sorts itself. If there are no challenges to ideas, the group will become increasingly radicalized and stupid.
+- “There are some ideas so absurd that only an intellectual could believe them.” - George Orwell. I'm slowly beginning to understand Orwell's quote. Living in an era where universities have sorted themselves into ideological orthodoxy, it's becoming increasingly clear that the most absurd ideas are being pushed by the most "educated." JS Mill warned about unchallenged ideas. We are witnessing highly credentialed stupidity wreak havoc on the world beyond the university. To be clear: it doesn't matter which way a group ideologically sorts itself. If there are no challenges to ideas, the group will become increasingly radicalized and stupid.
 
 ## 2023/07/22
 

@@ -1,17 +1,24 @@
 ---
-title: Etc
-permalink: /etc/
-layout: page
-excerpt: I am John Sosoka, a Boise based software engineer.
-comments: false
+title: Etc  
+permalink: /etc/  
+layout: page  
+excerpt: Index of all the pages that don't fit anywhere else.
 ---
 
-More things to check out:
+## Personal Interests
 
-- [Books](/books/) - Books that I recommend. 
+- [Books](/books/) - Books that I recommend.
 - [Music](/music/) - Music that I've written.
-- [Minecraft](/minecraft/) - Realms, Servers, etc. that I've hosted.
-- [Workflow](/workflow/) - Apps/Tools/Services that I use for running my life.
 - [Quotes](/quotes/) - Some quotes I've collected.
-- [Scriptorium](/scriptorium/) - Scripts that I've written. 
+
+## Technology and Workflow
+
+- [Workflow](/workflow/) - Apps/Tools/Services that I use for running my life.
+- [Scriptorium](/scriptorium/) - Scripts that I've written.
+- [Headphones](/headphones/) - A page about headphones.
+
+## Gaming and Entertainment
+
+- [Minecraft](/minecraft/) - Realms, Servers, etc. that I've hosted.
 - [Grinkers](/grinkers/) - A tribute page to Grinkers, a now closed arcade in Eagle, Idaho.
+
