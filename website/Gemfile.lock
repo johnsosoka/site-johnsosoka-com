@@ -41,7 +41,7 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    jscom_ice (0.0.4)
+    jscom_ice (0.0.5)
       jekyll (~> 4.3.2)
       jekyll-compose (~> 0.12.0)
       jekyll-feed (~> 0.13)
@@ -76,7 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.3.2)
-  jscom_ice (~> 0.0.4)
+  jscom_ice (~> 0.0.5)
 
 BUNDLED WITH
    2.2.3
