@@ -14,11 +14,7 @@
   url: /notes/
   external: false
 
-- title: bits
-  url: /bits/
-  external: false
-
-- title: etc.
+- title: beyond.
   url: /etc/
   external: false
 # Styling needs to be addressed for submenus, but they do work.
