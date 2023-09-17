@@ -11,8 +11,8 @@ Most of the technical content is in the [blog](/blog) section. The [notes](/note
 book notes, Udemy course notes and probably a few barely coherent notes with bits of information I've picked up along 
 the way.
 
-There are other pages such as [books](/books), where I'll share _some_ books that I recommend and [bits](/bits), my little 
-microblog experiment. The [etc](/etc) page serves as an index for some of the other miscellaneous pages.
+There are other pages such as [books](/books), where I'll share _some_ books that I recommend. 
+The [etc](/etc) page serves as an index for some of the other miscellaneous pages.
 
 Feel free to check out the source code for this website on [GitHub](https://github.com/johnsosoka/jscom-blog).
 
