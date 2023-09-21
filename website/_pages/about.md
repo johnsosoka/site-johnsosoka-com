@@ -42,8 +42,8 @@ Terraform to provision AWS infrastructure for johnsosoka.com as well.
 
 
 
-Below is a short video a shot of a lightning storm filmed in Meridian, Idaho. This was really fun to watch. From 
-my position I couldn't hear any thunder. The lightning was so frequent that I originally thought a work vehicle was
+Below is a short video of a lightning storm filmed in Meridian, Idaho. This was really fun to watch. From 
+my location I couldn't hear any thunder. The lightning was so frequent that I originally thought a work vehicle was
 parked outside with its light strobing. When I went to check it out, this is what I saw:
 
 ##### 08/26/2023 - Meridian, Idaho
