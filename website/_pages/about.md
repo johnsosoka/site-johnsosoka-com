@@ -40,12 +40,15 @@ Terraform to provision AWS infrastructure for johnsosoka.com as well.
 
 #### Snippets
 
-Below are a few shots from our recent trip to McCall, Idaho.
-
-{% assign carousel = site.data.carousels['baby-moon-mccall'] %}
 
 
-{% include carousel.html images=carousel %}
+Below is a short video a shot of a lightning storm filmed in Meridian, Idaho. This was really fun to watch. From 
+my position I couldn't hear any thunder. The lightning was so frequent that I originally thought a work vehicle was
+parked outside with its light strobing. When I went to check it out, this is what I saw:
+
+##### 08/26/2023 - Meridian, Idaho
+<iframe style="width:100%" height=500 src="https://www.youtube.com/embed/17ewAztiQ5E?si=AzeJgq0oZzgFuc_f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ---
 

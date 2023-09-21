@@ -9,6 +9,19 @@ This page houses retired snippets from the (About page)[/about/] page.
 
 ---
 
+### Circa 2023-07-21 - 2023-09-21
+
+---
+
+Below are a few shots from our recent trip to McCall, Idaho.
+
+{% assign carousel = site.data.carousels['baby-moon-mccall'] %}
+
+
+{% include carousel.html images=carousel %}
+
+---
+
 ### Circa 2021-11-08 - 2023-07-20
 Below is a snapshot of the About page as of 2021-11-08. This is the first version of the About page that I published.
 The photo is a picture from my office at our house in Charlotte. We only lived there for a year before moving back to 
