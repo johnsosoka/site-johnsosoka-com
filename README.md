@@ -1,7 +1,8 @@
 # jscom-blog
 
-Welcome to the repository for [My Homepage](https://johnsosoka.com). A personal blog, written by a software engineer
-and lover-of-dogs currently living in Boise, Idaho. Writing about technology, software engineering, and my expanding family.
+Welcome to the repository for [My Homepage](https://johnsosoka.com).
+
+This is a test. I've removed some text above, and I'm adding text here.
 
 ## About
 
