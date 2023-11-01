@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Strategies & Patterns for LLM App Development"
+title: "LLM App Development, Part 1: Prompting, Structured replies and Application Flow"
 category: blog
 tags: LangChain AI chatGPT LangChain4J Java LLM App Patterns Strategy Strategies
 ---
@@ -12,9 +12,9 @@ These past few months I have been exploring writing LLM applications. That is, s
 a Large Language Model in one capacity or another. Many people have restricted themselves to only viewing the potential of 
 LLMs in terms of chatbots, which is severely limited and horribly unimaginative.
 
-I have been finding that we can weave LLM capabilities into our legacy applications in interesting ways. Instead of 
-demonstrating all the ways we can integrate LLMs into legacy applications, I will instead focus on some of the 
-patterns and strategies that I have uncovered.
+I have been finding that we can weave LLM capabilities into our legacy applications in interesting ways. We will be 
+building a simple LLM application that helps us edit a technical blog post. Along the way, I'll demonstrate some of 
+the patterns and strategies that I have uncovered.
 
 **Note:** I'll be using LangChain4J in my examples, but the concepts here should be applicable to any LLM framework.
 
@@ -227,8 +227,6 @@ public class FeedbackItem {
 Really consider the above fields. Each of these is going to be populated _by the LLM_. We're asking the LLM to conform its responses
 to the above model throughout our application. One of my goals for the above is to have actionable steps and insight into the LLMs reasoning.
 
-
-
 Finally, we can map the structured response string to a Java object:
 
 ```java
@@ -330,7 +328,13 @@ patterns for building LLM applications. Along the way, we'll find abstractions f
 _An homage to the Single Responsibility Principle_
 
 LLMs are a new technology, and at the moment they are good at **tasks** not **jobs**. This means that we should be designing
-LLM applications where simple tasks are dispatched to the LLM. I have found through different prompting & application flows that
+LLM applications where simple tasks are dispatched to the LLM. 
+
+A Job might be "Verify the technical accuracy of this blog post." which really is a collection of tasks. Tasks might include
+researching the technical accuracy of a claim, or verifying that a code sample is correct. Tasks might require multiple 
+tools to be used in conjunction with each other.
+
+I have found through different prompting & application flows that
 you can get _better quality results_ from LLMs by giving them more focused tasks.
 
 As this post is focusing on a blog editor application that leverages an LLM, I'll use that as an example. Instead of giving
@@ -416,8 +420,8 @@ Again, we can use the "Prompt Clauses" to remind the editor of the audience and 
 
 ### Focused Operations, Aggregated Results
 
-When we design an LLM application to have simple, well-defined tasks, we can start to mold a more well rounded & dynamic
-application. We have structured an agent to perform two specific blog editing tasks and we have defined a structured output.
+When we design an LLM application to have simple, well-defined tasks, we can start to mold a more well-rounded & dynamic
+application. We have structured an agent to perform two specific blog editing tasks, and we have defined a structured output.
 
 With focused operations _and_ structured output, we can start to aggregate the results of multiple operations.
 
@@ -495,15 +499,11 @@ Revise the usage of LangChain4J's @StructuredPrompt annotation.
 ... 
 ```
 
-I've truncated the results, it is already providing valuable feedback on the blog post that I'm actively writing.
+I've truncated the results, it is already providing valuable feedback on the blog post that I'm actively writing. You can probably
+start to imagine how an application could unfold. We may have some follow up items that we could use to create a "to-do" list, further
+prompting an LLM to rewrite sections of the blog post. Or, we could count on a task to research & validate the technical accuracy of a 
+claim in the blog post.
 
-## General
+Being able to bolt into LLMs opens up a lot of interesting opportunities.
 
-Unfortunately, I'm running out of time for today. There are some other quick lessons:
-
-* **Front-Load information where Possible** - Instead of using a tool or chat history, front-load data that you think the LLM might need.
-* **Limit Chat History** - If you don't need it, don't use it. It will rack up your bill/token usage and distort the LLM's results if you aren't careful.
-* **Use Vector Search (WHEN APPROPRIATE)** - Vector search is great at returning semantically relevant data. But you must keep in mind the size of the chunked data returned & also consider if semantically relevant isn't logically relevant. For example, if you vector search for a phrase when you could look up a specific citation #. It could result in semantically relevant text from a larger corpus that isn't logically relevant.
-* **Design Minimum Operation Tools** - If you provide a tool for your LLM to use, it should achieve something in as few operations as possible. The more rely on output from chained tool usage, the more variance/unreliability in the results. A single operation is more reliable than a chain of operations.
-
-I'll expand on 
+In a future post, I'll continue expanding on this application--demonstrating some lessons I've learned along the way.
