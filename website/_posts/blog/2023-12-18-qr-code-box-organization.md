@@ -83,3 +83,10 @@ for key, url in qr_data.items():
 
 
 
+![Cutting the Codes](https://media.johnsosoka.com/blog/2023-12-19/IMG_2205.jpeg)
+
+![Cutting pt 2](https://media.johnsosoka.com/blog/2023-12-19/IMG_2206.jpeg)
+
+![Cutting pt 2](https://media.johnsosoka.com/blog/2023-12-19/IMG_2207.jpeg)
+
+![Cutting pt 2](https://media.johnsosoka.com/blog/2023-12-19/IMG_2208.jpeg)
