@@ -18,14 +18,13 @@ over time.
 
 ## The Solution
 
-I had been toying with the idea of using QR codes to label boxes for awhile. Some time ago, I played around with a python 
+I had been toying with the idea of using QR codes to label boxes for a while. Some time ago, I played around with a python 
 library to get an idea of how it worked and what types of information I could encode.
 
-Initially I had thougth to simply encode the contents within the QR code, but I realized this would be pointless. I could 
+Initially I had thought to simply encode the contents within the QR code, but I realized this would be pointless. I could 
 just as easily write the contents on the box. 
 
-The real value would be to link the QR code to another piece of dynamic content that I could update as the contents of the 
-box change over time. 
+The real value would be in having the QR code link to a database that would be updatable.
 
 Additionally, storing box information in a database would allow me to save location details of the box itself. So, I could 
 search by contents, identify where the box is located & then go fetch it from my garage.
@@ -36,8 +35,14 @@ I decided to use [Notion](https://www.notion.so/) as my database. I have been us
 Plus, I already have the application on my phone, so I can easily scan the QR code which will take me to the Notion page 
 for the box I'm working with.
 
+The 1st step is to prepare the notion database. I created a new page with a table that has the following columns:
+Name, Tags, Content, QR Code, Type, Location.
+
+
 
 ### Python & QR Code
+
+Once the database is created an an entry exists, it's time to write some python code:
 
 ```python
 import qrcode
@@ -79,14 +84,24 @@ for key, url in qr_data.items():
     print(f"QR code for {key} generated and saved as '{key}.png'")
 ```
 
+You'll notice that in the above, I'm creating a dictionary with entries corresponding to each box. The key is the box
+name/id and the value is the URL to the Notion page for that box.
+
+
 ## The Result
 
-
+Once al of the QR codes have been generated, I tossed them into a Microsoft Word document, added a human readable label,
+and printed.
 
 ![Cutting the Codes](https://media.johnsosoka.com/blog/2023-12-19/IMG_2205.jpeg)
 
-![Cutting pt 2](https://media.johnsosoka.com/blog/2023-12-19/IMG_2206.jpeg)
-
-![Cutting pt 2](https://media.johnsosoka.com/blog/2023-12-19/IMG_2207.jpeg)
+After cutting the codes, I taped them to boxes.
 
 ![Cutting pt 2](https://media.johnsosoka.com/blog/2023-12-19/IMG_2208.jpeg)
+
+I spent some time in the garage, with my tablet attaching the QR codes to boxes & updating the database
+entries in Notion.
+
+This was a fun project that only took a couple of hours. It was an idea that I had been kicking around for some time, 
+ideally it will enable me to find things in my garage without having to dig through boxes. I haven't been using this 
+system long enough to know if it will be useful, but I'm optimistic and hope that sharing this will help others.
