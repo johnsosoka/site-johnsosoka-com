@@ -11,7 +11,7 @@ a few times. It's a great way to prune your belongings. It's also a great way to
 
 ## The Problem
 
-Over time, the contents of our storage boxes shifts. A box that was once full of C++ books may now be full of python books. 
+Over time, the contents of our storage boxes shift. A box that was once full of C++ books may now be full of python books. 
 A box that used to contain Playstation 4 games and accessories may someday contain Playstation 5 games and accessories. 
 Point being, the more detailed we are about the contents _on the box_ the more likely those details will become innacurate 
 over time.
