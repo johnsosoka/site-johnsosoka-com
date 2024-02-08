@@ -6,10 +6,13 @@ on:
       confirm:
         description: 'Type "yes" to confirm deployment to PRODUCTION!'
         required: true
+  # Deploy on merge or push to main.
   push:
     branches:
       - main
-
+  # Deploy on 10am UTC, January 1st (Update Copyright Year in Footer)
+  schedule:
+    - cron: '0 10 1 1 *'
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest
