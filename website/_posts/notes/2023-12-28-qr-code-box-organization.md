@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Organizing Home Storage with Python, QR Codes & Notion"
-category: blog
+category: note
 tags: notion productivity qr python organization storage home household tech
 ---
 
