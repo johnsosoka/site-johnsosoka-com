@@ -299,7 +299,8 @@ To read more about modules and agent design, check out [this paper](https://arxi
 ## Conclusion
 
 I hope that this blog has helped make the SELF-DISCOVER algorithm more accessible. I'm excited to refine this implementation
-and then try it out in a real-world application. More than likely, I'll be using it in a `Planning` module orchestration agent.
+and then try it out in a real-world application. More than likely, I'll be using it as part of a  `Planning` module for 
+orchestration agent.
 
 If you have any questions or comments, feel free to reach out to me on [Linkedin](https://www.linkedin.com/in/john-sosoka-4528b970/)
 
