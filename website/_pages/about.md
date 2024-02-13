@@ -3,21 +3,24 @@ title: About
 permalink: /about/
 layout: page
 excerpt: I am John Sosoka, a Boise based software engineer.
-comments: false
 ---
 
 ## Me:
 
-I am John Sosoka, a Boise based software engineer. I am a backend developer and usually work 
+Hi, I'm John. I'm a father, husband, and software engineer living in Boise, I am a backend developer and usually work 
 with Java & Python day to day. Over the course of my career I have worked in a variety of roles in software development,
 including software tester, release engineer, software engineer and tech lead.
 
-When I'm not coding you can find me hiking the trails around Boise with my dogs, hanging out with my family, or 
+Most recently I've been working a lot with Large Language Models (LLMs), particularly Agent design and orchestration. Last
+year I wired up a language model to a tools that allowed it to browse the internet and build a themed spotify playlists... 
+Once I witnessed the LLM's capacity for tool usage, I was hooked. I have been working on multiple LM/Agent related projects 
+since.
+
+When I'm not coding, you can find me hiking the trails around Boise with my dogs, hanging out with my family, or 
 working on projects around the house. 
 
 I also really enjoy Pinball and have been playing quite a bit at the [Pinball Museum](https://idahopinballmuseum.com/)
-in Garden City. I haven't [competed recently](https://www.ifpapinball.com/player.php?p=50104#past), but I'm hoping to
-be in competitive shape this fall (2023).
+in Garden City. I haven't [competed recently](https://www.ifpapinball.com/player.php?p=50104#past), but I do have an IFPA profile :).
 
 I have been on GitHub for a while under a pseudonym, but have recently created a more polished profile which you can 
 [visit here](https://github.com/johnsosoka). This same GitHub profile will host code examples to accompany blog posts.
@@ -35,12 +38,9 @@ keeping a garden, I like contributing to it and watching it grow but don't have 
 As I'm not a professional writer and this is a very low traffic site I might edit or update posts after they are 
 published; But, a public record of all changes will be available in the GitHub repository, linked below.
 
-View the source for this website on [GitHub](https://github.com/johnsosoka/jscom-blog). This includes the
-Terraform to provision AWS infrastructure for johnsosoka.com as well.
+View the source for this website on [GitHub](https://github.com/johnsosoka/jscom-blog). This includes the Terraform to provision AWS infrastructure for johnsosoka.com as well.
 
 #### Snippets
-
-
 
 Below is a short video of a lightning storm filmed in Meridian, Idaho. This was really fun to watch. From 
 my location I couldn't hear any thunder. The lightning was so frequent that I originally thought a work vehicle was
@@ -48,7 +48,6 @@ parked outside with its light strobing. When I went to check it out, this is wha
 
 ##### 08/26/2023 - Meridian, Idaho
 <iframe style="width:100%" height=500 src="https://www.youtube.com/embed/17ewAztiQ5E?si=AzeJgq0oZzgFuc_f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 
 ---
 

@@ -8,15 +8,15 @@ tags: LLM LangChain LangChain4J java spring research SELF-DISCOVER algorithm goo
 Google's DeepMind project recently published ["SELF-DISCOVER: Large Language Models Self-Compose Reasoning Structures"](https://arxiv.org/pdf/2402.03620.pdf) 
 The paper proposes "a general framework for LLMs to self-discover the task-intrinsic reasoning structures to tackle complex 
 reasoning problems." After reading the paper it was clear that the algorithm would be pretty easy to implement, especially 
-with the help of [LangChain4J](https://github.com/langchain4j/langchain4j), which is an LLM Integration framework that I've
-been heavily working with.
+with the help of [LangChain4J](https://github.com/langchain4j/langchain4j), which is a Java LLM Integration framework that has proven to be dramatically more 
+stable than the official Python LangChain framework.
 
 ## Understanding the Algorithm
 
 The algorithm is broken into two phases: Composition and Solving. The composition phase is further broken into three steps:
 
 1. **Select:** The LLM is provided a `task` and a list of `reasoning modules` and is asked to select the most appropriate 
-reasoning modules to solve the task.
+reasoning modules to solve the task. Each "reasoning module" is a string with text describing a problem-solving strategy.
 2. **Adapt:** The LLM is provided the _selected_ `reasoning modules` and the task. It is asked to adapt the selected reasoning
 modules to the task.
 3. **Implement:** The LLM is provided the _adapted_ `reasoning modules` The adapted reasoning modules are transformed into 
@@ -112,7 +112,7 @@ public class ReasoningModuleConfig {
 When the application starts, the `ReasoningModuleConfig` class will be populated with the reasoning modules from the
 `application.yml` file that we defined. This also makes it easy to extend the reasoning bank in the future.
 
-### LangChain AIService SELF-DISCOVERY Interface
+### LangChain AIService SELF-DISCOVER Interface
 
 What a mouthful! The `AIService` is a LangChain4J construct. We can define an interface, utilize some special LangChain4J
 annotations to help guide behavior, and then via the AIService.builder() method, we can pass a LanguageModel (openAI in this case)
