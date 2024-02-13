@@ -18,6 +18,9 @@ the patterns and strategies that I have uncovered.
 
 **Note:** I'll be using LangChain4J in my examples, but the concepts here should be applicable to any LLM framework.
 
+**Edit 02/13/24:** Since writing this post the LangChain4J project has improved strucured replies rendering the 
+`JSON_LIST_RESPONSE_CLAUSE` obsolete.
+
 ## Prompting
 
 We'll start with the simplest & most obvious use case for LLMs: prompting. Prompting is the act of providing a model with
