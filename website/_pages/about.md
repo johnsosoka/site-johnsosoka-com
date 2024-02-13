@@ -16,7 +16,7 @@ year I wired up a language model to a tools that allowed it to browse the intern
 Once I witnessed the LLM's capacity for tool usage, I was hooked. I have been working on multiple LM/Agent related projects 
 since.
 
-When I'm not coding you can find me hiking the trails around Boise with my dogs, hanging out with my family, or 
+When I'm not coding, you can find me hiking the trails around Boise with my dogs, hanging out with my family, or 
 working on projects around the house. 
 
 I also really enjoy Pinball and have been playing quite a bit at the [Pinball Museum](https://idahopinballmuseum.com/)

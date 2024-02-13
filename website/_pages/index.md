@@ -4,8 +4,8 @@ layout: home
 permalink: /
 ---
 
-👋 Hello and welcome to my personal homepage. It's a work in progress 🙂. I'm mostly using it as a place to
-practice writing, share family updates, document projects, and collect my thoughts.
+👋 Hello and welcome to my personal homepage. I'm mostly using it as a place to practice writing, share family updates, 
+document projects, and collect my thoughts.
 
 Most of the technical content is in the [blog](/blog) section. The [bytes](/notes) section is more of a wildcard, but it's 
 where I'll share book notes, course notes, quick tips, passing thoughts, etc.
