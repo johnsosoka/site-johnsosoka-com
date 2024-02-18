@@ -12,9 +12,9 @@ with Java & Python day to day. Over the course of my career I have worked in a v
 including software tester, release engineer, software engineer and tech lead.
 
 Most recently I've been working a lot with Large Language Models (LLMs), particularly Agent design and orchestration. Last
-year I wired up a language model to a tools that allowed it to browse the internet and build a themed spotify playlists... 
-Once I witnessed the LLM's capacity for tool usage, I was hooked. I have been working on multiple LM/Agent related projects 
-since.
+year I wired up a language model to a collection of tools that allowed it to browse the internet and build a themed spotify 
+playlists... Once I witnessed the LLM's capacity for planning & tool usage, I was hooked. I have been working on multiple 
+LM/Agent related projects ever since.
 
 When I'm not coding, you can find me hiking the trails around Boise with my dogs, hanging out with my family, or 
 working on projects around the house. 

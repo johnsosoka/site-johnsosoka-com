@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LLM App Development, Part 1: Prompting and Structured Replies"
+title: "LLM App Development: Prompting and Structured Replies"
 category: blog
 tags: LangChain AI chatGPT LangChain4J Java LLM App Patterns Strategy Strategies
 ---
