@@ -107,8 +107,8 @@ in details.
 
 **Note:** As a pattern, there is nothing stopping us from using an LLM to manage the persistence & retrieval of data. That is
 to say we can have one instance of an LLM that is responsible for managing the context window and another instance of an LLM
-that is responsible for having a conversation.
-
+that is responsible for having a conversation. I like to think of this as a "subconscious." That is, a reasoning layer that
+helps the LLM make decisions about what to remember and what to forget.
 
 - **Graph Databases**: Graph databases can be enormously powerful, particularly if the use case of your LLM is to manage
   relationships between entities or concepts. As messages "slide" out of the context window, they can be stored in a graph
@@ -124,7 +124,7 @@ that is responsible for having a conversation.
 LLM applications with memory can be designed in a great many ways. If you're building a autonomous agent instead of 
 a chatbot, the design might be different. Instead of summarizing and retrieving conversation details, it instead might be
 saving lessons learned instead; For example, if a tool execution fails to align with a plan, the agent can save this information 
-as a lesson learned.
+as a lesson to be retrieved before the next planning & execution cycle.
 
 
 ### Conclusion
@@ -134,4 +134,5 @@ sliding windows, reserved indices & request augmented retrieval. We also briefly
 and how they might be implemented.
 
 I hope that this article has provided a high-level understanding on how to add memory to LLMs. In future posts, I will
-be taking a deeper dive into implementing some of these strategies.
+be taking a deeper dive into implementing some of these strategies. Feel free to reach out on [linkedin](https://www.linkedin.com/in/john-sosoka-4528b970/)
+the [contact page](/contact/) if you have any questions or comments.
