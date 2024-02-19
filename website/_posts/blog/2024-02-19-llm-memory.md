@@ -6,6 +6,8 @@ category: blog
 tags: LLM java memory context management RAG retrieval augmented generation chatbot persistent memory data management graph sql node redis
 ---
 
+![headimg](https://media.johnsosoka.com/blog/2024-02-19/aimemart.png	)
+
 With the recent OpenAI announcement adding memory to chatGPT, it seemed like a great time to write about _how_ to add 
 memory to large language models (LLMs). While the OpenAI announcement is new, giving LLMs persistent memory is not.
 
