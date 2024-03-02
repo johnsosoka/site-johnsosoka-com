@@ -10,6 +10,7 @@ excerpt: Index of all the pages that don't fit anywhere else.
 - [Books](/books/) - Books that I recommend.
 - [Music](/music/) - Music that I've written.
 - [Quotes](/quotes/) - Some quotes I've collected.
+- [Memorials](/memorial/) - A collection of memorial pages.
 
 ## Technology and Workflow
 
