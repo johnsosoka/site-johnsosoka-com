@@ -9,4 +9,4 @@ I recently published an article, [The Dawn of Semi-Autonomous Commerce Agents](h
 in which I explain what an Agent is, how they might be used in commerce, and how they might be implemented. 
 The article is a high-level overview of the concept of Agents and how they might be used in commerce. It is not a technical deep dive.
 
-Feel free to read the full article [here.](https://www.commerce-architects.com/post/the-dawn-of-semi-autonomous-e-commerce-agents)
+Read the full article [here.](https://www.commerce-architects.com/post/the-dawn-of-semi-autonomous-e-commerce-agents)
