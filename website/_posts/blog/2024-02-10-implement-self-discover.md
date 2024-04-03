@@ -150,7 +150,7 @@ public interface SelfDiscovery {
 ...
 ```
 
-It is worth noting as this time that `@UserMessage` appears to be the only annotation in the LangChain4J frameowrk capable 
+It is worth noting at this time that `@UserMessage` appears to be the only annotation in the LangChain4J frameowrk capable 
 of handling multiple variables. 
 
 #### Adapt
