@@ -14,9 +14,14 @@
   url: /notes/
   external: false
 
-- title: beyond.
+- title: beyond
   url: /etc/
   external: false
+
+- title: consulting
+  url: /consulting/
+  external: false
+
 # Styling needs to be addressed for submenus, but they do work.
 #  subitems:
 #    - title: Books

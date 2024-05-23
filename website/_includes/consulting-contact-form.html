@@ -1,0 +1,102 @@
+<div class="container-fluid mt-5">
+    <form id="contactMeForm">
+        <!-- Alert on Success/Failure -->
+        <div id="notification" class="alert mt-3" role="alert" style="display: none;"></div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" name="user_name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="mail" name="user_email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="company" name="company_name" placeholder="Company Name">
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="industry" name="industry">
+                <option value="Industry">Industry</option>
+                <option value="Advertising and Marketing">Advertising and Marketing</option>
+                <option value="Agriculture and Farming">Agriculture and Farming</option>
+                <option value="Automotive">Automotive</option>
+                <option value="Banking and Financial Services">Banking and Financial Services</option>
+                <option value="Construction and Real Estate">Construction and Real Estate</option>
+                <option value="E-commerce and Retail">E-commerce and Retail</option>
+                <option value="Education and E-learning">Education and E-learning</option>
+                <option value="Energy and Utilities">Energy and Utilities</option>
+                <option value="Entertainment and Media">Entertainment and Media</option>
+                <option value="Fashion and Apparel">Fashion and Apparel</option>
+                <option value="Food and Beverage">Food and Beverage</option>
+                <option value="Gaming and Esports">Gaming and Esports</option>
+                <option value="Government and Public Sector">Government and Public Sector</option>
+                <option value="Healthcare and Life Sciences">Healthcare and Life Sciences</option>
+                <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                <option value="Human Resources and Recruitment">Human Resources and Recruitment</option>
+                <option value="Insurance">Insurance</option>
+                <option value="Legal Services">Legal Services</option>
+                <option value="Logistics and Supply Chain">Logistics and Supply Chain</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Non-profit and Charitable Organizations">Non-profit and Charitable Organizations</option>
+                <option value="Pharmaceuticals and Biotechnology">Pharmaceuticals and Biotechnology</option>
+                <option value="Professional Services (Consulting, Accounting, etc.)">Professional Services (Consulting, Accounting, etc.)</option>
+                <option value="Publishing and Journalism">Publishing and Journalism</option>
+                <option value="Security and Surveillance">Security and Surveillance</option>
+                <option value="Sports and Fitness">Sports and Fitness</option>
+                <option value="Telecommunications">Telecommunications</option>
+                <option value="Transportation and Mobility">Transportation and Mobility</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="msg" name="user_message" placeholder="Message (Required)"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="contact_submit">Send your message</button>
+    </form>
+</div>
+
+<script src="/assets/js/jquery-3.7.0.min.js"></script>
+
+<script>
+    function submitContact(payload) {
+        $.ajax({
+            url : "{{ site.contact.api.url }}",
+            type: "POST",
+            dataType: "json",
+            data: payload,
+            success: function(data){
+                console.log(data);
+                $('#notification').addClass('alert-success').text('Message Sent!').show();
+                clearForm();
+            },
+            error: function(){
+                console.log("Error in the request");
+                $('#notification').addClass('alert-danger').text('Something went wrong :(').show();
+            }
+        });
+    }
+
+    function clearForm() {
+        $('#name').val('');
+        $('#mail').val('');
+        $('#company').val('');
+        $('#industry').val('');
+        $('#msg').val('');
+    }
+
+    function buildPayload() {
+        var contactMePayload = {
+            contact_name : $('#name').val(),
+            contact_email : $('#mail').val(),
+            company_name : $('#company').val(),
+            industry : $('#industry').val(),
+            contact_message : $('#msg').val(),
+            consulting_contact: true
+        };
+
+        return JSON.stringify(contactMePayload);
+    }
+
+    $('#contact_submit').click(function() {
+        var payload = buildPayload();
+        console.log(payload);
+        submitContact(payload);
+    });
+</script>
