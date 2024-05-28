@@ -5,6 +5,9 @@
   url: https://github.com/johnsosoka
   external: false
 
+- title: consulting
+  url: /consulting/
+
 - title: rss
   url: /feed.xml
   external: false

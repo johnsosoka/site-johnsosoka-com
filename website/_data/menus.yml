@@ -18,9 +18,9 @@
   url: /etc/
   external: false
 
-- title: consulting
-  url: /consulting/
-  external: false
+#- title: consulting
+#  url: /consulting/
+#  external: false
 
 # Styling needs to be addressed for submenus, but they do work.
 #  subitems:
