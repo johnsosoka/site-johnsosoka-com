@@ -10,7 +10,7 @@ document projects, and collect my thoughts.
 Most of the technical content is in the [blog](/blog) section. The [bytes](/notes) section is more of a wildcard, but it's 
 where I'll share book notes, course notes, quick tips, passing thoughts, etc.
 
-The [etc](/etc) page serves as an index for some of the other miscellaneous pages.
+The [beyond](/beyond) page serves as an index for some of the other miscellaneous pages.
 
 The source code for this website is available on [GitHub](https://github.com/johnsosoka/jscom-blog).
 

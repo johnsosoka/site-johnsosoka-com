@@ -1,9 +1,11 @@
 ---
-title: Etc  
-permalink: /etc/  
+title: Beyond  
+permalink: /beyond/  
 layout: page  
 excerpt: Index of all the pages that don't fit anywhere else.
 ---
+
+Index of all the pages that don't fit anywhere else.
 
 ## Personal Interests
 
