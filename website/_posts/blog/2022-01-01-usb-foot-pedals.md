@@ -36,7 +36,7 @@ realize that foot pedals could be utilized outside of gaming or transcription. A
 highlighting the potential of usb foot pedals to get the word out.
 
 I think that there might be some great potential for combining pedal usage with AutoHotKey scripts in the future–I have 
-some notes on writing ahk scripts [here ](/notes/2021/12/27/ahk-recipes-example-howto.html).
+some notes on writing ahk scripts [here ](/note/2021/12/27/ahk-recipes-example-howto.html).
 
 Happy new year!
 

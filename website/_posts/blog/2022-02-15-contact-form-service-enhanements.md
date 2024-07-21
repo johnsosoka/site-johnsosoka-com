@@ -9,7 +9,7 @@ I’m certain that I’ve mentioned in previous posts that I am _not_ a client-s
 
 In my previous post, I had used an HTML form & form submit. This resulted in a poor user experience & fair bit of bloated backend code to parse the submission. As implemented, upon form submit, the user would be redirected to the backend service. A more familiar and modern experience would have had the request fire in the background upon submit.
 
-Now that I have taken an introductory Javascript course ([course notes here](/notes/udemy/js-jquery-course/2022-01-29-the-complete-js-jsquery-course.html)) I have a better understanding of how to handle form submissions in a more familiar and modern way.
+Now that I have taken an introductory Javascript course ([course notes here](/note/udemy/js-jquery-course/2022-01-29-the-complete-js-jsquery-course.html)) I have a better understanding of how to handle form submissions in a more familiar and modern way.
 
 ## Long-Term Plan
 
