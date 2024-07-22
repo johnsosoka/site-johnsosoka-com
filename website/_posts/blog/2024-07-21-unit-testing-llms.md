@@ -60,7 +60,7 @@ public class BookingTools {
 <br>
 Next up, I'll define the LangChain4J [AIService](https://docs.langchain4j.dev/tutorials/ai-services/). This class will define 
 the role of the agent, as well as an entrypoint to interface with the LLM. Furthermore, we can easily attach this to a
-`@Tool` exposing it to the `HotelBookingAgent` which is to be testedl.
+`@Tool` exposing it to the `HotelBookingAgent` which is to be tested.
 
 ```java
 package com.johnsosoka.langchainbookingtests.agent;
@@ -91,6 +91,7 @@ public class BookingAgentConfig {
     @Bean
     public ChatLanguageModel chatLanguageModel() {
         return OpenAiChatModel.builder()
+                .modelName(OpenAiChatModelName.GPT_4_O)
                 .apiKey(apiKey)
                 .build();
     }
