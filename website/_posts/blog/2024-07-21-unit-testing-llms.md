@@ -5,6 +5,8 @@ category: blog
 tags: java langchain4j testing unit-testing junit mockito large-language-models llm
 ---
 
+![unit-test-llms-png](https://media.johnsosoka.com/blog/2024-07-21/unit-test-llms.png)
+
 Unit tests are a critical part of enterprise software development. Not only do unit tests help validate the expected
 behavior of the code, but they also serve as a form of documentation and give developers the confidence to refactor
 and contribute to the codebase. I have worked on software projects lacking unit tests, and have seen the negative
