@@ -338,7 +338,7 @@ We will continue utilizing an LLM to evaluate our `BookingAgent` LLM, which is e
 be provided a description for the expected behavior of the system, and it will both generate a test plan
 and execute on that plan.
 
-The QA Agent will be able to interact with the `BookingAgent` by exposing it as a `@Tool` to the QA agent. The QA Agent
+The `TestAgent` will be able to interact with the `BookingAgent` by exposing it as a `@Tool` to the QA agent. The `TestAgent`
 will then be able to chat with the `BookingAgent` like a customer would.
 
 First, we'll wrap the `ChatService` in a `BookingAgentTool`:
