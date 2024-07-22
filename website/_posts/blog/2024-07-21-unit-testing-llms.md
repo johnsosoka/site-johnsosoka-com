@@ -14,7 +14,8 @@ Testing Large Language Models (LLMs) is a unique challenge. Particularly because
 these models. It isn't always as simple as asserting that the output of a function is equal to an expected value as 
 there can be many ways for an LLM to potentially phrase a correct answer. In today's post, I will be walking through 
 a handful of strategies for unit testing LLMs _with_ LLMs. We will start simple, and then build our way up to
-an LLM-Driven QA Agent, which can generate its own test cases & use them to evaluate the target agent's performance.
+an `MultiPhaseEvaluator`, which can guides a test agent through creating a test plan, executing on that plan 
+(agent -> agent evaluation), and then evaluating the results.
 
 ## Setup
 
@@ -33,8 +34,7 @@ simply wraps the `HotelBookingService`:
 public class BookingTools {
 
     private final HotelBookingService hotelBookingService;
-
-
+    
     @Tool("Check Availability -- Useful for seeing if a room is available for a given date.")
     public boolean checkAvailability(String date) {
         LocalDate parsedDate = LocalDate.parse(date);
@@ -359,14 +359,16 @@ public class BookingAgentTool {
 ```
 <br>
 
-Next, we will construct an `AiService` definition with several methods. We will define:
+Next, we will define and create several methods encapsulating the different phases our `TestAgent` will be guided through. 
 
-- A method to generate a test plan
-- A method to execute the test plan
-- A method to evaluate the test results
+We will define a method and prompt to:
+
+- Generate a test plan
+- Execute the test plan
+- Evaluate the test results
 
 ```java
-public interface QATesterAgent {
+public interface TestAgent {
 
     @SystemMessage({
             "You are a world class QA engineer, your job is to test the system and ensure that it is working as expected.",
@@ -401,26 +403,24 @@ public interface QATesterAgent {
 ```
 <br>
 
-Finally, we will create an `AgenticQA` class which will handle the flow-control of the QA Agent:
+Finally, we will create an `MultiPhaseEvaluator` class which will handle the flow-control of the `TestAgent`:
 
 ```java
 @RequiredArgsConstructor
 @Slf4j
-public class AgenticQA {
+public class MultiPhaseEvaluator {
 
-    private final QATesterAgent qaTesterAgent;
+    private final TestAgent testAgent;
 
     /**
-     * Generate and execute a test plan for a given System Description.
-     * If the QATesterAgent supplied is equipped with the appropriate tools, it will generate a test plan,
-     * execute the test plan, and evaluate the results. It is intended for usage against an LLM-Driven Agent.
+     * Generates a test plan, executes the test plan, and evaluates the results for a given system description.
      * @param systemDescription
      * @return
      */
     public TestPlanResult generateAndExecuteTestPlan(String systemDescription) {
-        String testCases = qaTesterAgent.writeTestCases(systemDescription);
-        String testPlanResults = qaTesterAgent.test(testCases);
-        Boolean testPlanResult = qaTesterAgent.evaluateResults(testPlanResults);
+        String testCases = testAgent.writeTestCases(systemDescription);
+        String testPlanResults = testAgent.test(testCases);
+        Boolean testPlanResult = testAgent.evaluateResults(testPlanResults);
         return TestPlanResult.builder()
                 .testPlan(testCases)
                 .testPlanResults(testPlanResults)
@@ -431,8 +431,9 @@ public class AgenticQA {
 ```
 <br>
 
-I've created helper methods to provision the `QATesterAgent` and `AgenticQA` class, you can view this in the complete example
-on my GitHub. The important part is seeing this added to the test:
+I've created helper methods to provision the `TestAgent` and `MultiPhaseEvaluator` class, you can view this in the complete example
+on [Github](https://github.com/johnsosoka/code-examples/blob/main/java/langchain-booking-tests/src/test/java/com/johnsosoka/langchainbookingtests/service/ChatServiceTestIT.java). 
+The important part is seeing this added to the test:
 
 ```java
     @Test
@@ -448,17 +449,20 @@ on my GitHub. The important part is seeing this added to the test:
                 - The system has a hotel with 0 rooms available on 2025-02-28
                 - All other dates should be considered unavailable
                 """;
-
-        TestPlanResult testPlanResult = agenticQA.generateAndExecuteTestPlan(systemDescription);
+        
+        TestPlanResult testPlanResult = multiPhaseEvaluator.generateAndExecuteTestPlan(systemDescription);
         log.info("Test Plan: \n{}", testPlanResult.getTestPlan());
         log.info("Test Plan Results: \n{}", testPlanResult.getTestPlanResults());
         assertTrue(testPlanResult.getAllTestsPassed());
     }
 ```
 <br>
+
 You can see that we're describing the capabilities of the system that's going to be evaluated. Remember, we're equipping
-the `QATesterAgent` with a tool that allows it to interact with the `BookingAgent` via the `ChatService`. Below is the 
-conversation between the QA Agent and the Booking Agent:
+the `TestAgent` with a tool that allows it to interact with the `BookingAgent` via the `ChatService`. The `MultiPhaseEvaluator`
+will guide the `TestAgent` through writing test cases, executing on those test cases, and evaluating the results.
+
+Below is the conversation between the QA Agent and the Booking Agent:
 
 ```commandline
 QA Agent Message - Check availability for 2025-01-15
@@ -488,7 +492,7 @@ Booking Agent Response - Could you please provide the check-out date for Emily D
 ```
 <br>
 
-This is pretty interesting stuff, the QA Agent is able to generate a test plan & interact with the booking agent to execute
+This is pretty interesting stuff, the `TestAgent` is able to generate a test plan & interact with the booking agent to execute
 on that plan. The abridged version of the plan generated for the above execution run was:
 
 1. Check availability for a date with available rooms
@@ -509,8 +513,8 @@ the accuracy and robustness of our tests; But, that is a project for another day
 
 Testing Large Language Models is a new and unique challenge. I'm really excited to see what other ideas the industry comes 
 up with in the future. We covered quite a bit of ground today, starting with a simple unit test using `contains` and working 
-our way to a fully functional QA Agent capable of generating test plans and executing on them. Hopefully, this article has
-given you some ideas on how to test your own LLM applications. This was a very interesting  project to work on, and I hope you 
+our way to a fully functional `MultiPhaseEvaluator` capable of generating test plans and executing on them. Hopefully, this article has
+given you some ideas on how to test your own LLM applications. This was a fun project to work on, and I hope you 
 found it as interesting as I did. Watching the two agents interact with each other was thrilling, and being able to use a junit 
 assertion to evaluate the results was the cherry on top.
 
