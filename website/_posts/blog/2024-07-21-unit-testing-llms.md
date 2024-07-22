@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unit Testing Large Language Models: Agent-Based Evaluation with LangChain4J"
+title: "Unit Testing Large Language Models: Agentic Test Evaluation with LangChain4J"
 category: blog
 tags: java langchain4j testing unit-testing junit mockito large-language-models llm
 ---
@@ -18,14 +18,14 @@ an LLM-Driven QA Agent, which can generate its own test cases & use them to eval
 
 ## Setup
 
-For this project, I will be recreating the Hotel Booking Agent example that I created with Spring AI. You can read
-the original blog post [here](/blog/2024/03/24/Spring-AI.html). The project is a simple Hotel Booking Agent that can
-check availability, book rooms, and look up reservations.
+For this project, I will be recreating the Hotel Booking Agent example that I created with Spring AI in a previous article. 
+You can read the original blog post [here](/blog/2024/03/24/Spring-AI.html). The project contains a simple hotel booking agent 
+with access to tools to check availability, book rooms, and look up reservations.
 
 The first thing I've done is copied the existing dummy [HotelBookingService](https://github.com/johnsosoka/code-examples/blob/main/java/spring-ai-booking/src/main/java/com/johnsosoka/springaibooking/service/HotelBookingService.java) 
 class from the Spring AI project. This class contains the logic for checking availability, booking rooms, and looking up 
 reservations. Once copied, I needed to define the LangChain4J toolkit, which will be exposed to the booking agent. It 
-simply wraps the HotelBookingService:
+simply wraps the `HotelBookingService`:
 
 ```java
 @Component
@@ -56,7 +56,7 @@ public class BookingTools {
 }
 ```
 <br>
-Next up, I'll define the LangChain4J agent. This class will define the role of the agent, as well as an entrypoint to
+Next up, I'll define the LangChain4J `AiService`. This class will define the role of the agent, as well as an entrypoint to
 interface with the LLM.
 
 ```java
@@ -105,7 +105,8 @@ public class BookingAgentConfig {
 ```
 <br>
 Finally, I will create an additional service class that will be used to interact with the agent. Remember, we're just
-setting up a dummy application so that we have something to test--This is not a production-ready application.
+setting up a dummy application so that we have something to test--This is not a production-ready application, and as
+such will not support concurrent conversations.
 
 ```java
 package com.johnsosoka.langchainbookingtests.service;
@@ -131,10 +132,10 @@ The SpringAI HotelBookingAgent has now been migrated to LangChain4J! We can now 
 
 ## Unit Testing
 
-The HotelBookingService has two hardcoded dates: January 15, 2025 (available) and February 28, 2025 (unavailable). We can
+The `HotelBookingService` has two hardcoded dates: January 15, 2025 (available) and February 28, 2025 (unavailable). We can
 use these dates to test the agent's ability to check availability, book rooms, and find bookings.
 
-To begin, I'll set up an integration test for the ChatService, and evaluate the response using `contains` to assert that
+To begin, I'll set up an integration test for the `ChatService`, and evaluate the response using `contains` to assert that
 the agent's response contains the expected output.
 
 ```java
@@ -324,11 +325,13 @@ Interestingly enough, the evaluation failed on the first pass, but passed on the
 why we use a multi-pass evaluation strategy. It helps to mitigate the non-deterministic nature of the LLM tasked with
 evaluating the results.
 
-### Agentic Evaluation (QA Simulation)
+### Multi-Phase Agent Evaluation (Plan & Test)
 
-The final strategy that I'll cover in this article is Agentic Evaluation. In this scenario, we're going to build something
-of a QA Engineer. We will continue utilizing an LLM to evaluate our `BookingAgent` LLM, which is exposed via the `ChatService`.
-This Agent will be provided a description for the expected behavior of the system, and it will both generate a test plan
+The final strategy that I'll cover in this article is Multi-Phase Agent Evaluation. With this strategy, instead of performing 
+the same evaluation multiple times, we will instead guide an agent through multiple phases: Planning, Execution & Evaluation.
+
+We will continue utilizing an LLM to evaluate our `BookingAgent` LLM, which is exposed via the `ChatService`. This Agent will 
+be provided a description for the expected behavior of the system, and it will both generate a test plan
 and execute on that plan.
 
 The QA Agent will be able to interact with the `BookingAgent` by exposing it as a `@Tool` to the QA agent. The QA Agent
@@ -487,7 +490,6 @@ Booking Agent Response - Could you please provide the check-out date for Emily D
 
 This is pretty interesting stuff, the QA Agent is able to generate a test plan & interact with the booking agent to execute
 on that plan. The abridged version of the plan generated for the above execution run was:
-Certainly! Here are the test case titles extracted into a list:
 
 1. Check availability for a date with available rooms
 2. Check availability for a date with no available rooms
@@ -500,13 +502,18 @@ Certainly! Here are the test case titles extracted into a list:
 9. Book a room for a guest with check-out date before check-in date
 10. Book a room for a guest with check-in and check-out date being the same
 
+We could feasibly combine the multi-pass evaluation strategy with the agentic QA evaluation strategy to further improve
+the accuracy and robustness of our tests; But, that is a project for another day.
+
 ## Conclusion
 
 Testing Large Language Models is a new and unique challenge. I'm really excited to see what other ideas the industry comes 
 up with in the future. We covered quite a bit of ground today, starting with a simple unit test using `contains` and working 
-our way to a fully functional QA Agent capable of generating test plans and executing on them. Hopefully this article has
+our way to a fully functional QA Agent capable of generating test plans and executing on them. Hopefully, this article has
 given you some ideas on how to test your own LLM applications. This was a very interesting  project to work on, and I hope you 
 found it as interesting as I did. Watching the two agents interact with each other was thrilling, and being able to use a junit 
 assertion to evaluate the results was the cherry on top.
+
+The complete example can be found on my GitHub [here](https://github.com/johnsosoka/code-examples/tree/main/java/langchain-booking-tests)
 
 Happy coding!
