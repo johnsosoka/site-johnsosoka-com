@@ -14,12 +14,12 @@ Testing Large Language Models (LLMs) is a unique challenge. Particularly because
 these models. It isn't always as simple as asserting that the output of a function is equal to an expected value as 
 there can be many ways for an LLM to potentially phrase a correct answer. In today's post, I will be walking through 
 a handful of strategies for unit testing LLMs _with_ LLMs. We will start simple, and then build our way up to
-an `MultiPhaseEvaluator`, which can guides a test agent through creating a test plan, executing on that plan 
-(agent -> agent evaluation), and then evaluating the results.
+a `MultiPhaseEvaluator`, which can guides a test agent through creating a test plan, executing on that plan 
+(agent to agent interaction), and then evaluating the results. 
 
 ## Setup
 
-For this project, I will be recreating the Hotel Booking Agent example that I created with Spring AI in a previous article. 
+For this project, I will be recreating the Hotel Booking Agent example that I built with Spring AI in a previous article. 
 You can read the original blog post [here](/blog/2024/03/24/Spring-AI.html). The project contains a simple hotel booking agent 
 with access to tools to check availability, book rooms, and look up reservations.
 
@@ -56,8 +56,9 @@ public class BookingTools {
 }
 ```
 <br>
-Next up, I'll define the LangChain4J `AiService`. This class will define the role of the agent, as well as an entrypoint to
-interface with the LLM.
+Next up, I'll define the LangChain4J [AIService](https://docs.langchain4j.dev/tutorials/ai-services/). This class will define 
+the role of the agent, as well as an entrypoint to interface with the LLM. Furthermore, we can easily attach this to a
+`@Tool` exposing it to the `HotelBookingAgent` which is to be testedl.
 
 ```java
 package com.johnsosoka.langchainbookingtests.agent;
@@ -134,6 +135,8 @@ The SpringAI HotelBookingAgent has now been migrated to LangChain4J! We can now 
 
 The `HotelBookingService` has two hardcoded dates: January 15, 2025 (available) and February 28, 2025 (unavailable). We can
 use these dates to test the agent's ability to check availability, book rooms, and find bookings.
+
+### Testing Without Agents
 
 To begin, I'll set up an integration test for the `ChatService`, and evaluate the response using `contains` to assert that
 the agent's response contains the expected output.
@@ -321,11 +324,12 @@ Here is the output from a test run:
 ```
 <br>
 
-Interestingly enough, the evaluation failed on the first pass, but passed on the subsequent two passes. This is largely 
+Interestingly enough, the evaluation failed on the first pass, but passed on the following two passes. This is largely 
 why we use a multi-pass evaluation strategy. It helps to mitigate the non-deterministic nature of the LLM tasked with
-evaluating the results.
+evaluating the results. In a production environment, you may want to increase the number of passes and potentially 
+tweak the temperature of the underlying `ChatLanguageModel` to improve evaluation accuracy.
 
-### Multi-Phase Agent Evaluation (Plan & Test)
+### Multi-Phase Agent Evaluation (Plan, Test & Evaluate)
 
 The final strategy that I'll cover in this article is Multi-Phase Agent Evaluation. With this strategy, instead of performing 
 the same evaluation multiple times, we will instead guide an agent through multiple phases: Planning, Execution & Evaluation.
@@ -358,6 +362,8 @@ public class BookingAgentTool {
 }
 ```
 <br>
+By exposing the `ChatService` (and by extension the `BookingAgent`) as a `@Tool`, any agent equipped with the `BookingAgentTool`
+component, will be able to interact with the `BookingAgent` as though it were a customer or QA tester.
 
 Next, we will define and create several methods encapsulating the different phases our `TestAgent` will be guided through. 
 
@@ -430,6 +436,8 @@ public class MultiPhaseEvaluator {
 }
 ```
 <br>
+Notice above that we're passing the output from one LLM invocation to the next. This flow-control allows us to guide LLMs 
+with task-specific prompts through a series of logical steps.
 
 I've created helper methods to provision the `TestAgent` and `MultiPhaseEvaluator` class, you can view this in the complete example
 on [Github](https://github.com/johnsosoka/code-examples/blob/main/java/langchain-booking-tests/src/test/java/com/johnsosoka/langchainbookingtests/service/ChatServiceTestIT.java). 
