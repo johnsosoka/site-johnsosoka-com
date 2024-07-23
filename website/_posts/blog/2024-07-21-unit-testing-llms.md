@@ -192,6 +192,7 @@ the response must meet as well as the response itself to evaluate.
 Let's first define the `TestEvaluationAgent` interface:
 
 ```java
+{% raw %}
 public interface TestEvaluationAgent {
 
     @SystemMessage({
@@ -207,6 +208,7 @@ public interface TestEvaluationAgent {
     })
     public Boolean evaluate(@V("condition") String condition, @V("result") String result);
 }
+{% endraw %}
 ```
 <br>
 In the above, you can see how we're defining the "profile" or "role" of the `TestEvaluationAgent`. The `@SystemMessage`
@@ -377,6 +379,7 @@ We will define a method and prompt to:
 - Evaluate the test results
 
 ```java
+{% raw %}
 public interface TestAgent {
 
     @SystemMessage({
@@ -409,6 +412,7 @@ public interface TestAgent {
     public Boolean evaluateResults(String testResults);
 
 }
+{% endraw %}
 ```
 <br>
 
