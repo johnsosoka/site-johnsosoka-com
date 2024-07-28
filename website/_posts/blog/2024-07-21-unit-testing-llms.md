@@ -7,6 +7,13 @@ tags: java langchain4j testing unit-testing junit mockito large-language-models 
 
 ![unit-test-llms-png](https://media.johnsosoka.com/blog/2024-07-21/unit-test-llms.png)
 
+---
+
+**Note:** This article assumes familiarity with LangChain4j, an LLM Integration framework. For a primer on this library,
+you can read an introduction that I wrote [here](https://www.commerce-architects.com/post/the-basic-building-blocks-of-agents).
+
+---
+
 Unit tests are a critical part of enterprise software development. Not only do unit tests help validate the expected
 behavior of the code, but they also serve as a form of documentation and give developers the confidence to refactor
 and contribute to the codebase. I have worked on software projects lacking unit tests, and have seen the negative
@@ -21,9 +28,10 @@ a `MultiPhaseEvaluator`, which can guides a test agent through creating a test p
 
 ## Setup
 
-For this project, I will be recreating the Hotel Booking Agent example that I built with Spring AI in a previous article. 
-You can read the original blog post [here](/blog/2024/03/24/Spring-AI.html). The project contains a simple hotel booking agent 
-with access to tools to check availability, book rooms, and look up reservations.
+To evaluate LLM performance in Unit Tests, we're going to need something to test. To achieve this, I will be 
+recreating the Hotel Booking Agent example that I built with Spring AI in a previous article. You can read the original 
+blog post [here](/blog/2024/03/24/Spring-AI.html). The project contains a simple hotel booking agent with access to tools to check availability, 
+book rooms, and look up reservations.
 
 The first thing I've done is copied the existing dummy [HotelBookingService](https://github.com/johnsosoka/code-examples/blob/main/java/spring-ai-booking/src/main/java/com/johnsosoka/springaibooking/service/HotelBookingService.java) 
 class from the Spring AI project. This class contains the logic for checking availability, booking rooms, and looking up 
