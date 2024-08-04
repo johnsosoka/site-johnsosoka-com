@@ -5,8 +5,10 @@ category: note
 tags: notion productivity qr python organization storage home household tech
 ---
 
+---
 **Edit 02/13/24:** - Now that Notion has released notion.ai, this strategy is even more powerful. I can just ask a bot
 inside Notion where my stuff is.
+---
 
 I've had a nomadic couple of years. Having moved about four times in as many years, I've had to pack and unpack my life 
 a few times. It's a great way to prune your belongings. It's also a great way to lose track of things.
