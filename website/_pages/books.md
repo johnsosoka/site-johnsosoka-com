@@ -52,6 +52,10 @@ profile up to date, but I don't always succeed.
 * To Your Scattered Bodies Go (Riverworld Saga, Book 1)
 * Manna – Two Views of Humanity's Future
 
+### Speculative Fiction
+
+* Mania (Lionel Shriver)
+
 # Social / Political
 
 ### Social Cycle Theory
