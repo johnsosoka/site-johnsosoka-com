@@ -14,8 +14,8 @@ The [beyond](/beyond) page serves as an index for some of the other miscellaneou
 
 The source code for this website is available on [GitHub](https://github.com/johnsosoka/jscom-blog).
 
-![Aiur](https://media.johnsosoka.com/test/2023-01-01-aiur.jpeg)
-> Meet Aiur, my youngest dog, pictured above on the Polecat Loop Trail in the Boise foothills on a foggy New Years Day, 2023.
+![Bailey](https://media.johnsosoka.com/pages/homepage/IMG_4219.jpeg)
+> Meet Bailey, our youngest dog.
 
 #### Recent Blog Posts
 {% include posts.html category="blog" post_display_limit=5 post_collection_title="Recent Blog Posts" %}
