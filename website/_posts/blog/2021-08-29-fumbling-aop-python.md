@@ -172,7 +172,7 @@ how to pull this off--how can my decorator gain access to the connection object 
 that a fair strategy would be to stash the connection object in a known location. 
 
 {:refdef: style="text-align: center;"}
-![new plan class relationship](/assets/img/blog/aspect-fumble/hack-uml.png)
+![new plan class relationship](https://media.johnsosoka.com/old/img/blog/aspect-fumble/initial-overiew-uml.png)
 {: refdef}
 
 With this new plan, I would create a dictionary on the parent class which would serve as a key/value store for the 
