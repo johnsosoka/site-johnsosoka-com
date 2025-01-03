@@ -9,15 +9,16 @@ Last year (almost to the day) I wrote a "Note" which I consider less thought-out
 home organization with a Notion database & QR codes, originally posted [here](/note/2023/12/28/qr-code-box-organization.html). 
 In that post, I had provided a Python script for bulk generation of QR codes linking them to items in a private Notion 
 database. The gist of my project in that post was to print out QR codes & attach them to boxes in my garage for easy 
-identification. As long as I maintained the Notion database entry for the related QR code, I could easily find the box I 
-was looking for.
+identification. The QR codes would link to _private_ notion pages, such that I could scan them on my phone & view the
+corresponding Notion page with content descriptions.  As long as I maintained the Notion database entry for the related 
+QR code, I could easily find the box I was looking for.
 
 I was recently contacted teacher at a university who encountered my post and wanted to apply similar concepts to their
 use case, managing a catalog of items that could be lent out to students. They required a more automated solution, where
-an event in Notion could trigger a process to generate that QR code and attach it to the database entry. The teacher was
-managing a database of hundreds of items, not tens of items like my home organization project. With so many items to manage,
-generating QR codes manually & copying them to Notion manually would not only be tedious, but also error-prone. 
-
+an event in Notion would trigger a process to generate a QR code, linking to a corresponding Ntion database entry. The 
+teacher was managing a database of hundreds of items, not tens of items like my home organization project. With so many 
+items to manage, generating QR codes manually & copying them to Notion manually would not only be tedious, but also 
+error-prone. 
 
 
 # The Project
