@@ -6,7 +6,11 @@ excerpt: minecraft
 ---
 
 ## Server
-* 04/27/2022 - Realm is live. Contact for invite.
+
+I'm not currently hosting any public servers, but I may in the future. Keep an eye out here for current world information 
+and old world/realm downloads.
+
+* ~~04/27/2022 - Realm is live. Contact for invite.~~
 * ~~01/10/2022 - minecraft.johnsosoka.com is live!~~
 
 ## Downloads
