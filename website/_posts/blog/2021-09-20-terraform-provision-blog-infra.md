@@ -6,6 +6,9 @@ subtitle: Building infrastructure for a personal site reproducibly & on the chea
 tags: terraform s3 aws jekyll scripting awscli cloudfront route53
 ---
 
+**Update 2023/07/23:**
+- I've written an article on how to use GitHub Actions to automatically deploy this website. You can find it [here](/blog/2023/07/16/gitlab-pipeline-s3.html).
+
 # Introduction
 
 I first created this website last year, and I pieced it all together by hand using the aws console. Shortly after 
@@ -600,5 +603,4 @@ to clear by creating a CloudFront Invalidation Event via the AWSCLI.
 In future iterations, I will set up either a CodeCommit or Jenkins pipeline so that merges to master will build & deploy 
 artifacts for me. Until then, I'll be living in the stone age and manually triggering my deployment script.
 
-**Update 2023/07/23:**
-- I've written an article on how to use GitHub Actions to automatically deploy this website. You can find it [here](/content/posts/blog/2023/07/16/gitlab-pipeline-s3.html).
+
