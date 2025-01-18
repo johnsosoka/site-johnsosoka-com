@@ -1,20 +1,20 @@
-- title: home
+- title: Home
   url: /
   external: false
 
-- title: about
+- title: About
   url: /about/
   external: false
 
-- title: blog
+- title: Blog
   url: /blog/
   external: false
 
-- title: bytes
+- title: Bytes
   url: /notes/
   external: false
 
-- title: beyond
+- title: Beyond
   url: /beyond/
   external: false
 
