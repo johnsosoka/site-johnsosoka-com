@@ -10,6 +10,9 @@ excerpt: minecraft
 I'm not currently hosting any public servers, but I may in the future. Keep an eye out here for current world information 
 and old world/realm downloads.
 
+* 02/02/2025 - `minecraft.johnsosoka.com` is live again!
+  * World backs up nightly at 3am Mountain Time.
+  * Currently running on a Raspberry Pi 5 with 8GB of RAM.
 * ~~04/27/2022 - Realm is live. Contact for invite.~~
 * ~~01/10/2022 - minecraft.johnsosoka.com is live!~~
 
