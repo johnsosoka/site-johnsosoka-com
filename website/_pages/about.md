@@ -9,7 +9,7 @@ excerpt: I am John Sosoka, a Boise based software engineer.
 
 Hi, I'm John. I'm a father, husband, and software engineer living in Boise, I am a backend developer and usually work 
 with Java & Python day to day. Over the course of my career I have worked in a variety of roles in software development,
-including software tester, release engineer, software engineer and tech lead.
+including software tester, release engineer, software engineer, principal software engineer, and tech lead.
 
 Most recently I've been working a lot with Large Language Models (LLMs), particularly Agent design and orchestration. Last
 year I wired up a language model to a collection of tools that allowed it to browse the internet and build a themed spotify 
@@ -43,7 +43,7 @@ View the source for this website on [GitHub](https://github.com/johnsosoka/jscom
 #### Snippets
 
 Below is a short video of a lightning storm filmed in Meridian, Idaho. This was really fun to watch. From 
-my location I couldn't hear any thunder. The lightning was so frequent that I originally thought a work vehicle was
+my location, I couldn't hear any thunder. The lightning was so frequent that I originally thought a work vehicle was
 parked outside with its light strobing. When I went to check it out, this is what I saw:
 
 ##### 08/26/2023 - Meridian, Idaho
