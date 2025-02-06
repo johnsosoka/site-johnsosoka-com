@@ -31,7 +31,7 @@ The Sundara is my favorite pair of headphones in my collection. The bass is so f
 of the sound. They're really wonderful for electronica music. I have more expensive pairs, but as a daily driver, these
 are my go-to.
 
-![sundara](https://buy.guru/wp-content/uploads/2021/04/HiFiMan-Sundara-768x768.jpg)
+![sundara](https://media.johnsosoka.com/pages/headphones/hifiman-sundara.jpg)
 
 #### Ananda BT
 
