@@ -19,6 +19,7 @@ Index of all the pages that don't fit anywhere else.
 - [Workflow](/workflow/) - Apps/Tools/Services that I use for running my life.
 - [Scriptorium](/scriptorium/) - Scripts that I've written.
 - [Headphones](/headphones/) - A page about headphones.
+- [Hosted Services](/services/) - Public services that I host.
 
 ## Gaming and Entertainment
 
