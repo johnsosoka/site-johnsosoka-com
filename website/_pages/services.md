@@ -31,4 +31,9 @@ Notion is a great productivity/note-taking tool. I have created a handful of ser
 
 You can find out more about Notion [here](https://www.notion.com/).
 
-## Communication Services
+### Notion QR Service
+
+I have a service that will generate and attach a QR code to a Notion page. This can be helpful for tracking items IRL, as
+you can print the QR code and physically attach it to the item.
+
+Instructions for configuring and using the service can be found [here](https://github.com/johnsosoka/jscom-notion-qr-service)
