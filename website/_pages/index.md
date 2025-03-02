@@ -14,6 +14,8 @@ The [beyond](/beyond) page serves as an index for some of the other miscellaneou
 
 The source code for this website is available on [GitHub](https://github.com/johnsosoka/jscom-blog).
 
+---
+
 #### Recent Blog Posts
 {% include posts.html category="blog" post_display_limit=8 post_collection_title="Recent Blog Posts" %}
 
