@@ -23,5 +23,10 @@ _[Discover more blog posts](/blog)_
 
 ---
 
-![Bailey](https://media.johnsosoka.com/pages/homepage/IMG_4219.jpeg)
-> Meet Bailey, the latest addition to our family.
+#### Pic of the Moment
+
+![janos](https://media.johnsosoka.com/pages/homepage/sosoka-workshop.jpeg)
+> My great-grandfather (dead center, in overalls), John Sosoka, in his workshop. Sometime in the 1930s/40s.
+> He emigrated from the Austro-Hungarian Empire in 1921. He was a machinist, building aircraft parts.
+
+
