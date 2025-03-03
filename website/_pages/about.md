@@ -54,4 +54,5 @@ parked outside with its light strobing. When I went to check it out, this is wha
 ##### Retired About Page Snippets
 
 * [Retired Snippets](/retired/about/)
+* [Retired Homepage Snippets](/retired/home/)
 
