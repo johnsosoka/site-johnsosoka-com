@@ -5,7 +5,7 @@ title: AutoHotKey Notes, Recipes & Examples
 note_type: AHK Scripting
 ---
 
-AutoHotkey (AHK) is a niche scripting language build around keyboard & mouse IO. The official [AHK Documentation](https://www.autohotkey.com/docs/AutoHotkey.htm) 
+AutoHotkey (AHK) is a niche scripting language built around keyboard & mouse IO. The official [AHK Documentation](https://www.autohotkey.com/docs/AutoHotkey.htm) 
 is enormously helpful & provides many wonderful examples. Unfortunately, at the time of this writing it only runs on Windows.
 
 What follows are some quick recipes to get up and running in AHK quickly--I find myself writing AHK scripts just infrequently 

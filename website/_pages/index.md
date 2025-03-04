@@ -26,7 +26,7 @@ _[Discover more blog posts](/blog)_
 #### Pic of the Moment
 
 ![janos](https://media.johnsosoka.com/pages/homepage/sosoka-workshop.jpeg)
-> My great-grandfather (dead center, in overalls), John Sosoka, in his workshop. Sometime in the 1930s/40s.
-> He emigrated from the Austro-Hungarian Empire in 1921. He was a machinist, building aircraft parts.
+> My great-grandfather (dead center, in overalls), John Sosoka, in his workshop. Year unknown, likely 1920s.
+> He was a machinist who emigrated from the Austro-Hungarian Empire in 1921.
 
 
