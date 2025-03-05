@@ -26,7 +26,5 @@ _[Discover more blog posts](/blog)_
 #### Pic of the Moment
 
 ![janos](https://media.johnsosoka.com/pages/homepage/sosoka-workshop.jpeg)
-> My great-grandfather (dead center, in overalls), John Sosoka, in his workshop. Year unknown, likely 1920s.
-> He was a machinist who emigrated from the Austro-Hungarian Empire in 1921.
-
-
+> My great-grandfather, John (Janos) Sosoka (centered, in overalls), in his machine shop. Picture likely taken in the mid-1920s. 
+> Born in 1893 in what was then the Austro-Hungarian Empire, he immigrated to the U.S. in 1921.
